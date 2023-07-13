@@ -1,0 +1,475 @@
+#Introduction
+
+C is a procedural (karyavidhi sambandhi) programming language initially developed by Dennis Ritchie in the year 1972 at the Bell laboratories. It was mainly developed as a system programming language to write the UNIX operating system .
+
+The main features of the C language includes :
+
+# General Purposes and Portable
+
+# Low Level Memory Access
+
+# Fast Speed 
+
+# Clean Syntax
+
+# Middles Level Language
+
+# Imperative (Imporatant) Language
+
+# Structural language (a type of programming that generally converts large or complex programs into more manageable and small pieces of code.)
+
+# Simple , Reliable , Easy to use 
+These features makes C suitable for system programming like an operating system or compiler development
+
+
+#Whyyyyyyyyyyyyyy should i learn this
+
+Many later languages have borrowed syntax/features directly or indirectly from c . Java PHP Javscript and many other languages are mainly based on C .
+ 
+C++ is nearly a superset of C language (Only a few programs may compile in C, but not in C++).
+
+If a person learns C programming first, it will help him to learn any modern programming language as well.
+
+
+#Begining with C programming :
+
+The following code is one of the simplest C programs that will help us the basic syntax structure of a C program.
+
+#include <stdio.h>
+int main() {
+int a = 10;
+printf("%d", a);
+return 0;
+}
+
+
+Let us analyze the structure of our program line by line.
+
+# Structure of the C program
+
+By structure, it is meant that any program can be written in this structure only. Writing a C program in any other structure will hence lead to a Compilation Error.
+
+1- #include <stdio.h>          - Header
+2- int main(void)              - Main
+3- {
+4-    printf("Hello frndz");   -Statement
+5-    return 0;                - Return
+6-  }
+
+
+# Components of a C program :
+
+1.Header files Inclusion - line 1- [#include <stdio.h>]
+
+The first and foremost component is the inclusion of the Header files in a C program. 
+
+A header file is a file with extension .h which contains C function declarations and macro definitions to be shared between several source files.
+
+In the above example, the preprocessor copies the preprocessed code of stdio.h to our file. The .h files are called header files in C.
+
+Some of the C Header files:
+
+stddef.h – Defines several useful types and macros.
+stdint.h – Defines exact width integer types.
+stdio.h – Defines core input and output functions
+stdlib.h – Defines numeric conversion functions, pseudo-random network generator, and memory allocation
+string.h – Defines string handling functions
+math.h – Defines common mathematical functions.
+
+
+2. Main Method Declaration – Line 2 [int main()]
+The next part of a C program is to declare the main() function.
+
+Entry point of a C program and the execution typically begins with the first line of the main().
+
+Empty brackets indicate that the main doesn’t take any paramete.
+
+The value returned by the main indicates the status of program termination.
+
+
+3. Body of Main Method – Line 3 to Line 6 [enclosed in {}]
+
+A pair of curly brackets define the body of a function. All functions must start and end with curly brackets.
+
+
+
+4. Statement – Line 4 [printf(“Hello World”);]
+
+Statements are the instructions given to the compiler.
+
+In C, a statement is always terminated by a semicolon (;).
+
+5. Return Statement – Line 5 [return 0;]
+
+The last part of any C function is the return statement.The return statement refers to the return values from a function. 
+
+This return statement and return value depend upon the return type of the function. 
+
+The return statement in our program returns the value from main(). The returned value may be used by an operating system to know the termination status of your program. 
+
+The value 0 typically means successful termination. 
+
+
+
+#Application of C 
+
+Operating systems: C is widely used for developing operating systems such as Unix, Linux, and Windows.
+
+Embedded systems: C is a popular language for developing embedded systems such as microcontrollers, microprocessors, and other electronic devices.
+
+System software: C is used for developing system software such as device drivers, compilers, and assemblers.
+
+Networking: C is widely used for developing networking applications such as web servers, network protocols, and network drivers.
+
+Database systems: C is used for developing database systems such as Oracle, MySQL, and PostgreSQL.
+
+Gaming: C is often used for developing computer games due to its ability to handle low-level hardware interactions.
+
+Artificial Intelligence: C is used for developing artificial intelligence and machine learning applications such as neural networks and deep learning algorithms.
+
+Scientific applications: C is used for developing scientific applications such as simulation software and numerical analysis tools.
+
+Financial applications: C is used for developing financial applications such as stock market analysis and trading systems.
+
+
+
+#C hello world Program
+
+All one needs to do is display the message “Hello World” on the screen. 
+
+
+// Simple C program to display "Hello World"
+
+// Header file for input output functions
+#include <stdio.h>
+
+// main function -
+// where the execution of program begins
+int main()
+{
+
+	// prints hello world
+	printf("Hello World");
+
+	return 0;
+}
+
+
+#Any line beginning with ‘//’ without quotes OR in between /*…*/ in C is a comment.
+
+#The #include directive tells the compiler to include a file and #include<stdio.h> tells the compiler to include the header file for the Standard Input Output file which contains declarations of all the standard input/output library functions.
+
+#Indentation: As you can see the printf and the return statement have been indented or moved to the right side. This is done to make the code more readable. In a program as Hello World, it does not seem to hold much relevance but as the program becomes more complex, it makes the code more readable and less error-prone. Therefore, one must always use indentations and comments to make the code more readable.
+
+
+# C Programming Language Standard
+
+The C programming language has several standard versions, with the most commonly used ones being C89/C90, C99, C11, and C18.
+
+
+When writing C code, it’s important to know which standard version is being used and to write code that is compatible with that standard. Many compilers support multiple standard versions, and it’s often possible to specify which version to use with a compiler flag or directive.
+    
+
+
+Here are some advantages and disadvantages of using the C programming language:
+
+Advantages:
+Efficiency: C is a fast and efficient language that can be used to create high-performance applications.
+
+Portability: C programs can be compiled and run on a wide range of platforms and operating systems.
+
+Low-level access: C provides low-level access to system resources, making it ideal for systems programming and developing operating systems.
+
+Large user community: C has a large and active user community, which means there are many resources and libraries available for developers.
+
+Widely used: C is a widely used language, and many modern programming languages are built on top of it.
+
+
+
+Disadvantages:
+
+Steep learning curve: C can be difficult to learn, especially for beginners, due to its complex syntax and low-level access to system resources.
+
+Lack of memory management: C does not provide automatic memory management, which can lead to memory leaks and other memory-related bugs if not handled properly.
+
+No built-in support for object-oriented programming: C does not provide built-in support for object-oriented 
+programming, making it more difficult to write object-oriented code compared to languages like Java or Python.
+
+No built-in support for concurrency: C does not provide built-in support for concurrency, making it more difficult to write multithreaded applications compared to languages like Java or Go.
+
+Security vulnerabilities: C programs are prone to security vulnerabilities, such as buffer overflows, if not written carefully.
+
+
+
+Overall, C is a powerful language with many advantages, but it also requires a high degree of expertise to use effectively and has some potential drawbacks, especially for beginners or developers working on complex projects.
+
+
+#Importance:
+
+Choosing the right programming language: Knowing the advantages and disadvantages of C can help developers choose the right programming language for their projects. For example, if high performance is a priority, C may be a good choice, but if ease of use or built-in memory management is important, another language may be a better fit.
+
+Writing efficient code: Understanding the efficiency advantages of C can help developers write more efficient and optimized code, which is especially important for systems programming and other performance-critical applications.
+
+Avoiding common pitfalls: Understanding the potential disadvantages of C, such as memory management issues or security vulnerabilities, can help developers avoid common pitfalls and write safer, more secure code.
+
+Collaboration and communication: Knowing the advantages and disadvantages of C can also help developers communicate and collaborate effectively with others on their team or in the wider programming community.
+
+
+The idea of this article is to introduce C standard.
+
+What to do when a C program produces different results in two different compilers? 
+
+For example, consider the following simple C program. 
+
+void main() { }
+
+
+The above program fails in GCC as the return type of main is void, but it compiles in Turbo C. How do we decide whether it is a legitimate C program or not? 
+
+
+Which compiler is right?
+The answer to all such questions is C standard. In all such cases, we need to see what C standard says about such programs.
+
+
+What is C standard? 
+
+The latest C standard is ISO/IEC 9899:2018, also known as C17 as the final draft was published in 2018. Before C11, there was C99. The C11 final draft is available here.
+
+
+What to do with programs whose behavior is undefined or unspecified in standard? 
+As a programmer, it is never a good idea to use programming constructs whose behavior is undefined or unspecified, such programs should always be discouraged.
+
+
+
+
+#Interesting Facts about Macros and Preprocessors in C
+
+
+In a C program, all lines that start with # are processed by preprocessor which is a special program invoked by the compiler. by this we mean to say that the ‘#’ symbol is used to process the functionality prior than other statements in the program, that is, which means it processes some code before run-time or say during the compile-time. In a very basic term, preprocessor takes a C program and produces another C program without any #.
+
+
+
+The following are some interesting facts about preprocessors in C. 
+
+
+1) When we use include directive,  the contents of included header file (after preprocessing) are copied to the current file.
+
+
+2) When we use define for a constant, the preprocessor produces a C program where the defined constant is searched and matching tokens are replaced with the given expression. For example in the following program max is defined as 100.
+
+
+
+#include <stdio.h>
+#define max 100
+int main()
+{
+	printf("max is %d", max);
+	return 0;
+}
+
+Output: 
+max is 100
+
+
+3) The macros can take function like arguments, the arguments are not checked for data type. For example, the following macro INCREMENT(x) can be used for x of any data type.
+
+
+#include <stdio.h>
+#define INCREMENT(x) ++x
+int main()
+{
+    char* ptr = "GeeksQuiz";
+    int x = 10;
+    printf("%s  ", INCREMENT(ptr));
+    printf("%d", INCREMENT(x));
+    return 0;
+}
+
+
+
+Output: 
+eeksQuiz  11
+
+
+
+4) The macro arguments are not evaluated before macro expansion. For example, consider the following program
+
+
+#include <stdio.h>
+#define MULTIPLY(a, b) a* b
+int main()
+{
+	// The macro is expanded as 2 + 3 * 3 + 5, not as 5*8
+	printf("%d", MULTIPLY(2 + 3, 3 + 5));
+	return 0;
+}
+// Output: 16
+
+
+
+Output: 
+16
+
+
+The previous problem can be solved using following program 
+
+
+#include <stdio.h>
+// here, instead of writing a*a we write (a)*(b)
+#define MULTIPLY(a, b) (a) * (b)
+int main()
+{
+	// The macro is expanded as (2 + 3) * (3 + 5), as 5*8
+	printf("%d", MULTIPLY(2 + 3, 3 + 5));
+	return 0;
+}
+
+
+Output: 
+40
+
+
+
+5) The tokens passed to macros can be concatenated using operator ## called Token-Pasting operator.
+
+
+
+#include <stdio.h>
+#define merge(a, b) a##b
+int main() { printf("%d ", merge(12, 34)); }
+
+
+
+Output: 
+1234
+
+
+
+6) A token passed to macro can be converted to a string literal by using # before it.
+
+
+#include <stdio.h>
+#define get(a) #a
+int main()
+{
+	// GeeksQuiz is changed to "GeeksQuiz"
+	printf("%s", get(GeeksQuiz));
+}
+
+
+Output: 
+GeeksQuiz
+
+
+
+7) The macros can be written in multiple lines using ‘\’. The last line doesn’t need to have ‘\’.
+
+
+
+
+#include <stdio.h>
+#define PRINT(i, limit)								 \
+	while (i < limit) {								 \
+		printf("GeeksQuiz ");							 \
+		i++;											 \
+	}
+int main()
+{
+	int i = 0;
+	PRINT(i, 3);
+	return 0;
+}
+
+
+Output: 
+GeeksQuiz GeeksQuiz GeeksQuiz
+
+
+
+8) The macros with arguments should be avoided as they cause problems sometimes. And Inline functions should be preferred as there is type checking parameter evaluation in inline functions. From C99 onward, inline functions are supported by C language also. 
+
+
+For example consider the following program. From first look the output seems to be 1, but it produces 36 as output.
+
+
+#include <stdio.h>
+
+#define square(x) x* x
+int main()
+{
+	// Expanded as 36/6*6
+	int x = 36 / square(6);
+	printf("%d", x);
+	return 0;
+}
+
+
+Output
+36
+
+
+But we can write this code as follows to get the expected result i.e. 1:
+
+
+
+#include <stdio.h>
+
+#define square(x) (x * x)
+int main()
+{
+	// Expanded as 36/(6*6)
+	int x = 36 / square(6);
+	printf("%d", x);
+	return 0;
+}
+
+
+Output
+
+1
+
+
+If we use inline functions, we get the expected output. Also, the program given in point 4 above can be corrected using inline functions.
+
+
+#include <stdio.h>
+
+static inline int square(int x) { return x * x; }
+int main()
+{
+	int x = 36 / square(6);
+	printf("%d", x);
+	return 0;
+}
+
+
+Output: 
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
