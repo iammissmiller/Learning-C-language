@@ -1,0 +1,465 @@
+Keywords in C
+
+In C Programming language, there are many rules so to avoid different types of errors. One of such rule is not able to declare variable names with auto, long, etc. This is all because these are keywords. Let us check all keywords in C language.
+
+What are Keywords?
+
+Keywords are predefined or reserved words that have special meanings to the compiler. These are part of the syntax and cannot be used as identifiers in the program.
+
+auto
+
+auto is the default storage class variable that is declared inside a function or a block. auto variables can only be accessed within the function/block they are declared. By default, auto variables have garbage values assigned to them. Automatic variables are also called local variables as they are local to a function. 
+
+auto int num;
+
+// C program to demonstrate
+// auto keyword
+#include <stdio.h>
+
+int printvalue()
+{
+auto int a = 10;
+printf("%d", a);
+}
+
+// Driver code
+int main()
+{
+printvalue();
+return 0;
+}
+
+Output
+10
+
+
+break and continue
+
+The break statement is used to terminate the innermost loop. It generally terminates a loop or a switch statement. The switch statement skips to the next iteration of the loop. Below is the C program to demonstrate break and continue in C:
+
+// C program to show use
+// of break and continue
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+for (int i = 1; i <= 10; i++)
+{
+	if (i == 2)
+	{
+	continue;
+	}
+	if (i == 6)
+	{
+	break;
+	}
+	printf("%d ", i);
+}
+return 0;
+}
+
+Output
+1 3 4 5 
+
+switch, case, and default
+
+The switch statement in C is used as an alternate to the if-else ladder statement. For a single variable i.e, switch variable it allows us to execute multiple operations for different possible values of a single variable. 
+
+
+switch(Expression)
+{
+    case '1': // operation 1
+            break;
+    case:'2': // operation 2
+            break;
+    default: // default statement to be executed 
+}
+
+
+// C program to demonstrate
+// switch case statement
+#include <stdio.h>
+
+// Driver code
+int main() {
+int i = 4;
+switch (i) {
+	case 1:
+	printf("Case 1\n");break;
+	case 2:
+	printf("Case 2\n");break;
+	case 3:
+	printf("Case 3\n");break;
+	case 4:
+	printf("Case 4\n");break;
+	default:
+	printf("Default\n");break;
+}
+}
+
+Output
+Case 4
+
+char
+
+char keyword in C is used to declare a character variable in the C programming language.
+
+char x = 'D';
+
+// C program to demonstrate
+// char keyword
+#include <stdio.h>
+
+// Driver code
+int main() {
+char c = 'a';
+printf("%c", c);
+return 0;
+}
+
+Output
+a
+
+
+const
+The const keyword defines a variable who’s value cannot be changed.
+
+const int num = 10;
+Below is the C program to demonstrate the const keyword:
+
+
+// C program to demonstrate
+// const keyword
+#include <stdio.h>
+
+// Driver code
+int main() {
+const int a = 11;
+a = a + 2;
+printf("%d", a);
+return 0;
+}
+
+This code will produce an error because the integer a was defined as a constant  and it’s value was later on changed.
+Output:
+
+error: assignment of read-only variable 'a'
+       a = a + 2;
+
+
+do
+
+The do statement is used to declare a do-while loop. A do-while loop is a loop that executes once, and then checks it’s condition to see if it should continue through the loop. After the first iteration, it will continue to execute the code while the condition is true
+
+
+// C program to demonstrate
+// do-while keyword
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+int i = 1;
+do {
+	printf("%d ", i);
+	i++;
+} while(i <= 5);
+
+return 0;
+}
+
+Output
+1 2 3 4 5 
+
+
+double and float
+
+The doubles and floats are datatypes used to declare decimal type variables. They are similar, but doubles have 15 decimal digits, and floats only have 7.
+
+Example:
+
+float marks = 97.5;
+double num;
+
+// C program to demonstrate
+// double float keyword
+#include <stdio.h>
+
+// Driver code
+int main() {
+float f = 0.3;
+double d = 10.67;
+printf("Float value: %f\n", f);
+printf("Double value: %f\n", d);
+return 0;
+}
+
+Output
+Float value: 0.300000
+Double value: 10.670000
+
+if-else
+
+The if-else statement is used to make decisions, where if a condition is true, then it will execute a block of code; if it isn’t true (else), then it will execute a different block of code.
+
+if(marks == 97) {
+    // if marks are 97 then will execute this block of code
+}
+else {
+    // else it will execute this block of code
+}
+
+
+// C program to demonstrate
+// if-else keyword
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+int a = 10;
+if(a < 11)
+{
+	printf("A is less than 11");
+}
+else
+{
+	printf("A is equal to or "
+		"greater than 11");
+}
+return 0;
+}
+
+Output
+A is less than 11
+
+enum
+
+
+The enum keyword is used to declare an enum (short for enumeration). An enum is a user-defined datatype, which holds a list of user-defined integer constants. By default, the value of each constant is it’s index (starting at zero), though this can be changed. You can declare an object of an enum and can set it’s value to one of the constants you declared before. Here is an example of how an enum might be used:
+
+// An example program to
+// demonstrate working of
+// enum in C
+#include<stdio.h>
+
+// enum declaration:
+enum week{Mon, Tue, Wed, Thur, Fri, Sat, Sun};
+
+// Driver code
+int main()
+{
+//object of the enum (week), called day
+enum week day;
+day = Wed;
+printf("%d", day);
+return 0;
+}
+
+Output
+2
+
+extern
+
+The extern keyword is used to declare a variable or a function that has an external linkage outside of the file declaration.
+
+#include <stdio.h>
+
+extern int a;
+
+int main(){
+
+	printf("%d", a);
+
+	return 0;
+}
+
+
+for
+
+The “for” keyword is used to declare a for-loop. A for-loop is a loop that is specified to run a certain amount of times.
+
+// C program to demonstrate
+// for keyword
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+for (int i = 0; i < 5; i++)
+{
+	printf("%d ", i);
+}
+return 0;
+}
+
+Output
+0 1 2 3 4 
+
+goto
+
+The goto statement is used to transfer the control of the program to the given label. It is used to jump from anywhere to anywhere within a function.
+
+Example:
+
+goto label;
+
+// code
+
+label:
+
+
+// C program demonstrate
+// goto keyword
+#include <stdio.h>
+
+// Function to print numbers
+// from 1 to 10
+void printNumbers() {
+	int n = 1;
+
+label:
+	printf("%d ", n);
+	n++;
+	if (n <= 10) goto label;
+}
+
+// Driver code
+int main(){
+	printNumbers();
+	return 0;
+}
+
+
+Output
+1 2 3 4 5 6 7 8 9 10 
+
+int
+
+int keyword is used in a type declaration to give a variable an integer type. In C, the integer variable must have a range of at least -32768 to +32767. 
+
+Example:
+
+int x = 10;
+
+
+// C program to demonstrate
+// int keyword
+#include <stdio.h>
+
+void sum() {
+	int a = 10, b = 20;
+	int sum;
+	sum = a + b;
+	printf("%d", sum);
+}
+
+// Driver code
+int main() {
+	sum();
+	return 0;
+}
+
+Output
+30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
