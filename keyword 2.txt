@@ -1,0 +1,680 @@
+short, long, signed, and unsigned
+
+Different data types also have different ranges up to which they can store numbers. These ranges may vary from compiler to compiler.
+
+// C program to demonstrate
+// short, long, signed,
+// and unsigned keyword
+#include <stdio.h>
+
+// Driver code
+int main() {
+// short integer
+short int a = 12345;
+
+// signed integer
+signed int b = -34;
+
+// unsigned integer
+unsigned int c = 12;
+
+// L or l is used for
+// long int in C.
+long int d = 99998L;
+
+printf("Integer value with a short int data: %hd", a);
+printf("\nInteger value with a signed int data: %d", b);
+printf("\nInteger value with an unsigned int data: %u", c);
+printf("\nInteger value with a long int data: %ld", d);
+return 0;
+}
+
+Output
+Integer value with a short int data: 12345
+Integer value with a signed int data: -34
+Integer value with an unsigned int data: 12
+Integer value with a long int data: 99998
+
+return
+
+The return statement returns a value to where the function was called.
+
+Example:
+
+return x;
+
+// C program to demonstrate
+// return keyword
+#include <stdio.h>
+int sum(int x, int y) {
+int sum;
+sum = x + y;
+return sum;
+}
+
+// Driver code
+int main() {
+int num1 = 10;
+int num2 = 20;
+printf("Sum: %d",
+		sum(num1, num2));
+return 0;
+}
+
+Output
+Sum: 30
+
+
+sizeof 
+
+sizeof is a keyword that gets the size of an expression, (variables, arrays, pointers, etc.) in bytes.
+
+Example:
+
+sizeof(char);
+sizeof(int);
+sizeof(float); in bytes.
+
+
+
+// C program to demonsstrate
+// sizeof keyword
+#include <stdio.h>
+
+// Driver code
+int main() {
+int x = 10;
+printf("%d", sizeof(x));
+return 0;
+}
+
+Output
+4
+
+register
+
+Register variables tell the compiler to store variables in the CPU register instead of memory. Frequently used variables are kept in the CPU registers for faster access. 
+
+Example: 
+
+register char c = 's'; 
+
+static 
+
+The static keyword is used to create static variables. A static variable is not limited by a scope and can be used throughout the program. It’s value is preserved even after it’s  scope.
+
+For Example:
+
+static int num;
+
+struct 
+
+The struct keyword in C programming language is used to declare a structure. 
+A structure is a list of variables, (they can be of different data types), which are grouped together under one data type.
+
+For Example:
+
+struct Geek {
+    char name[50];
+    int num;
+    double var;
+};
+
+Below is the C program for the struct keyword:
+
+// C program to demonstrate
+// struct keyword
+#include <stdio.h>
+#include <string.h>
+
+struct Books {
+char title[50];
+char author[50];
+};
+
+// Driver code
+int main( ) {
+// Declare Book1 of type Book
+struct Books book1;	
+	
+// book 1 specification
+strcpy(book1.title, "C++ Programming");
+strcpy(book1.author, "Bjarne Stroustrup");
+
+// Print book details
+printf("Book 1 title : %s\n", book1.title);
+printf("Book 1 author : %s\n", book1.author);
+return 0;
+}
+
+Output
+Book 1 title : C++ Programming
+Book 1 author : Bjarne Stroustrup
+
+typedef 
+
+The typedef keyword in C programming language is used to define a data type with a new name in the program. typedef keyword is used to make our code more readable.
+
+For Example:
+
+typedef long num
+
+
+union
+
+The union is a user-defined data type. All data members which are declared under the union keyword share the same memory location.
+
+
+Example:
+
+union GeekforGeeks {
+    int x;
+    char s;
+} obj;
+
+
+Below is the C program for the union keyword:
+
+#include <stdio.h>
+union student {
+int age;
+char marks;
+} s;
+
+// Driver code
+int main() {
+s.age = 15;
+s.marks = 56;
+printf("age = %d", s.age);
+printf("\nmarks = %d", s.marks);
+}
+
+Output
+age = 56
+marks = 56
+
+
+void 
+
+The void keyword means nothing i.e, NULL value. When the function return type is used as the void, the keyword void specifies that it has no return value.
+
+Example:
+
+void fun() {
+    // program
+}
+
+volatile
+
+The volatile keyword is used to create volatile objects. Objects which are declared volatile are omitted from optimization as their values can be changed by code outside the scope of the current code at any point in time.
+
+For Example:
+
+const volatile marks = 98;
+
+
+Conclusion
+
+Keywords are Reserved words in C with certain meanings.
+We can’t use keywords as any element’s name.
+There are 32 keywords in C all having unique meanings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
