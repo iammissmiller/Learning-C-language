@@ -1,0 +1,96 @@
+# Code for Explanation 
+
+// C program to demonstrate 
+// switch case statement
+#include <stdio.h>
+
+// Driver code
+int main() {
+  int i = 4;
+  switch (i) {
+    case 1: 
+      printf("Case 1\n");break;
+    case 2:
+      printf("Case 2\n");break;
+    case 3:
+      printf("Case 3\n");break;
+    case 4:
+      printf("Case 4\n");break;
+    default:
+      printf("Default\n");break;
+  }
+}
+
+
+
+
+* In programming, the "driver code" refers to the portion of a program designed to initiate and 
+  test the functions or operations of the code. It is essentially the code that drives the 
+  execution of the main logic.
+
+
+# Driver Code in the Example
+In the provided C program, the driver code is the main function. 
+  Here's a brief explanation using the example: 
+
+
+# Breakdown of Driver Code:
+
+  * Starting Point:
+
+The main function is the entry point of the program. When you run the program,
+    execution starts from the main function.
+
+  
+  * Variable Initialization:
+
+int i = 4; initializes the variable i with the value 4.
+
+ 
+  * Switch Statement:
+
+switch (i) { ... } evaluates the value of i and executes the corresponding 
+    case block.
+In this case, since i is 4, the code within case 4: executes, printing "Case 4" 
+    to the console.
+
+  
+  * Execution Flow:
+
+The break statement terminates the switch statement, preventing the execution
+    of subsequent cases.
+If none of the case values matched i, the default case would execute, 
+    printing "Default".
+
+
+  * End of Program:
+
+return 0; indicates that the program executed successfully.
+
+
+# Summary:
+  
+  The driver code, which is the main function in this example, sets up the environment 
+  (by initializing variables) and directs the flow of execution through the switch statement. 
+  This demonstrates how the program behaves based on different values of i. Here, it ensures 
+  that when i is 4, the program prints "Case 4".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
