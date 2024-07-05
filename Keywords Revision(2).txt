@@ -1,0 +1,301 @@
+# Keywords Revision
+
+# char
+
+* char keyword in C is used to declare a character variable in the C programming language.
+
+# Syntax = char x = 'D';
+
+# Example 
+
+// C program to demonstrate 
+// char keyword
+#include <stdio.h>
+
+// Driver code
+int main() {
+  char c = 'a';
+  printf("%c", c);
+  return 0;
+}
+
+
+# const
+
+* The const keyword defines a variable who’s value cannot be changed.
+
+# Syntax = const int num = 10;
+
+# Example 
+
+// C program to demonstrate 
+// const keyword
+#include <stdio.h>
+
+// Driver code
+int main() {
+  const int a = 11;
+  a = a + 2;
+  printf("%d", a);
+  return 0;
+}
+
+This code will produce an error because the integer a was defined as a constant  and it’s 
+value was later on changed.
+
+Output:
+
+error: assignment of read-only variable 'a'
+       a = a + 2;
+
+
+# do
+
+* The do statement is used to declare a do-while loop.
+* A do-while loop is a loop that executes once, and then checks it’s condition to see if it 
+  should continue through the loop.
+* After the first iteration, it will continue to execute the code while the condition is true.
+
+
+# Example 
+
+// C program to demonstrate
+// do-while keyword
+#include <stdio.h>
+
+// Driver code
+int main() 
+{
+  int i = 1;
+  do {
+    printf("%d ", i);
+    i++;
+  } while(i <= 5);
+  
+  return 0;
+}
+
+
+# double and float
+
+* The doubles and floats are datatypes used to declare decimal type variables.
+* They are similar, but doubles have 15 decimal digits, and floats only have 7.
+
+# Example 
+
+// C program to demonstrate 
+// double float keyword
+#include <stdio.h>
+
+// Driver code
+int main() {
+  float f = 0.3;
+  double d = 10.67;
+  printf("Float value: %f\n", f);
+  printf("Double value: %f\n", d);
+  return 0;
+}
+
+
+*** %f = Format specifier "%f" which is used for floating-point numbers.
+
+         Writing %f in the printf function is important because it serves as a format specifier 
+         that tells the function how to interpret and display the data you are passing to it. 
+         Each format specifier corresponds to a specific data type, ensuring that the data is
+         presented correctly.
+
+## Importance of %f:
+                    * Correct Data Interpretation:%f is used to format and print floating-point 
+                      numbers (both float and double). Without the correct format specifier, 
+                      the printf function wouldn't know how to properly interpret and display
+                      the binary representation of the floating-point number.
+               
+                      
+For example, printf("%f", 3.14); correctly prints 3.140000.
+                    
+                    
+                    * Ensures Proper Output: Using the appropriate format specifier ensures that
+                      the output is in a human-readable format. If you use an incorrect format 
+                      specifier, the output may be garbled or incorrect.
+
+                      
+For example, using %d (which is for integers) instead of %f for a 
+                      floating-point number can result in unexpected and incorrect output.
+
+
+                     
+                    * Type Safety and Debugging: Format specifiers help with type safety. They 
+                      ensure that the data type of the variable matches the format specified, 
+                      which can prevent bugs and logical errors in the code.
+
+
+                      During debugging, format specifiers make it easier to understand the data 
+                      being printed and to catch potential issues.
+
+# if-else 
+
+  The if-else statement is used to make decisions, where if a condition is true, then it will 
+  execute a block of code; if it isn’t true (else), then it will execute a different block of 
+  code.
+
+# Syntax 
+
+if(marks == 97) {
+    // if marks are 97 then will execute this block of code
+}
+else {
+    // else it will execute this block of code
+}
+
+
+# example 
+
+// C program to demonstrate 
+// if-else keyword
+#include <stdio.h>
+
+// Driver code
+int main() 
+{
+  int a = 10;
+  if(a < 11)
+  {
+    printf("A is less than 11");
+  }
+  else
+  {
+    printf("A is equal to or "
+           "greater than 11");
+  }  
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
