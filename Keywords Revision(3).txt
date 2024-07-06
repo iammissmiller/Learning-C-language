@@ -1,0 +1,98 @@
+# Keywords Revision
+
+# enum
+
+* The enum keyword is used to declare an enum   (short for enumeration).
+* An enum is a user-defined datatype, which   holds a list of user-defined integer   constants.
+* By default, the value of each constant is   it’s index (starting at zero), though this   can be changed.
+* You can declare an object of an enum and can   set it’s value to one of the constants you   declared before.
+
+# Example 
+
+// An example program to 
+// demonstrate working of 
+// enum in C
+#include<stdio.h>
+
+// enum declaration:
+enum week{Mon, Tue, Wed, Thur, Fri, Sat, Sun};
+
+// Driver code
+int main()
+{
+//object of the enum (week), called day
+  enum week day;
+  day = Wed;
+  printf("%d", day);
+  return 0;
+}
+
+
+
+# extern
+
+The extern keyword is used to declare a variable or a function that has an external   linkage outside of the file declaration.
+
+# Example
+
+#include <stdio.h>
+
+extern int a;
+
+int main(){ 
+  
+    printf("%d", a);
+
+      return 0;
+}
+
+
+
+# for
+
+The “for” keyword is used to declare a for-loop. A for-loop is a loop that is specified to run a certain amount of times.
+
+
+# Example
+
+// C program to demonstrate 
+// for keyword
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+  for (int i = 0; i < 5; i++) 
+  {
+    printf("%d ", i);
+  }
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
