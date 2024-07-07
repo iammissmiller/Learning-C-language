@@ -1,0 +1,142 @@
+#Keyword Revision
+
+# goto
+
+The goto statement is used to transfer the control of the program to the given label. It is used to jump from anywhere to anywhere within a function.
+
+# syntax = goto label;
+           // code
+           label:
+
+# Example 
+
+// C program demonstrate
+// goto keyword
+#include <stdio.h>
+
+// Function to print numbers
+// from 1 to 10
+void printNumbers() {
+    int n = 1;
+
+label:
+    printf("%d ", n);
+    n++;
+    if (n <= 10) goto label;
+}
+
+// Driver code
+int main(){
+    printNumbers();
+    return 0;
+}
+
+
+# int 
+
+int keyword is used in a type declaration to give a variable an integer type. In C, the integer variable must have a range of at least -32768 to +32767. 
+
+# syntax = int x = 10; 
+
+# Example 
+
+// C program to demonstrate
+// int keyword
+#include <stdio.h>
+
+void sum() {
+    int a = 10, b = 20;
+    int sum;
+    sum = a + b;
+    printf("%d", sum);
+}
+
+// Driver code
+int main() {
+    sum();
+    return 0;
+}
+
+
+# return
+
+The return statement returns a value to where the function was called.
+
+
+# Example 
+
+// C program to demonstrate
+// return keyword
+#include <stdio.h>
+int sum(int x, int y) {
+  int sum;
+  sum = x + y;
+  return sum;
+}
+
+// Driver code
+int main() {
+  int num1 = 10;
+  int num2 = 20;
+  printf("Sum: %d", 
+          sum(num1, num2));
+  return 0;
+}
+
+
+# sizeof 
+
+* sizeof is a keyword that gets the size of an expression, (variables, arrays, pointers, etc.) in bytes.
+
+
+# Syntax = sizeof(char);
+           sizeof(int);
+           sizeof(float); in bytes.
+
+# Example 
+
+// C program to demonsstrate 
+// sizeof keyword
+#include <stdio.h>
+
+// Driver code
+int main() { 
+  int x = 10;
+  printf("%d", sizeof(x));
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
