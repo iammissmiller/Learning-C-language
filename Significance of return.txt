@@ -1,0 +1,67 @@
+# SIgnificance of return keyword
+
+// C program to demonstrate
+// return keyword
+#include <stdio.h>
+int sum(int x, int y) {
+  int sum;
+  sum = x + y;
+  return sum;
+}
+
+// Driver code
+int main() {
+  int num1 = 10;
+  int num2 = 20;
+  printf("Sum: %d", 
+          sum(num1, num2));
+  return 0;
+}
+
+
+
+* In this C program, the return keyword plays a crucial role in both the sum function and the main function. Here's an explanation of its significance:
+
+
+
+** Return in the sum Function:
+
+***Purpose: The return statement in the sum function is used to return the result of the addition of x and y back to the caller of the function.
+
+
+***Significance: When the sum function is called in main, the return statement provides the result of the computation (x + y) to the calling code. Without the return statement, the function would not send back the computed sum, and thus the calling function wouldn't be able to use the result
+
+
+* Return in the main Function:
+
+*** Purpose: The return statement in the main function returns an integer value to the operating system.
+
+
+*** Significance: The return value of 0 typically indicates that the program executed successfully. This value is used by the operating system or the environment that ran the program to determine if it completed without errors. A non-zero return value generally indicates that an error occurred.
+
+
+
+
+## In summary, the return keyword in the sum function is used to pass the result of the addition back to the caller, while the return keyword in the main function is used to indicate the success or failure of the program to the operating system.
+
+
+# what would happen if we dont use return
+
+
+* In the sum function, not using return will lead to undefined behavior and potentially incorrect results or runtime errors.
+
+
+* In the main function, not using return will implicitly return 0 in C99 and later standards, but it is not recommended to rely on this behavior for portability and clarity. Explicitly using return 0; ensures that the program indicates successful execution to the operating system.
+
+
+
+
+
+
+
+
+
+
+
+
+
