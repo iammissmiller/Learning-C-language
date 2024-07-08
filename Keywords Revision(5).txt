@@ -1,0 +1,41 @@
+# Keyword
+
+
+# struct 
+
+* The struct keyword in C programming language is used to declare a structure.
+
+* A structure is a list of variables, (they can be of different data types), which are grouped together under one data type.
+
+# syntax = struct Geek {
+           char name[50];
+           int num;
+           double var;
+           };
+
+# Example
+
+// C program to demonstrate 
+// struct keyword
+#include <stdio.h>
+#include <string.h>
+
+struct Books {
+  char  title[50];
+  char  author[50];
+};
+
+// Driver code
+int main( ) {
+  // Declare Book1 of type Book
+  struct Books book1;        
+   
+ // book 1 specification 
+ strcpy(book1.title, "C++ Programming");
+ strcpy(book1.author, "Bjarne Stroustrup"); 
+ 
+ // Print book details
+ printf("Book 1 title : %s\n", book1.title);
+ printf("Book 1 author : %s\n", book1.author);
+ return 0;
+}
