@@ -1,0 +1,75 @@
+# KEYWORD REVISION 
+
+# typedef 
+  
+  The typedef keyword in C programming language is used to define a data type with a new name in   the program. typedef keyword is used to make our code more readable.
+
+# Syntax = typedef long num
+
+# union 
+
+  The union is a user-defined data type. All data members which are declared under the union     keyword share the same memory location.
+
+# SYNTAX 
+
+union GeekforGeeks 
+  {
+    int x;
+    char s;
+    } obj;
+
+
+# EXAMPLE 
+
+#include <stdio.h>
+union student {  
+  int age;  
+  char marks;   
+} s;  
+
+// Driver code
+int main() {  
+  s.age = 15;  
+  s.marks = 56;
+  printf("age = %d", s.age);  
+  printf("\nmarks = %d", s.marks);  
+}   
+
+
+# void 
+
+  The void keyword means nothing i.e, NULL value. When the function return type is used as the   void, the keyword void specifies that it has no return value.
+
+
+# SYNTAX = void fun() {
+    // program
+}
+
+
+# volatile
+
+  The volatile keyword is used to create volatile objects. Objects which are declared volatile     are omitted from optimization as their values can be changed by code outside the scope of the   current code at any point in time.
+
+
+  marks are declared constant so they can’t be changed by the program. But hardware can change   it as they are volatile objects.
+
+# SYNTAX 
+
+const volatile marks = 98;
+
+
+# Conclusion
+  
+  In this article, the points we learned about the keywords are mentioned below:
+
+* Keywords are Reserved words in C with certain meanings.
+
+* We can’t use keywords as any element’s name.
+
+* There are 32 keywords in C all having unique meanings.
+
+
+
+
+
+
