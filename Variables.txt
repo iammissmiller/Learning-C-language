@@ -1,0 +1,306 @@
+C Variables
+
+* A variable in C language is the name associated with some memory location to store data of different types.
+
+* There are many types of variables in C depending on the scope, storage class, lifetime, type of data they store, etc.
+
+* A variable is the basic building block of a C program that can be used in expressions as a substitute in place of the value it stores.
+
+# What is a variable in C?
+
+A variable in C is a memory location with some name that helps store some form of data and retrieves it when required. We can store different types of data in the variable and reuse the same variable for storing some other data any number of times.
+
+# C Variable Syntax
+
+data_type variable_name = value;    // defining single variable
+            or
+data_type variable_name1, variable_name2;    // defining multiple variable
+
+Here,
+
+data_type: Type of data that a variable can store.
+
+variable_name: Name of the variable given by the user.
+
+value: value assigned to the variable by the user.
+
+*** Note: C is a strongly typed language so all the variables types must be specified before using them.
+
+There are 3 aspects of defining a variable:
+
+Variable Declaration
+Variable Definition
+Variable Initialization
+
+
+1. C Variable Declaration
+
+Variable declaration in C tells the compiler about the existence of the variable with the given name and data type.When the variable is declared, an entry in symbol table is created and memory will be allocated at the time of initialization of the variable.
+
+
+2. C Variable Definition
+
+In the definition of a C variable, the compiler allocates some memory and some value to it. A defined variable will contain some random garbage value till it is not initialized.
+
+
+3. C Variable Initialization
+
+Initialization of a variable is the process where the user assigns some meaningful value to the variable.
+
+
+# How to use variables in C?
+
+// C program to demonstrate the 
+// declaration, definition and
+// initialization
+#include <stdio.h>
+
+int main()
+{
+    // declaration with definition
+    int defined_var;
+
+    printf("Defined_var: %d\n", defined_var);
+
+    // initialization
+    defined_var = 12;
+
+    // declaration + definition + initialization
+    int ini_var = 25;
+
+    printf("Value of defined_var after initialization: %d\n",defined_var);
+    printf("Value of ini_var: %d", ini_var);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
