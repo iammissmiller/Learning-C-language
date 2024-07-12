@@ -1,0 +1,148 @@
+# Variables
+
+# Rules for Naming Variables in C
+
+* A variable name must only contain alphabets, digits, and underscore.
+
+* A variable name must start with an alphabet or an underscore only. It cannot start with a digit.
+
+* No whitespace is allowed within the variable name.
+
+* A variable name must not be any reserved word or keyword.
+
+
+# C Variable Types
+
+* Local Variables
+
+* Global Variables
+
+* Static Variables
+
+* Automatic Variables
+
+* Extern Variables
+
+* Register Variables
+
+
+1. Local Variables in C
+
+A Local variable in C is a variable that is declared inside a function or a block of code. Its scope is limited to the block or function in which it is declared.
+
+
+Example of Local Variable in C
+
+// C program to declare and print local variable inside a
+// function.
+#include <stdio.h>
+
+void function()
+{
+    int x = 10; // local variable
+    printf("%d", x);
+}
+
+int main() { function(); }
+
+
+
+In the above code, x can be used only in the scope of function(). Using it in the main function will give an error.
+
+
+2. Global Variables in C
+
+A Global variable in C is a variable that is declared outside the function or a block of code. Its scope is the whole program i.e. we can access the global variable anywhere in the C program after it is declared.
+
+Example of Global Variable in C
+
+// C program to demonstrate use of global variable
+#include <stdio.h>
+
+int x = 20; // global variable
+
+void function1() { printf("Function 1: %d\n", x); }
+
+void function2() { printf("Function 2: %d\n", x); }
+
+int main()
+{
+
+    function1();
+    function2();
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
