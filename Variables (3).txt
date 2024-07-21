@@ -1,0 +1,148 @@
+# types of variables 
+
+3. Static Variables in C
+
+A static variable in C is a variable that is defined using the static keyword. It can be defined only once in a C program and its scope depends upon the region where it is declared (can be global or local).
+
+
+The default value of static variables is zero.
+
+
+Syntax of Static Variable in C
+
+static data_type variable_name = initial_value;
+
+As its lifetime is till the end of the program, it can retain its value for multiple function calls as shown in the example.
+
+
+# example
+
+// C program to demonstrate use of static variable
+#include <stdio.h>
+
+void function()
+{
+    int x = 20; // local variable
+    static int y = 30; // static variable
+    x = x + 10;
+    y = y + 10;
+    printf("\tLocal: %d\n\tStatic: %d\n", x, y);
+}
+
+int main()
+{
+    printf("First Call\n");
+    function();
+    printf("Second Call\n");
+    function();
+    printf("Third Call\n");
+    function();
+    return 0;
+}
+
+
+4. Automatic Variable in C
+
+All the local variables are automatic variables by default. They are also known as auto variables.
+
+Their scope is local and their lifetime is till the end of the block. If we need, we can use the auto keyword to define the auto variables.
+
+The default value of the auto variables is a garbage value.
+
+
+Syntax of Auto Variable in C
+
+
+auto data_type variable_name;
+        or
+data_type variable_name;    (in local scope)
+
+
+# example
+
+// C program to demonstrate use of automatic variable
+#include <stdio.h>
+
+void function()
+{
+    int x = 10; // local variable (also automatic)
+    auto int y = 20; // automatic variable
+    printf("Auto Variable: %d", y);
+}
+int main()
+{
+
+    function();
+    return 0;
+}
+
+
+5. External Variables in C
+
+External variables in C can be shared between multiple C files. We can declare an external variable using the extern keyword.
+
+Their scope is global and they exist between multiple C files.
+
+
+Syntax of Extern Variables in C
+
+extern data_type variable_name;
+
+
+6. Register Variables in C
+
+Register variables in C are those variables that are stored in the CPU register instead of the conventional storage place like RAM. Their scope is local and exists till the end of the block or a function.
+
+These variables are declared using the register keyword.
+
+The default value of register variables is a garbage value.
+
+
+Syntax of Register Variables in C
+
+register data_type variable_name = initial_value;
+
+# example
+
+// C program to demonstrate the definition of register
+// variable
+#include <stdio.h>
+
+int main()
+{
+    //    register variable
+    register int var = 22;
+
+    printf("Value of Register Variable: %d\n", var);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
