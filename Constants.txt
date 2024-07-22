@@ -1,0 +1,113 @@
+Constants in C
+
+* The constants in C are the read-only variables whose values cannot be modified once they are declared in the C program.
+
+* The type of constant can be an integer constant, a floating pointer constant, a string constant, or a character constant. In C language, the const keyword is used to define the constants.
+
+
+How to Define Constant in C?
+
+We define a constant in C language using the const keyword. Also known as a const type qualifier, the const keyword is placed at the start of the variable declaration to declare that variable as a constant.
+
+
+Syntax to Define Constant
+
+const data_type var_name = value;
+
+# Example
+
+// C program to illustrate constant variable definition
+#include <stdio.h>
+
+int main()
+{
+
+	// defining integer constant using const keyword
+	const int int_const = 25;
+
+	// defining character constant using const keyword
+	const char char_const = 'A';
+
+	// defining float constant using const keyword
+	const float float_const = 15.66;
+
+	printf("Printing value of Integer Constant: %d\n",
+		int_const);
+	printf("Printing value of Character Constant: %c\n",
+		char_const);
+	printf("Printing value of Float Constant: %f",
+		float_const);
+
+	return 0;
+}
+
+
+
+# Types of Constants in C
+
+* Integer Constant
+
+* Character Constant
+
+* Floating Point Constant
+
+* Double Precision Floating Point Constant
+
+* Array Constant
+
+* Structure Constant
+
+
+Properties of Constant in C
+
+The important properties of constant variables in C defined using the const keyword are as follows:
+
+
+1. Initialization with Declaration
+
+We can only initialize the constant variable in C at the time of its declaration. Otherwise, it will store the garbage value.
+
+
+2. Immutability
+
+The constant variables in c are immutable after its definition, i.e., they can be initialized only once in the whole program. After that, we cannot modify the value stored inside that variable.
+
+
+
+
+// C Program to demonstrate the behaviour of constant
+// variable
+#include <stdio.h>
+
+int main()
+{
+	// declaring a constant variable
+	const int var;
+	// initializing constant variable var after declaration
+	var = 20;
+
+	printf("Value of var: %d", var);
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
