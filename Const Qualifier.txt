@@ -1,0 +1,163 @@
+Const Qualifier in C
+
+The qualifier const can be applied to the declaration of any variable to specify that its value will not be changed (which depends upon where const variables are stored, we may change the value of the const variable by using a pointer). The result is implementation-defined if an attempt is made to change a const.
+
+
+Using the const qualifier in C is a good practice when we want to ensure that some values should remain constant and should not be accidentally modified.
+
+
+Here are some different use cases of the const qualifier in C:
+
+
+1. Constant Variables
+
+const int var = 100;
+
+In this case, const is used to declare a variable var as a constant with an initial value of 100. The value of this variable cannot be modified once it is initialized.
+
+
+2. Pointer to Constant
+
+const int* ptr;
+
+
+// C program to demonstrate that the pointer to point to
+// any other integer variable, but the value of the object
+// (entity) pointed can not be changed
+
+#include <stdio.h>
+int main(void)
+{
+	int i = 10;
+	int j = 20;
+	/* ptr is pointer to constant */
+	const int* ptr = &i;
+
+	printf("ptr: %d\n", *ptr);
+	/* error: object pointed cannot be modified
+	using the pointer ptr */
+	*ptr = 100;
+
+	ptr = &j; /* valid */
+	printf("ptr: %d\n", *ptr);
+
+	return 0;
+}
+
+
+
+3. Constant Pointer to Variable
+
+int* const ptr;
+
+The above declaration is a constant pointer to an integer variable, which means we can change the value of the object pointed by the pointer, but cannot change the pointer to point to another variable.
+
+// C program to demonstrate that the value of object pointed
+// by pointer can be changed but the pointer can not point
+// to another variable
+
+#include <stdio.h>
+
+int main(void)
+{
+	int i = 10;
+	int j = 20;
+	/* constant pointer to integer */
+	int* const ptr = &i;
+
+	printf("ptr: %d\n", *ptr);
+
+	*ptr = 100; /* valid */
+	printf("ptr: %d\n", *ptr);
+
+	ptr = &j; /* error */
+	return 0;
+}
+
+
+4. Constant Pointer to Constant
+
+const int* const ptr;
+
+The above declaration is a constant pointer to a constant variable which means we cannot change the value pointed by the pointer as well as we cannot point the pointer to other variables. Let us see with an example. 
+
+
+// C program to demonstrate that value pointed by the
+// pointer can not be changed as well as we cannot point the
+// pointer to other variables
+
+#include <stdio.h>
+
+int main(void)
+{
+	int i = 10;
+	int j = 20;
+	/* constant pointer to constant integer */
+	const int* const ptr = &i;
+
+	printf("ptr: %d\n", *ptr);
+
+	ptr = &j; /* error */
+	*ptr = 100; /* error */
+
+	return 0;
+}
+
+
+Advantages of const Qualifiers in C
+
+* Improved Code Readability: By marking a variable as const, you indicate to other programmers that its value should not be changed, making your code easier to understand and maintain.
+
+
+* Enhanced Type Safety: By using const, you can ensure that values are not accidentally modified, reducing the chance of bugs and errors in your code.
+
+
+* Improved Optimization: Compilers can optimize const variables more effectively, as they know that their values will not change during program execution. This can result in faster and more efficient code.
+
+
+* Better Memory Usage: By declaring variables as const, you can often avoid having to make a copy of their values, which can reduce memory usage and improve performance.
+
+
+* Improved Compatibility: By declaring variables as const, you can make your code more compatible with other libraries and APIs that use const variables.
+
+
+* Improved Reliability: By using const, you can make your code more reliable, as you can ensure that values are not modified unexpectedly, reducing the risk of bugs and errors in your code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
