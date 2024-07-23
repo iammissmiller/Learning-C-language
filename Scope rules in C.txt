@@ -1,0 +1,129 @@
+Scope rules in C
+
+The scope of a variable in C is the block or the region in the program where a variable is declared, defined, and used. Outside this region, we cannot access the variable and it is treated as an undeclared identifier.
+
+
+* The scope is the area under which a variable is visible.
+
+* The scope of an identifier is the part of the program where the identifier may directly be accessible.
+
+* We can only refer to a variable in its scope.
+
+* In C, all identifiers are lexically(or statically) scoped.
+
+
+Types of Scope Rules in C
+
+
+Global Scope
+Local Scope
+
+
+1. Global Scope in C
+
+The global scope refers to the region outside any block or function.
+
+* The variables declared in the global scope are called global variables.
+
+* Global variables are visible in every part of the program.
+
+* Global is also called File Scope as the scope of an identifier starts at the beginning of the file and ends at the end of the file.
+
+
+Linkage of Variables in Global Scope
+
+Global variables have external linkage by default. It means that the variables declared in the global scope can be accessed in another C source file. We have to use the extern keyword for that purpose.
+
+
+2. Local Scope in C
+
+The local scope refers to the region inside a block or a function. It is the space enclosed between the { } braces.
+
+* The variables declared within the local scope are called local variables.
+
+* Local variables are visible in the block they are declared in and other blocks nested inside that block.
+
+* Local scope is also called Block scope.
+
+* Local variables have internal linkage.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
