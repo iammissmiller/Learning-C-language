@@ -1,0 +1,108 @@
+Different ways to declare variable as constant in C
+
+
+1. Using const Keyword
+
+The const keyword specifies that a variable or object value is constant and can’t be modified at the compilation time.
+
+Syntax
+
+const data_type variable_name = initial_value;
+
+
+Example
+
+// C program to demonstrate const specifier
+#include <stdio.h>
+int main()
+{
+    const int num = 1;
+
+    num = 5; // Modifying the value
+    return 0;
+}
+
+
+It will throw as error like:
+error: assignment of read-only variable ‘num’
+
+
+2. Using Macros
+
+We can also use Macros to define constant, but there is a catch. Since Macros are handled by the pre-processor(the pre-processor does text replacement in our source file, replacing all occurrences of ‘var’ with the literal 5) not by the compiler. Hence it wouldn’t be recommended because Macros doesn’t carry type checking information and also prone to error. In fact not quite constant as ‘var’ can be redefined like this.
+
+Syntax
+
+#define name value
+
+Example
+
+// C program to demonstrate the problems
+// in 'Macros'
+#include <stdio.h>
+
+#define var 5
+int main()
+{
+    printf("%d ", var);
+
+#ifdef var
+#undef var
+
+// redefine var as 10
+#define var 10
+#endif
+
+    printf("%d", var);
+    return 0;
+}
+
+
+3. Using enum Keyword
+
+Enumeration (or enum) is a user defined data type in C. It is mainly used to assign names to integral constants, that make a program easy to read and maintain.
+
+
+Example
+
+// C program to illustrate the use of enums to declare
+// constant
+#include <stdio.h>
+
+// In C internally the default
+// type of 'var' is int
+enum VARS { var = 42 };
+
+// where mytype = int, char, long etc.
+// but it can't be float, double or
+// user defined data type.
+int main()
+{
+    printf("The value of var: %d", var);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
