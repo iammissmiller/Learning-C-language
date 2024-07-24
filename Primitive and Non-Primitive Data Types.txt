@@ -1,0 +1,122 @@
+Primitive and Non-Primitive Data Types
+
+
+# Primitive Data Types
+
+Primitive data types are the basic building blocks for data manipulation in C. They are predefined by the language and provide the foundation for declaring variables. The primary primitive data types in C are:
+
+Integer Types
+
+Floating-Point Types
+
+
+
+Character Type
+
+
+
+Void Type
+
+
+
+
+# Non-Primitive Data Types
+
+Non-primitive data types are derived from primitive data types and can store multiple values or more complex data structures. They provide more complex functionalities and are defined by the programmer. The main non-primitive data types in C are:
+
+
+
+
+Arrays
+
+Pointers
+
+Structures
+
+Unions
+
+Enumerations
+
+
+
+
+# Summary
+
+Primitive Data Types: Basic data types like int, char, float, and double. These are predefined in the C language.
+
+
+
+Non-Primitive Data Types: Derived or complex data types like arrays, pointers, structures, unions, and enumerations. These are defined by the programmer and can store more complex data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
