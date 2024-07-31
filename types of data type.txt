@@ -1,0 +1,92 @@
+Types of Data Type
+
+# Integer Data Type
+
+The integer datatype in C is used to store the integer numbers(any number including positive, negative and zero without decimal part). Octal values, hexadecimal values, and decimal values can be stored in int data type in C. 
+
+Format Specifier: %d
+
+Syntax of Integer : int var_name;
+
+The integer data type can also be used as
+
+unsigned int: Unsigned int data type in C is used to store the data values from zero to positive numbers but it can’t store negative values like signed int.
+
+short int: It is lesser in size than the int by 2 bytes so can only store values from -32,768 to 32,767.
+
+long int: Larger version of the int datatype so can store values greater than int.
+
+unsigned short int: Similar in relationship with short int as unsigned int with int.
+
+Note: The size of an integer data type is compiler-dependent. We can use sizeof operator to check the actual size of any data type.
+
+
+# Character Data Type
+
+Character data type allows its variable to store only a single character. The size of the character is 1 byte. It is the most basic data type in C. It stores a single character and requires a single byte of memory in almost all compilers.
+
+Format Specifier: %c
+
+Syntax of char : char var_name;
+
+
+# Float Data Type
+
+In C programming float data type is used to store floating-point values. Float in C is used to store decimal and exponential values. It is used to store decimal numbers (numbers with floating point values) with single precision.
+
+Format Specifier: %f
+
+Syntax of float : float var_name;
+
+
+# Double Data Type
+
+A Double data type in C is used to store decimal numbers (numbers with floating point values) with double precision. It is used to define numeric values which hold numbers with decimal values in C.
+
+The double data type is basically a precision sort of data type that is capable of holding 64 bits of decimal numbers or floating points. Since double has more precision as compared to that float then it is much more obvious that it occupies twice the memory occupied by the floating-point type. It can easily accommodate about 16 to 17 digits after or before a decimal point.
+
+
+Format Specifier: %lf
+
+
+Syntax of Double : double var_name;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
