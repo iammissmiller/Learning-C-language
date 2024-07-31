@@ -1,0 +1,111 @@
+Data Types in C
+
+Each variable in C has an associated data type. It specifies the type of data that the variable can store like integer, character, floating, double, etc.
+
+Each data type requires different amounts of memory and has some specific operations which can be performed over it.
+
+The data type is a collection of data with values having fixed values, meaning as well as its characteristics.
+
+
+* Primitive Data Types
+
+Primitive data types are the most basic data types that are used for representing simple values such as integers, float, characters, etc.
+
+
+* User Defined Data Types	
+
+The user-defined data types are defined by the user himself.
+
+
+* Derived Types	
+
+The data types that are derived from the primitive or built-in datatypes are referred to as Derived Data Types.
+
+
+Different data types also have different ranges up to which they can store numbers. These ranges may vary from compiler to compiler. Below is a list of ranges along with the memory requirement and format specifiers on the 32-bit GCC compiler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
