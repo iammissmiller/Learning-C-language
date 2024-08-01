@@ -1,0 +1,152 @@
+# Literals in C
+
+* Literals are the constant values that are assigned to the variables.
+
+* Literals represent fixed values that cannot be modified. Literals contain memory but they do not have references as variables. 
+
+*  Generally, both terms, constants, and literals are used interchangeably. 
+
+For example, “const int = 5;“, is a constant expression and the value 5 is referred to as a constant integer literal.
+
+
+# Types of C Literals
+
+There are 4 types of literal in C:
+
+Integer Literal
+
+Float Literal
+
+Character Literal
+
+String Literal
+
+
+1. Integer Literals
+
+Integer literals are used to represent and store the integer values only.
+
+* Example
+
+#include <stdio.h>
+
+int main()
+{
+
+    // constant integer literal
+    const int intVal = 10;
+
+    printf("Integer Literal:%d \n", intVal);
+    return 0;
+}
+
+
+2. Floating-Point Literals
+
+* These are used to represent and store real numbers.
+
+* The real number has an integer part, real part, fractional part, and exponential part.
+
+* The floating-point literals can be stored either in decimal form or exponential form.
+
+* While representing the floating-point decimals one must keep two things in mind to produce valid literal:
+
+*** In the decimal form, one must include the integer part, or fractional part, or both, otherwise, it will lead to an error.
+
+*** In the exponential form, one must include both the significand and exponent part, otherwise, it will lead to an error.
+
+
+# Example:
+
+#include <stdio.h>
+
+int main()
+{
+    // constant float literal
+    const float floatVal = 4.14;
+
+    printf("Floating point literal: %.2f\n",
+        floatVal);
+    return 0;
+}
+
+
+3. Character Literals
+
+* This refers to the literal that is used to store a single character within a single quote.
+
+* To store multiple characters, one needs to use a character array.
+
+* Storing more than one character within a single quote will throw a warning and display just the last character of the literal.
+
+*  It gives rise to the following two representations:
+
+char type: This is used to store normal character literal or narrow-character literals.
+
+# Example:
+
+#include <stdio.h>
+
+int main()
+{
+    // constant char literal
+    const char charVal = 'A';
+
+    printf("Character Literal: %c\n",
+        charVal);
+    return 0;
+}
+
+
+4. String Literals
+
+* String literals are similar to that character literals, except that they can store multiple characters and uses a double quote to store the same.
+
+* It can also accommodate the special characters and escape sequences mentioned in the table above.
+
+* We can break a long line into multiple lines using string literal and can separate them with the help of white spaces.
+
+# Example:
+
+#include <stdio.h>
+
+int main()
+{
+    const char str[]
+        = "Welcome\nTo\nGeeks\tFor\tGeeks";
+    printf("%s", str);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
