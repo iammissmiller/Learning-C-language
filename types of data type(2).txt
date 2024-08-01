@@ -1,0 +1,122 @@
+Types of data types
+
+# Void Data Type
+
+The void data type in C is used to specify that no value is present. It does not provide a result value to its caller. It has no values and no operations. It is used to represent nothing. Void is used in multiple ways as function return type, function arguments as void, and pointers to void.
+
+Syntax:
+
+// function return type void
+void exit(int check);
+
+// Function without any parameter can accept void.
+int print(void);
+
+// memory allocation function which
+// returns a pointer to void.
+void *malloc (size_t size);
+
+# Example of Void
+
+// C program to demonstrate
+// use of void pointers
+#include <stdio.h>
+
+int main()
+{
+	int val = 30;
+	void* ptr = &val;
+	printf("%d", *(int*)ptr);
+	return 0;
+}
+
+
+# size of data types in C
+
+The size of the data types in C is dependent on the size of the architecture, so we cannot define the universal size of the data types. For that, the C language provides the sizeof() operator to check the size of the data types.
+
+
+* Example
+
+// C Program to print size of
+// different data type in C
+#include <stdio.h>
+
+int main()
+{
+	int size_of_int = sizeof(int);
+	int size_of_char = sizeof(char);
+	int size_of_float = sizeof(float);
+	int size_of_double = sizeof(double);
+
+	printf("The size of int data type : %d\n", size_of_int);
+	printf("The size of char data type : %d\n",
+		size_of_char);
+	printf("The size of float data type : %d\n",
+		size_of_float);
+	printf("The size of double data type : %d",
+		size_of_double);
+
+	return 0;
+}
+
+
+Output 
+
+The size of int data type : 4
+The size of char data type : 1
+The size of float data type : 4
+The size of double data type : 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
