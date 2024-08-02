@@ -1,0 +1,69 @@
+can i create a c programme using variable constants and data types alone
+
+
+
+
+Yes, you can create a basic C program using variable constants and data types alone. Here's a simple example of such a program:
+
+
+
+#include <stdio.h>
+
+
+
+int main() 
+{
+    
+    // Variable declaration
+
+    int a = 10;          // integer variable
+        float b = 5.25;      // float variable
+        char c = 'A';        // char variable
+        const int d = 100;   // constant integer
+
+ 
+
+
+    // Output values
+
+    printf("Integer a: %d\n", a);
+
+    printf("Float b: %.2f\n", b);
+
+    printf("Character c: %c\n", c);
+
+    printf("Constant integer d: %d\n", d);
+
+
+
+
+
+
+    return 0;
+
+}
+
+
+This program declares and initializes variables of different data types (integer, float, and character) and a constant, then prints their values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
