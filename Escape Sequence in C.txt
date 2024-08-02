@@ -1,0 +1,113 @@
+Escape Sequence in C 
+
+* The escape sequence in C is the characters or the sequence of characters that can be used inside the string literal. 
+
+* The purpose of the escape sequence is to represent the characters that cannot be used normally using the keyboard.
+
+* Some escape sequence characters are the part of ASCII charset but some are not.
+
+* Different escape sequences represent different characters but the output is dependent on the compiler you are using.
+
+
+# Escape Sequence in C Examples
+
+*** Alarm or Beep (\a) 
+
+It is used to generate a bell sound in the C program.
+
+Example to demonstrate how to use \a escape sequence in C
+
+// C program to illustrate  \a escape sequence
+#include <stdio.h>
+
+int main(void)
+{
+    // output may depend upon the compiler
+    printf("My mobile number "
+           "is 7\a8\a7\a3\a9\a2\a3\a4\a0\a8\a");
+    return (0);
+}
+
+
+*** Backspace (\b)
+
+It is used to move the cursor one place backward.
+
+// C program to illustrate  \b escape sequence
+#include <stdio.h>
+
+int main(void)
+{
+    // \b - backspace character transfers
+    // the cursor one character back with
+    // or without deleting on different
+    // compilers.
+    printf("Hello \b\b\b\b\b\bHi Geeks");
+    return (0);
+}
+
+
+*** New Line (\n)
+
+It moves the cursor to the start of the next line.
+
+Example to demonstrate how to use \n escape sequence in C
+
+// C program to illustrate \n escape sequence
+#include <stdio.h>
+int main(void)
+{
+    // Here we are using \n, which is a new line character.
+    printf("Hello\n");
+    printf("GeeksforGeeks");
+    return (0);
+}
+
+
+*** Horizontal Tab (\t)	
+
+It inserts some whitespace to the left of the cursor and moves the cursor accordingly.
+
+Example to demonstrate how to use \t escape sequence in C
+
+// C program to illustrate \t escape sequence
+#include <stdio.h>
+
+int main(void)
+{
+    // Here we are using \t, which is
+    // a horizontal tab character.
+    // It will provide a tab space
+    // between two words.
+    printf("Hello \t GFG");
+    return (0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
