@@ -1,0 +1,112 @@
+Escape Sequence in C
+
+# Vertical Tab (\v)
+
+It is used to insert vertical space.
+
+Example to demonstrate how to use \v escape sequence in C
+
+// C program to illustrate \v escape sequence
+#include <stdio.h>
+
+int main(void)
+{
+    // Here we are using \v, which
+    // is vertical tab character.
+    printf("Hello friends\v");
+
+    printf("Welcome to GFG");
+
+    return (0);
+}
+
+
+# Carriage Return (\r)
+
+It moves the cursor to the start of the current line.
+
+used for overwriting
+
+// C program to illustrate \r escape sequence
+#include <stdio.h>
+
+int main(void)
+{
+    // Here we are using \r, which
+    // is carriage return character.
+    printf("Hello   Geeks \rGeeksfor");
+    return (0);
+}
+
+
+
+# Backlash (\\)
+
+Use to insert backslash character.
+
+// C program to illustrate \\(Backslash)
+// escape sequence to print backslash.
+#include <stdio.h>
+
+int main(void)
+{
+    // Here we are using \,
+    // It contains two escape sequence
+    // means \ and \n.
+    printf("Hello\\GFG");
+    return (0);
+}
+
+
+# Single Quote (\’) and Double Quote (\”)
+
+It is used to display a single quotation and double quotation marks.
+
+
+// C program to illustrate \' escape
+// sequence/ and \" escape sequence to
+// print single quote and double quote.
+#include <stdio.h>
+int main(void)
+{
+    printf("\' Hello Geeks\n");
+    printf("\" Hello Geeks");
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
