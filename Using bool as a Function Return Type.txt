@@ -1,0 +1,63 @@
+Using bool as a Function Return Type
+
+You can also use the bool data type as a function return type. Function return type adds the feature to return the result of all the operations performed inside the function.
+
+Below is the implementation of the above approach:
+
+
+// C Program to demonstrate using of
+// bool as a function return type
+#include <stdbool.h>
+#include <stdio.h>
+
+// function returning boolean value
+bool is_even(int num)
+{
+	if (num % 2 == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+// Main function
+int main()
+{
+	// Integer value declared
+	int num = 5;
+
+	// Function calling
+	if (is_even(num)) {
+		printf("%d is even\n", num);
+	}
+	else {
+		printf("%d is odd\n", num);
+	}
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
