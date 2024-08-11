@@ -1,0 +1,78 @@
+Using Bool in Conditional Statements
+
+The bool data type is commonly used in conditional statements such as if-else statements. Condition like if a is greater than equal to b or else b is greater than a can be implemented using boolean. These conditions using conditional operator like “==” , “>” , <” , “!=” ,etc return boolean values.
+
+
+Below is the implementation of conditional statements:
+
+
+
+// C Program to implement
+// conditional statements
+#include <stdbool.h>
+#include <stdio.h>
+
+// Main Function
+int main()
+{
+
+	// Integers declared
+	int a = 3;
+	int b = 4;
+
+	// Conditional Statements
+	if (a > b) {
+		printf("a is greater\n");
+	}
+	else {
+		printf("a is smaller\n");
+	}
+
+	printf("%d is the result of a>b", a > b);
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
