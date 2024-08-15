@@ -1,0 +1,106 @@
+#include <stdio.h>
+
+
+
+int main(void)
+
+
+{
+
+
+int num;
+
+char ch;
+
+float f;
+
+
+
+printf("enter the integer : ");
+
+scanf("%d" , &num);
+
+
+
+printf("\nEntered integer is: %d",num);
+
+while((getchar()) != '\n');
+
+
+
+printf("\n\nenter the float : ");
+
+scanf("%f" , &f);
+
+
+
+printf("\nEntered float is: %f", f);
+
+
+printf("\n\nenter the character : ");
+
+scanf("%c" , &ch);
+
+
+
+printf("\nEntered character is: %c", ch);
+
+
+
+return 0;
+
+
+}
+
+
+
+
+
+
+
+what is wrong with my program
+
+
+Your program has a minor issue with how input is handled after reading the float value and before reading the character.
+ 
+Specifically, the issue arises because scanf() leaves a newline character ('\n') in the input buffer after reading the float, which causes scanf("%c", &ch); to immediately read this newline character instead of waiting for user input.
+
+
+
+Here’s what’s happening:
+
+
+
+After reading the integer and float values using scanf("%d", &num); and scanf("%f", &f);, there is still a newline character in the input buffer.
+
+
+When scanf("%c", &ch); is called, it immediately reads this newline character instead of waiting for the user to input a character.
+
+
+The issue can be fixed by adding another call to getchar() after reading the float value to consume the leftover newline character before reading the character input.
+
+
+
+
+updated code is uploded in git hub as formatspecifier.c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
