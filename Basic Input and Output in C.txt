@@ -1,0 +1,208 @@
+Basic Input and Output in C
+
+C language has standard libraries that allow input and output in a program. The stdio.h or standard input output library in C that has methods for input and output.
+
+# scanf()
+
+The scanf() method, in C, reads the value from the console as per the type specified and store it in the given address.
+
+* Syntax:
+
+scanf("%X", &variableOfXType);
+
+where %X is the format specifier in C. It is a way to tell the compiler what type of data is in a variable and & is the address operator in C, which tells the compiler to change the real value of variableOfXType, stored at this address in the memory.
+
+
+# printf()
+
+The printf() method, in C, prints the value passed as the parameter to it, on the console screen.
+
+* Syntax:
+
+printf("%X", variableOfXType);
+
+where %X is the format specifier in C. It is a way to tell the compiler what type of data is in a variable and variableOfXType is the variable to be printed.
+
+
+*** How to take input and output of basic types in C?
+
+
+The basic type in C includes types like int, float, char, etc. Inorder to input or output the specific type, the X in the above syntax is changed with the specific format specifier of that type. The Syntax for input and output for these are:
+
+Integer:
+
+Input: scanf("%d", &intVariable);
+Output: printf("%d", intVariable);
+
+Float:
+
+Input: scanf("%f", &floatVariable);
+Output: printf("%f", floatVariable);
+
+Character:
+
+Input: scanf("%c", &charVariable);
+Output: printf("%c", charVariable);
+
+
+Please refer Format specifiers in C for more examples. 
+
+// C program to show input and output
+
+#include <stdio.h>
+
+int main()
+{
+
+    // Declare the variables
+    int num;
+    char ch;
+    float f;
+
+    // --- Integer ---
+
+    // Input the integer
+    printf("Enter the integer: ");
+    scanf("%d", &num);
+
+    // Output the integer
+    printf("\nEntered integer is: %d", num);
+
+    // --- Float ---
+  
+    //For input Clearing buffer
+      while((getchar()) != '\n');
+
+    // Input the float
+    printf("\n\nEnter the float: ");
+    scanf("%f", &f);
+
+    // Output the float
+    printf("\nEntered float is: %f", f);
+
+    // --- Character ---
+
+    // Input the Character
+    printf("\n\nEnter the Character: ");
+    scanf("%c", &ch);
+
+    // Output the Character
+    printf("\nEntered character is: %c", ch);
+
+    return 0;
+}
+
+
+*** How to take input and output of advanced type in C?
+
+
+The advanced type in C includes type like String. In order to input or output the string type, the X in the above syntax is changed with the %s format specifier. The Syntax for input and output for String is:
+
+
+
+Input: scanf("%s", stringVariable);
+Output: printf("%s", stringVariable);
+
+
+Example: 
+
+// C program to show input and output
+ 
+#include <stdio.h>
+ 
+int main()
+{
+ 
+    // Declare string variable
+    // as character array
+    char str[50];
+ 
+    // --- String ---
+    // To read a word
+ 
+    // Input the Word
+    printf("Enter the Word: ");
+    scanf("%s\n", str);
+ 
+    // Output the Word
+    printf("\nEntered Word is: %s", str);
+ 
+    // --- String ---
+    // To read a Sentence
+ 
+    // Input the Sentence
+    printf("\n\nEnter the Sentence: ");
+    scanf("%[^\n]s", str);
+ 
+    // Output the String
+    printf("\nEntered Sentence is: %s", str);
+ 
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
