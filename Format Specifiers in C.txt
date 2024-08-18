@@ -1,0 +1,69 @@
+Format Specifiers in C
+
+The format specifier in C is used to tell the compiler about the type of data to be printed or scanned in input and output operations. They always start with a % symbol and are used in the formatted string in functions like printf(), scanf, sprintf(), etc.
+
+
+* %c
+
+For character type.
+
+* %d
+
+For signed integer type.
+
+* %f
+
+For float type.
+
+* %o
+
+Octal representation
+
+* %p
+
+Pointer
+
+* %s
+
+String
+
+* %n
+
+Prints nothing
+
+* %%
+
+Prints % character
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
