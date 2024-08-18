@@ -1,0 +1,72 @@
+#include <stdio.h>
+
+int main(void)
+{
+// Declare string variable
+// as character array
+char str[50];
+
+printf("enter the word : ");
+scanf("%s\n" , str);
+
+printf("\nentered word is : %s" , str);
+
+printf("\n\nenter the sentence :");
+scanf("%[^\n]s" , str);
+
+printf("\nentered sentence is : %s " ,str);
+
+return 0;
+
+}
+
+
+
+
+
+
+
+
+There are a few issues in your program:
+
+
+
+Extra newline in scanf: 
+
+When reading a string with scanf, the format specifier "%s" should not be followed by a newline character. Also, when reading a full sentence with spaces, the format specifier should be "%[^\n]" and not "%[^\n]s". The extra \n in scanf("%s\n", str); should be removed, as it can cause unexpected behavior.
+
+
+
+Mixing input methods: 
+
+Using scanf for string input and then using it again to read a sentence can cause issues because of how scanf handles newline characters left in the input buffer. After reading a word with scanf, there might be a leftover newline in the buffer that needs to be handled before reading a full sentence.
+
+
+
+Flushing input buffer: 
+
+The program should clear the input buffer before reading the sentence, especially when switching from reading a word to reading a sentence.
+
+
+Key Changes:
+
+
+Removed the newline in the first scanf format string.
+
+
+Added getchar() to consume the leftover newline character after the first scanf.
+
+Corrected the format specifier for the sentence to "%[^\n]" to properly read the full sentence.
+
+
+
+
+
+
+
+
+
+
+
+
+
