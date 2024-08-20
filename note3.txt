@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main(void)
+
+{
+long var = 3000000000;
+
+printf("using %%d : %d" , var);
+
+printf("using %%ld : %ld" , var);
+
+return 0;
+
+}
+
+
+
+The difference in outputs when using %d and %ld in the printf function is due to the way the printf function interprets the data based on the format specifier you provide.
+
+
+Always use the correct format specifier (%d for int, %ld for long) to match the type of the variable being printed. Mismatched specifiers can lead to incorrect outputs because the function interprets the binary data in a way that doesn't match the actual size or type of the data.
+
+
+
+
+
+
+
+
+
+
+
+
+
