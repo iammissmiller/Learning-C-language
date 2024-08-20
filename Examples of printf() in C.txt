@@ -1,0 +1,176 @@
+Examples of printf() in C
+
+Example 1:  Print a Variable using Specifier in printf()
+
+In this example, we are printing an integer using a format specifier “%d” which is used for an integer. In the printf() function we are printing integers along with string using %d and in the arguments, we have passed variable names in a sequence corresponding to their format specifiers.
+
+
+
+// C program to print a variable
+#include <stdio.h>
+int main()
+{
+	int num1 = 99;
+	int num2 = 1;
+	printf("The sum of %d and %d is %d\n", num1, num2,
+		num1 + num2);
+	return 0;
+}
+
+
+
+Example 2: printf with Specified Width
+
+
+In this example, we will specify the width of the output which will be printed by the printf() function.
+
+
+
+// C program to illustrate the use of printf with width
+// specifier
+#include <stdio.h>
+int main()
+{
+	// number to be printed
+	int num = 123456;
+	// printing the num with 10 width and getting the
+	// printed characters in char_printed
+	printf("Printing num with width 10: ");
+	int chars_printed = printf("%10d", num);
+	printf("\nNumber of characters printed: %d",
+		chars_printed);
+
+	// specifying with using other method
+	printf("\nPrinting num with width 3: ");
+	chars_printed = printf("%*d", 3, num);
+	printf("\nNumber of characters printed: %d",
+		chars_printed);
+
+	return 0;
+}
+
+
+Example 3: printf with Precision Sub-Specifier
+
+In this example, we will demonstrate the precision sub-specifier in the printf() function
+
+
+// C program to illustrate the use of precision
+// sub-specifier
+#include <stdio.h>
+
+int main()
+{
+	int num = 2451;
+	float dec = 12.45126;
+	char* str = "GeeksforGeeks";
+
+	// precision for integral data
+	printf("For integers: %.10d\n", num);
+	// precision for numbers with decimal points
+	printf("For floats: %.2f\n", dec);
+	// for strings
+	printf("For strings: %.5s", str);
+
+	return 0;
+}
+
+
+
+Example 4: printf with Length Sub-Specifier
+
+
+// C program to illustrate the length modifier
+#include <stdio.h>
+
+int main()
+{
+	long var = 3000000000;
+	// printing var using %d
+	printf("Using %%d: %d", var);
+	// printing var using %ld
+	printf("\nUsing %%ld: %ld", var);
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
