@@ -1,0 +1,116 @@
+Formatting in C printf
+
+In C, a value can be a character type, integer type, float type, and so on. To display and format these values using printf, we have format specifiers that are used in the formatted string. These format specifiers start with the percentage symbol ‘%’.
+
+
+Syntax of Format Specifier
+
+%[flags][width][.precision][length]specifier
+
+
+1. Specifier
+
+It is the character that denotes the type of data. Some commonly used specifiers are:
+
+%d: for printing integers
+
+%f: for printing floating-point numbers
+
+%c: for printing characters
+
+%s: for printing strings
+
+%p: for printing memory addresses
+
+%x: for printing hexadecimal values
+
+
+2. Width
+
+It is the sub-specifier that denotes the minimum number of characters that will be printed.
+
+If the number of characters is less than the specified width, the white space will be used to fill the remaining characters’ places. But if the number of characters is greater than the specified width, all the characters will be still printed without cutting off any.
+
+
+Example
+
+printf("%25s", some_string);
+
+
+3. Precision
+
+Precision subspecifier meaning differs for different format specifiers it is being used with.
+
+For Integral data(d, i, u, o, x, X): Specifies the minimum number of digits to be printed. But unlike the width sub-specifier, instead of white spaces, this sub-specifier adds leading zeroes to the number. If the number has more digits than the precision, the number is printed as it is.
+
+
+For Float or Double Data(f, e, a, A): Specifies the number of digits to be printed after the decimal point.
+
+
+For String (s): Specifies the length of the string to be printed.
+
+
+Example
+
+printf("%.10d", some_integer);
+
+printf("%.3f", some_float);
+
+printf("%.25s", some_string);
+
+
+4. Length
+
+Specifies the length of the data type in the memory. It is used in correspondence with data type modifiers.
+
+There are 3 length sub-specifiers:
+
+h: With short int and unsigned short int
+
+l: With long int and unsigned long int.
+
+L: With long double
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
