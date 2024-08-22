@@ -1,0 +1,52 @@
+Formatted I/O vs Unformatted I/O
+
+Formatted I/O functions            
+
+
+These functions allow us to take input or display output in the user’s desired format.
+
+These functions support format specifiers.
+
+These are used for storing data more user friendly
+
+Here, we can use all data types.	
+
+printf(), scanf, sprintf() and sscanf() are examples of these functions.
+
+
+
+
+
+Unformatted I/O functions      
+
+
+These functions do not allow to take input or display output in user desired format.
+
+These functions do not support format specifiers.
+
+These functions are not more user-friendly.
+
+Here, we can use only character and string data types.
+
+getch(), getche(), gets() and puts(), are some examples of these functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
