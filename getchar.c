@@ -10,7 +10,7 @@ char ch;
 
 printf("enter the character :");
 
-ch = getchar();`
+ch = getchar();
 
 printf("%c" , ch);
 
