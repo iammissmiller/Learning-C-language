@@ -1,0 +1,172 @@
+Relational Operators in C
+
+In C, relational operators are the symbols that are used for comparison between two values to understand the type of relationship a pair of numbers shares. The result that we get after the relational operation is a boolean value, that tells whether the comparison is true or false. Relational operators are mainly used in conditional statements and loops to check the conditions in C programming.
+
+
+Types of C Relational Operators
+There are a total of 6 relational operators in C language. There are:
+
+1. Equal to operator (==)
+
+The C equal to operator (==) is a relational operator that is used to check whether the two given operands are equal or not.
+
+Equal to operator is a binary operator hence it requires two operands to perform the comparison.
+
+If the two values are equal, it returns true. Otherwise, it returns false.
+
+It does not work for strings or arrays.
+
+
+Syntax
+
+operand1 == operand2
+
+
+
+2. Not equal to operator (!=)
+
+The C not equal (==) to operator is another relational operator used for checking whether the two given operands are equal or not.
+
+It is also a binary operator, requiring two operands to perform the comparison.
+
+It is the exact boolean complement of the ‘==’ operator which returns true if the two values are not equal, false otherwise.
+
+Syntax
+
+operand1 != operand2
+
+
+
+3. Greater than operator (>)
+
+
+The greater than operator is a relational operator in C that checks whether the first operand is greater than the second operand or not.
+
+It is a binary operator.
+
+If the operand first is greater than the operand2, it returns true. Otherwise, it returns false.
+
+This operator is used to make decisions or create conditions based on the relative magnitude of two values.
+
+
+Syntax
+
+operand1 > operand2
+
+
+4. Less than operator (<)
+
+
+The less than operator is a relational operator in C that checks whether the first operand is lesser than the second operand.
+
+It is a binary operator.
+
+If the operand first is less than the operand2, it returns true. Otherwise, it returns false.
+
+This operator is also used to make decisions or create conditions based on the relative magnitude of two values.
+
+Syntax
+
+operand1 < operand2
+
+
+
+5. Greater than or equal to operator (>=)
+
+
+The greater than or equal to the operator is a relational operator in C that checks whether the first operand is greater than or equal to the second operand.
+
+It is a binary operator.
+
+If the operand first is greater than or equal to the operand2, it returns true. Otherwise, it returns false.
+
+
+Syntax
+
+operand1 >= operand2
+
+
+6. Less than or equal to the the operator (<=)
+
+The less than or equal to the operator is a relational operator in C that checks whether the first operand is less than or equal to the second operand.
+
+It is a binary operator.
+
+If the operand first is greater than or equal to the operand2, it returns true. Otherwise, it returns false.
+
+
+Syntax
+
+operand1 <= operand2
+
+
+
+Example of Relational Operator in C
+
+// C program to demonstrate working of relational operators 
+#include <stdio.h> 
+
+int main() 
+{ 
+	int a = 10, b = 4; 
+
+	// greater than example 
+	if (a > b) 
+		printf("a is greater than b\n"); 
+	else
+		printf("a is less than or equal to b\n"); 
+
+	// greater than equal to 
+	if (a >= b) 
+		printf("a is greater than or equal to b\n"); 
+	else
+		printf("a is lesser than b\n"); 
+
+	// less than example 
+	if (a < b) 
+		printf("a is less than b\n"); 
+	else
+		printf("a is greater than or equal to b\n"); 
+
+	// lesser than equal to 
+	if (a <= b) 
+		printf("a is lesser than or equal to b\n"); 
+	else
+		printf("a is greater than b\n"); 
+
+	// equal to 
+	if (a == b) 
+		printf("a is equal to b\n"); 
+	else
+		printf("a and b are not equal\n"); 
+
+	// not equal to 
+	if (a != b) 
+		printf("a is not equal to b\n"); 
+	else
+		printf("a is equal b\n"); 
+
+	return 0; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
