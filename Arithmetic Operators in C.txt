@@ -1,0 +1,131 @@
+Arithmetic Operators in C
+
+Arithmetic Operators are the type of operators in C that are used to perform mathematical operations in a C program. They can be used in programs to define expressions and mathematical formulas.
+
+
+What are C Arithmetic Operators?
+
+The C arithmetic operators are the symbols that are used to perform mathematical operations on operands. There are a total of 9 arithmetic operators in C to provide the basic arithmetic operations such as addition, subtraction, multiplication, etc.
+
+
+Types of Arithmetic Operators in C
+
+The C Arithmetic Operators are of two types based on the number of operands they work. These are as follows:
+
+
+Binary Arithmetic Operators
+Unary Arithmetic Operators
+
+
+1. Binary Arithmetic Operators in C
+
+The C binary arithmetic operators operate or work on two operands. C provides 5 Binary Arithmetic Operators for performing arithmetic functions which are as follows:
+
+
+* Modulus (%)
+
+Calculate the remainder when the first operand is divided by the second operand.
+
+ 
+2. Unary Arithmetic Operators in C
+
+The unary arithmetic operators operate or work with a single operand. In C, we have two unary arithmetic operators which are as follows:
+
+
+* Decrement Operator (--)
+
+Decreases the integer value of the variable by one.	
+
+–h or h–
+
+
+* Increment Operator in C
+
+ The ‘++’ operator is used to increment the value of an integer. It can be used in two ways:
+
+1. Pre-Increment
+
+
+When placed before the variable name (also called the pre-increment operator), its value is incremented instantly. Consider the example:
+
+a = ++x;
+
+This example can be expanded to
+
+a = (x = x + 1);
+
+
+2. Post Increment
+
+When it is placed after the variable name (also called post-increment operator), its value is preserved temporarily until the execution of this statement and it gets updated before the execution of the next statement. For example:
+
+a = x++;
+
+It can be expanded to
+
+a = x;
+x = x + 1;
+
+Decrement Operator in C
+ The ‘–‘ operator is used to decrement the value of an integer. Just like the increment operator, the decrement operator can also be used in two ways:
+
+1. Pre-Decrement
+
+When placed before the variable name (also called the pre-decrement operator), its value is decremented instantly. For example, – – x.
+
+2. Post Decrement
+
+When it is placed after the variable name (also called post-decrement operator), its value is preserved temporarily until the execution of this statement and it gets updated before the execution of the next statement. For example, x – –.
+
+
+Multiple Operators in a Single Expression
+
+Till now, we have only seen expressions in which we have used a single operator in a single expression. What happens when we use multiple operators in a single expression? Let’s try to understand this with the help of the below example.
+
+
+Example
+
+// C program to demonstrate the use
+#include <stdio.h>
+
+int main()
+{
+	int var;
+
+	// expression with multiple operators
+	var = 10 * 20 + 15 / 5;
+
+	printf("Result = %d", var);
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
