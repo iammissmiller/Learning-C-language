@@ -1,0 +1,242 @@
+Unary operators in C
+
+Types of unary operators
+
+Types of unary operators are mentioned below:
+
+Unary minus ( – )
+
+Increment ( ++ )
+
+Decrement ( — )
+
+NOT ( ! )
+
+Addressof operator ( & )
+
+sizeof()
+
+
+
+1. Unary Minus
+
+The minus operator ( – ) changes the sign of its argument. A positive number becomes negative, and a negative number becomes positive.
+
+
+int a = 10;
+int b = -a;  // b = -10
+
+Unary minus is different from the subtraction operator, as subtraction requires two operands.
+
+Below is the implementation of the unary minus (-) operator:
+
+
+
+#include <stdio.h>
+
+int main()
+{
+	// declaring a positive integer
+	int positiveInteger = 100;
+	// using - sign to make the value of positive integers
+	// to negative
+	int negativeInteger = -positiveInteger;
+
+	printf("Positive Integer = %d\n", positiveInteger);
+	printf("Negative Integer = %d", negativeInteger);
+	return 0;
+}
+
+
+2. Increment
+
+The increment operator ( ++ ) is used to increment the value of the variable by 1. The increment can be done in two ways:
+
+2.1 prefix increment
+In this method, the operator precedes the operand (e.g., ++a). The value of the operand will be altered before it is used.
+
+
+Example:
+
+  int a = 1;
+  int b = ++a;  // b = 2
+
+2.2 postfix increment
+In this method, the operator follows the operand (e.g., a++). The value operand will be altered after it is used.
+
+
+Example:
+
+
+ int a = 1;
+ int b = a++;   // b = 1
+ int c = a;     // c = 2
+
+
+Below is the implementation of the increment ( ++ ):
+
+
+// C program to illustrate increment
+
+#include <stdio.h>
+
+int main()
+{
+	int a = 5;
+	int b = 5;
+	printf("Pre-Incrementing a = %d\n", ++a);
+	printf("Post-Incrementing b = %d", b++);
+	return 0;
+}
+
+
+
+3. Decrement 
+
+The decrement operator ( — ) is used to decrement the value of the variable by 1. The decrement can be done in two ways:
+
+3.1 prefix decrement
+In this method, the operator precedes the operand (e.g., – -a). The value of the operand will be altered before it is used.
+
+
+Example:
+
+  int a = 1;
+  int b = --a;  // b = 0
+
+
+
+3.2 postfix decrement
+In this method, the operator follows the operand (e.g., a- -). The value of the operand will be altered after it is used.
+
+Example:
+
+ int a = 1;
+ int b = a--;   // b = 1
+ int c = a;     // c = 0
+
+
+Below is the implementation of the decrement ( — ):
+
+// C program to illustrate decrement
+
+#include <stdio.h>
+
+int main()
+{
+	int a = 5;
+	int b = 5;
+	printf("Pre-Decrementing a = %d\n", --a);
+	printf("Post-Decrementing b = %d", b--);
+	return 0;
+}
+
+
+
+4. NOT ( ! )
+
+The logical NOT operator ( ! ) is used to reverse the logical state of its operand. If a condition is true, then the Logical NOT operator will make it false.
+
+
+Example:
+
+   If x is true, then !x is false
+   If x is false, then !x is true
+
+
+
+Below is the implementation of the NOT (!) operator:
+
+
+// C program to illustrate NOT operator
+#include <stdio.h>
+
+int main()
+{
+
+	int a = 10;
+	int b = 5;
+
+	if (!(a > b))
+		printf("b is greater than a\n");
+	else
+		printf("a is greater than b");
+
+	return 0;
+}
+
+
+5. Addressof operator ( & )
+
+
+The addressof operator ( & ) gives an address of a variable. It is used to return the memory address of a variable. These addresses returned by the address-of operator are known as pointers because they “point” to the variable in memory.
+
+
+Example:
+
+& gives an address on variable n
+int a;
+int *ptr;
+ptr = &a; // address of a is copied to the location ptr. 
+
+
+Below is the implementation of the Addressof operator(&):
+
+
+// C program to demonstrate the use of 'address-of(&)'
+// operator
+#include <stdio.h>
+
+int main()
+{
+
+	int a = 20;
+	printf("Address of a = %p", &a);
+
+	return 0;
+}
+
+
+
+6. sizeof()
+
+
+This operator returns the size of its operand, in bytes. The sizeof() operator always precedes its operand. The operand is an expression, or it may be a cast.
+
+
+Note: The `sizeof()` operator in C++ is machine dependent. For example, the size of an ‘int’ in C++ may be 4 bytes in a 32-bit machine but it may be 8 bytes in a 64-bit machine.
+
+
+Below is the implementation of sizeof() operator:
+
+
+
+// C program to illustrate the sizeof operator
+#include <stdio.h>
+
+int main()
+{
+	// printing the size of double and int using sizeof
+	printf("Size of double: %d\n", sizeof(double));
+	printf("Size of int: %d\n", sizeof(int));
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
