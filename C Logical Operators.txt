@@ -1,0 +1,282 @@
+C Logical Operators
+
+
+Logical operators in C are used to combine multiple conditions/constraints. Logical Operators returns either 0 or 1, it depends on whether the expression result is true or false. In C programming for decision-making, we use logical operators.
+
+
+We have 3 logical operators in the C language:
+
+Logical AND ( && )
+Logical OR ( || )
+Logical NOT ( ! )
+
+
+
+Types of Logical Operators
+
+
+1. Logical AND Operator ( && )
+The logical AND operator (&&) returns true only if both operands are non-zero. Otherwise, it returns false (0). The return type of the result is int. Below is the truth table for the logical AND operator.
+
+
+Syntax
+
+(operand_1 && operand_2)
+
+
+// C program for Logical
+// AND Operator
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+    int a = 10, b = 20;
+
+    if (a > 0 && b > 0) {
+        printf("Both values are greater than 0\n");
+    }
+    else {
+        printf("Both values are less than 0\n");
+    }
+    return 0;
+}
+
+
+
+
+2. Logical OR Operator ( || )
+The logical OR operator returns true if any one of the operands is non-zero. Otherwise, it returns false i.e., 0 as the value. Below is the truth table for the logical OR operator.
+
+
+
+Syntax
+
+(operand_1 || operand_2)
+
+
+// C program for Logical
+// OR Operator
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+    int a = -1, b = 20;
+
+    if (a > 0 || b > 0) {
+        printf("Any one of the given value is "
+               "greater than 0\n");
+    }
+    else {
+        printf("Both values are less than 0\n");
+    }
+    return 0;
+}
+
+
+
+
+
+
+3. Logical NOT Operator ( ! )
+If the given operand is true then the logical NOT operator will make it false and vice-versa. Below is the truth table for the logical NOT operator.
+
+
+Syntax
+
+!(operand_1 && operand_2)
+
+
+// C program for Logical
+// NOT Operator
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+    int a = 10, b = 20;
+
+    if (!(a > 0 && b > 0)) {
+        // condition returned true but
+        // logical NOT operator changed
+        // it to false
+        printf("Both values are greater than 0\n");
+    }
+    else {
+        printf("Both values are less than 0\n");
+    }
+    return 0;
+}
+
+
+
+Short Circuit Logical Operators
+When the result can be determined by evaluating the preceding Logical expression without evaluating the further operands, it is known as short-circuiting.
+
+Short-circuiting can be seen in the equation having more than one Logical operator. They can either AND, OR, or both.
+
+1. Short Circuiting in Logical AND Operator
+The logical AND operator returns true if and only if all operands evaluate to true. If the first operand is false, then the further operands will not be evaluated. This is because even if the further operands evaluate to true, the entire condition will still return false.
+
+
+
+// C++ Program to illustrate short circuiting in Logical AND
+#include <iostream>
+using namespace std;
+
+// utility function to check positive
+bool is_positive(int number)
+{
+    if (number > 0)
+        return true;
+    else
+        return false;
+}
+// utility function to check if the number is even
+bool is_even(int number)
+{
+    if (number % 2 == 0)
+        return true;
+    else
+        return false;
+}
+
+// driver code
+int main()
+{
+    int x = 10;
+
+    // Both conditions are evaluated
+    if (is_positive(x) && is_even(x)) {
+        cout << "Both conditions are satisfied." << endl;
+    }
+    else {
+        cout << "Conditions not satisfied." << endl;
+    }
+
+    int y = -5;
+
+    // The first condition is evaluated and found to be
+    // false, so the second condition is not evaluated
+    if (is_positive(y) && is_even(y)) {
+        cout << "Both conditions are satisfied." << endl;
+    }
+    else {
+        cout << "Conditions not satisfied." << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Short Circuiting in Logical OR Operator
+OR operator returns true if at least one operand evaluates to true. If the first operand is true, then the further operands will not be evaluated. This is because even if the further operands evaluate to false, the entire condition will still return true.
+
+
+
+// C++ program to illustrate the short circuiting in Logical
+// OR
+#include <iostream>
+using namespace std;
+
+// utility function to check positive number
+bool is_positive(int number)
+{
+    if (number > 0)
+        return true;
+    else
+        return false;
+}
+
+// utility function to check if the number is even
+bool is_even(int number)
+{
+    if (number % 2 == 0)
+        return true;
+    else
+        return false;
+}
+
+// driver code
+int main()
+{
+    int x = 8;
+
+    // The first condition is evaluated and found to be
+    // true, so the second condition is not evaluated
+    if (is_positive(x) || is_even(x)) {
+        cout << "At least one condition is satisfied."
+             << endl;
+    }
+    else {
+        cout << "Conditions not satisfied." << endl;
+    }
+
+    int y = -5;
+
+    // The first condition is evaluated and found to be
+    // false, so the second condition is evaluated
+    if (is_positive(y) || is_even(y)) {
+        cout << "At least one condition is satisfied."
+             << endl;
+    }
+    else {
+        cout << "Conditions not satisfied." << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
