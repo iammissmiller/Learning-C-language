@@ -1,0 +1,45 @@
+Increment Operator
+
+* Increment Operator adds 1 to the operand.
+
+* The Postfix increment operator means the expression is evaluated first using the original value of the variable and then the variable is incremented(increased).The 
+
+* Prefix increment operator means the variable is incremented first and then the expression is evaluated using the new value of the variable.
+
+* Generally, we use this in decision-making and looping.
+
+
+
+Decrement Operator
+
+* Decrement Operator subtracts 1 from the operand.
+
+* The Postfix decrement operator means the expression is evaluated first using the original value of the variable and then the variable is decremented(decreased).
+
+* Prefix decrement operator means the variable is decremented first and then the expression is evaluated using the new value of the variable.
+
+* This is also used in decision-making and looping.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
