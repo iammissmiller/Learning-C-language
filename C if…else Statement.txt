@@ -1,0 +1,219 @@
+C if…else Statement
+
+The if-else statement in C is a flow control statement used for decision-making in the C program. It is one of the core concepts of C programming. It is an extension of the if in C that includes an else block along with the already existing if block.
+
+
+C if Statement
+
+The if statement in C is used to execute a block of code based on a specified condition.
+
+The syntax of the if statement in C is:
+
+if (condition) {
+   // code to be executed if the condition is true
+}
+
+
+
+
+
+
+C if-else Statement
+
+The if-else statement is a decision-making statement that is used to decide whether the part of the code will be executed or not based on the specified condition (test expression). If the given condition is true, then the code inside the if block is executed, otherwise the code inside the else block is executed.
+
+Syntax of if-else
+if (condition) {
+    // code executed when the condition is true
+}
+else {
+    // code executed when the condition is false
+
+
+How to use if-else in C?
+
+The following program demonstrates how to use if-else in C:
+
+
+// C Program to demonstrate the use of if-else statement
+#include <stdio.h>
+
+int main()
+{
+
+	// if block with condition at the start
+	if (5 < 10) {
+
+		// will be executed if the condition is true
+		printf("5 is less than 10.");
+	}
+
+	// else block after the if block
+	else {
+
+		// will be executed if the condition is false
+		printf("5 is greater that 10.");
+	}
+
+	return 0;
+}
+
+
+
+How if-else Statement works?
+Working of the if-else statement in C is explained below:
+
+When the program control first comes to the if-else block, the test condition is checked.
+
+
+If the test condition is true:
+The if block is executed.
+
+
+If the test condition is false:
+The else block is executed
+
+
+After that, the program control continues to the statements below the if-else statement.
+
+
+
+Example 2. C Program to check whether a person is eligible to vote or not.
+
+
+// C Program to check whether the person is eligible to vote
+// or not
+#include <stdio.h>
+
+int main()
+{
+
+	// declaring age of two person
+	int p1_age = 15;
+	int p2_age = 25;
+
+	// checking eligibility of person 1
+	if (p1_age < 18)
+		printf("Person 1 is not eligible to vote.\n");
+	else
+		printf("Person 1 is eligible to vote.\n");
+
+	// checking eligiblity of person 2
+	if (p2_age < 18)
+		printf("Person 2 is not eligible to vote.\n");
+	else
+		printf("Person 2 is eligible to vote.");
+
+	return 0;
+}
+
+
+
+
+
+# Advantages of if-else Statement
+
+The if-else statement enables the user to execute different statements based on different conditions.
+
+It can evaluate test expressions of type int, char, boolean, and more.
+
+It helps in modifying the flow of the program.
+
+It is simple, efficient, and easier to read when there is less number of conditions.
+
+
+#Disadvantages of if-else Statement
+
+If there are a lot of if statements present, the code becomes unreadable and complex.
+
+It also becomes slower compared to the switch statement.
+
+
+#Conclusion
+
+In this article, we discussed how to use the if-else statement in C for making decisions in our program based on the specified conditions. Being the core concept of C programming, it is frequently used in almost all C programs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
