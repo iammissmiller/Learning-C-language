@@ -1,0 +1,105 @@
+Decision Making in C (if , if..else, Nested if, if-else-if )
+
+The conditional statements (also known as decision control structures) such as if, if else, switch, etc. are used for decision-making purposes in C programs.
+
+They are also known as Decision-Making Statements and are used to evaluate one or more conditions and make the decision whether to execute a set of statements or not. These decision-making statements in programming languages decide the direction of the flow of program execution.
+
+
+
+
+Need of Conditional Statements
+
+There come situations in real life when we need to make some decisions and based on these decisions, we decide what should we do next. Similar situations arise in programming also where we need to make some decisions and based on these decisions we will execute the next block of code. For example, in C if x occurs then execute y else execute z. There can also be multiple conditions like in C if x occurs then execute p, else if condition y occurs execute q, else execute r. This condition of C else-if is one of the many ways of importing multiple conditions. 
+
+
+Types of Conditional Statements in C
+
+Following are the decision-making statements available in C:
+
+if Statement
+
+if-else Statement
+
+Nested if Statement
+
+if-else-if Ladder
+
+switch Statement
+
+Conditional Operator
+
+Jump Statements: 
+break
+continue
+goto
+return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
