@@ -1,0 +1,332 @@
+Switch Statement in C
+
+
+Switch case statement evaluates a given expression and based on the evaluated value(matching a certain condition), it executes the statements associated with it. Basically, it is used to perform different actions based on different conditions(cases). 
+
+
+Switch case statements follow a selection-control mechanism and allow a value to change control of execution.
+
+They are a substitute for long if statements that compare a variable to several integral values.
+
+The switch statement is a multiway branch statement. It provides an easy way to dispatch execution to different parts of code based on the value of the expression.
+
+
+In C, the switch case statement is used for executing one condition from multiple conditions. It is similar to an if-else-if ladder.
+
+The switch statement consists of conditional-based cases and a default case.
+
+Syntax of switch Statement in C
+switch(expression)
+{
+case value1: statement_1;
+             break;
+case value2: statement_2;
+             break;
+.
+.
+.
+case value_n: statement_n;
+              break;
+default: default_statement;
+}
+
+
+
+
+How to use switch case Statement in C?
+Before using the switch case in our program, we need to know about some rules of the switch statement.
+
+Rules of the switch case statement
+Following are some of the rules that we need to follow while using the switch statement:
+
+
+In a switch statement, the “case value” must be of “char” and “int” type.
+
+There can be one or N number of cases.
+
+The values in the case must be unique.
+
+Each statement of the case can have a break statement. It is optional.
+
+The default Statement is also optional.
+
+
+
+
+
+Example
+
+
+// C program to Demonstrate returning of day based numeric
+// value
+#include <stdio.h>
+
+int main()
+{
+    // switch variable
+    int var = 1;
+
+    // switch statement
+    switch (var)
+    {
+    case 1:
+        printf("Case 1 is Matched.");
+        break;
+
+    case 2:
+        printf("Case 2 is Matched.");
+        break;
+
+    case 3:
+        printf("Case 3 is Matched.");
+        break;
+
+    default:
+        printf("Default case is Matched.");
+        break;
+    }
+
+    return 0;
+}
+
+
+
+
+How switch Statement Work?
+The working of the switch statement in C is as follows:
+
+Step 1: The switch variable is evaluated.
+
+
+Step 2: The evaluated value is matched against all the present cases.
+
+
+Step 3A: If the matching case value is found, the associated code is executed.
+
+Step 3B: If the matching code is not found, then the default case is executed if present.
+
+
+Step 4A: If the break keyword is present in the case, then program control breaks out of the switch statement.
+
+Step 4B: If the break keyword is not present, then all the cases after the matching case are executed.
+
+
+Step 5: Statements after the switch statement are executed.
+We can also understand the working of the switch statement in C using the flowchart.
+
+
+
+
+Break in switch case
+This keyword is used to stop the execution inside a switch block. It helps to terminate the switch block and break out of it. When a break statement is reached, the switch terminates, and the flow of control jumps to the next line following the switch statement.
+
+The break statement is optional. If omitted, execution will continue on into the next case. The flow of control will fall through to subsequent cases until a break is reached.
+
+
+
+
+
+Example of switch case without break
+
+
+// C Program to demonstrate the behaviour of switch case
+// without break
+#include <stdio.h>
+
+int main()
+{
+
+    int var = 2;
+
+    // switch case without break
+    switch (var)
+    {
+    case 1:
+        printf("Case 1 is executed.\n");
+    case 2:
+        printf("Case 2 is executed.\n");
+    case 3:
+        printf("Case 3 is executed.");
+    case 4:
+        printf("Case 4 is executed.");
+    }
+    return 0;
+}
+
+
+
+Default in switch case
+
+The default keyword is used to specify the set of statements to execute if there is no case match. 
+
+It is optional to use the default keyword in a switch case. Even if the switch case statement does not have a default statement, it would run without any problem.
+
+
+
+
+Important Points About Switch Case Statements
+
+1. Switch expression should result in a constant value
+
+If the expression provided in the switch statement does not result in a constant value, it would not be valid. Some valid expressions for switch case will be,
+
+
+// Constant expressions allowed
+switch(1+2+23)
+switch(1*2+3%4)
+// Variable expression are allowed provided
+// they are assigned with fixed values
+switch(a*b+c*d)
+switch(a+b+c)
+
+2. Expression value should be only of int or char type.
+The switch statement can only evaluate the integer or character value. So the switch expression should return the values of type int or char only.
+
+3. Case Values must be Unique
+In the C switch statement, duplicate case values are not allowed.
+
+3. Nesting of switch Statements
+Nesting of switch statements is allowed, which means you can have switch statements inside another switch. However nested switch statements should be avoided as it makes the program more complex and less readable.
+
+4. The default block can be placed anywhere
+Regardless of its placement, the default case only gets executed if none of the other case conditions are met. So, putting it at the beginning, middle, or end doesn’t change the core logic.
+
+
+
+Example 1:  C Program to print the day of the week using a switch case.
+
+
+// C program to print the day using switch
+#include <stdio.h>
+
+// Driver Code
+int main()
+{
+    int day = 2;
+
+    printf("The day with number %d is ", day);
+    switch (day)
+    {
+    case 1:
+        printf("Monday");
+        break;
+    case 2:
+        printf("Tuesday");
+        break;
+    case 3:
+        printf("Wednesday");
+        break;
+    case 4:
+        printf("Thursday");
+        break;
+    case 5:
+        printf("Friday");
+        break;
+    case 6:
+        printf("Saturday");
+        break;
+    case 7:
+        printf("Sunday");
+        break;
+    default:
+        printf("Invalid Input");
+        break;
+    }
+    return 0;
+}
+
+
+
+
+Example 2: Simple Calculator using switch case in C
+
+
+// C Program to create a simple calculator using switch
+// statement
+#include <stdio.h>
+#include <stdlib.h>
+
+// driver code
+int main()
+{
+    // switch variable
+    char choice;
+    // operands
+    int x, y;
+
+    while (1)
+    {
+        printf("Enter the Operator (+,-,*,/)\nEnter x to "
+               "exit\n");
+        scanf(" %c", &choice);
+
+        // for exit
+        if (choice == 'x')
+        {
+            exit(0);
+        }
+
+        printf("Enter the two numbers: ");
+        scanf("%d %d", &x, &y);
+
+        // switch case with operation for each operator
+        switch (choice)
+        {
+        case '+':
+            printf("%d + %d = %d\n", x, y, x + y);
+            break;
+
+        case '-':
+            printf("%d - %d = %d\n", x, y, x - y);
+            break;
+
+        case '*':
+            printf("%d * %d = %d\n", x, y, x * y);
+            break;
+        case '/':
+            printf("%d / %d = %d\n", x, y, x / y);
+            break;
+        default:
+            printf("Invalid Operator Input\n");
+        }
+    }
+    return 0;
+}
+
+
+
+
+
+Advantages of C switch Statement
+
+Easier to read than if else if.
+
+Easier to debug and maintain for a large number of conditions.
+
+Faster execution speed.
+
+
+Disadvantages of C switch Statement
+
+Switch case can only evaluate int or char type.
+
+No support for logical expressions.
+
+Have to keep in mind to add a break in every case.
+
+
+Conclusion
+
+In this article, we discussed the switch statement in C programming and how to use it. It is a conditional statement like the if-else-if ladder having its own merits and demerits. It is mostly preferred when the number of conditions to evaluate is large.
+
+
+
+
+
+
+
+
+
+
+
+
