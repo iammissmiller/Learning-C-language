@@ -1,0 +1,59 @@
+Using Range in switch Case in C
+
+
+You all are familiar with switch case in C, but did you know you can use a range of numbers instead of a single number or character in the case statement? Range in switch case can be useful when we want to run the same set of statements for a range of numbers so that we do not have to write cases separately for each value.
+
+That is the case range extension of the GNU C compiler and not standard C.
+You can specify a range of consecutive values in a single case label.
+Syntax
+The syntax for using range case is:
+
+case low ... high:
+It can be used for a range of ASCII character codes like this:
+
+case 'A' ... 'Z':
+You need to Write spaces around the ellipses ( … ). For example, write this:
+
+// Correct  -   case 1 ... 5: 
+// Wrong -    case 1...5: 
+
+
+# Complexity Analysis
+
+Time Complexity: O(n), where n is the size of array arr.
+
+Auxiliary Space: O(1)
+
+
+# Error conditions
+
+low > high: The compiler gives an error message.
+
+Overlapping case values: If the value of a case label is within a case range that has already been used in the switch statement, the compiler gives an error message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
