@@ -1,0 +1,218 @@
+C for Loop
+
+
+In C programming, loops are responsible for performing repetitive tasks using a short code block that executes until the condition holds true. In this article, we will learn about for loop in C.
+
+
+for Loop in C
+
+The for loop in C Language provides a functionality/feature to repeat a set of statements a defined number of times. The for loop is in itself a form of an entry-controlled loop.
+
+Unlike the while loop and do…while loop, the for loop contains the initialization, condition, and updating statements as part of its syntax. It is mainly used to traverse arrays, vectors, and other data structures.
+
+Syntax of for Loop
+for(initialization; check/test expression; updation)
+{    
+     // body consisting of multiple statements
+}
+
+
+
+# Structure of for Loop
+
+
+The for loop follows a very structured approach where it begins with initializing a condition then checks the condition and in the end executes conditional statements followed by an updation of values.
+
+Initialization: This step initializes a loop control variable with an initial value that helps to progress the loop or helps in checking the condition. It acts as the index value when iterating an array or string.
+ 
+Check/Test Condition: This step of the for loop defines the condition that determines whether the loop should continue executing or not. The condition is checked before each iteration and if it is true then the iteration of the loop continues otherwise the loop is terminated.
+ 
+Body: It is the set of statements i.e. variables, functions, etc that is executed repeatedly till the condition is true. It is enclosed within curly braces { }.
+ 
+Updation: This specifies how the loop control variable should be updated after each iteration of the loop. Generally, it is the incrementation (variable++) or decrementation (variable–) of the loop control variable.
+
+
+
+
+
+
+
+#How for Loop Works?
+
+
+The working of for loop is mentioned below:
+
+Step 1: Initialization is the basic step of for loop this step occurs only once during the start of the loop. During Initialization, variables are declared, or already existing variables are assigned some value.
+
+Step 2: During the Second Step condition statements are checked and only if the condition is the satisfied loop we can further process otherwise loop is broken.
+
+Step 3: All the statements inside the loop are executed.
+
+Step 4: Updating the values of variables has been done as defined in the loop.
+Continue to Step 2 till the loop breaks.
+
+
+
+
+// C program to demonstrate for loop
+#include <stdio.h>
+
+int main()
+{
+	int gfg = 0;
+
+	// 'gfg' <= 5 is the check/test expression
+	// The loop will function if and only if 'gfg' is less
+	// than 5
+	//'gfg++' will increments it's value by this so that the
+	// loop can iterate for further evaluation
+
+	// conditional statement
+	for (gfg = 1; gfg <= 5; gfg++) 
+	{
+		// statement will be printed
+		printf("GeeksforGeeks\n");
+	}
+
+	// Return statement to tell that everything executed
+	// safely
+	return 0;
+}
+
+
+
+
+Nested for loop in C
+C provides the feature of a nested loop where we can place a loop inside another loop.
+
+Syntax
+for( .. ; .. ; .. ){
+    for( .. ; .. ; .. ){
+        ....
+    }
+}
+
+
+
+Special Conditions
+1. for loop without curly braces
+You already know about for loop and its syntax, when we declare a for loop without curly braces, the loop executes only one statement which is written just after it, and the statement can not be declarative.
+
+Example
+
+
+#include <stdio.h>
+
+int main()
+{
+
+	int i;
+
+	// for loop without curly braces
+	for (i = 1; i <= 10; i++)
+		printf("%d ", i);
+	printf("\nThis statement executes after for loop end!!!!"); // Statement print only once
+
+	return 0;
+}
+ 
+
+
+
+2. Infinite for Loop/NULL Parameter Loop
+This is also a kind of for loop where the input parameters are not available or do not exist by virtue of which the loop iterates/runs endlessly. 
+
+
+
+// C program to demonstrate infinite Loop
+#include <stdio.h>
+
+int main()
+{
+	int gfg = 0;
+	for (;;) // condition 1,2 and 3 are not entered
+	{
+		printf("GeeksforGeeks to Infinite");
+	}
+	// Return statement to tell that everything executed
+	// safely
+	return 0;
+}
+  
+
+
+# Advantages of for Loop
+
+
+
+There are certain advantages of using for loops in C as mentioned below:
+
+Provides code reusability
+
+Code size decreases 
+
+Traversing in data structures like array and string becomes easy.
+
+
+
+
+#Disadvantages of for Loop
+
+Despite so many advantages of for loops it even has certain disadvantages:
+
+Can’t skip any element while traversing
+
+Only a single condition is followed 
+
+
+
+
+
+#Conclusion
+
+In this article, the points we learned about for loops are mentioned below:
+
+It is an Entry-Controlled Loop 
+It can iterate from an adequate number to an infinite number according to the situation.
+It requires 3 conditions parameters i.e. check expression, conditional statement, and urinary operators for updation.
+Its workflow is an initialization, check/test, and then updation. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
