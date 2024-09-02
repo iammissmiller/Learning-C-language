@@ -1,0 +1,55 @@
+C – Loops
+
+
+Loops in programming are used to repeat a block of code until the specified condition is met. A loop statement allows programmers to execute a statement or group of statements multiple times without repetition of code.
+
+
+
+There are mainly two types of loops in C Programming:
+
+Entry Controlled loops: In Entry controlled loops the test condition is checked before entering the main body of the loop. For Loop and While Loop is Entry-controlled loops.
+
+Exit Controlled loops: In Exit controlled loops the test condition is evaluated at the end of the loop body. The loop body will execute at least once, irrespective of whether the condition is true or false. do-while Loop is Exit Controlled loop.
+
+
+
+
+for loop	
+
+first Initializes, then condition check, then executes the body and at last, the update is done.
+
+
+while loop 	
+
+first Initializes, then condition checks, and then executes the body, and updating can be inside the body.
+
+
+do-while loop	
+
+do-while first executes the body and then the condition check is done.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
