@@ -1,0 +1,8 @@
+They differ in Operation performed inside the loop
+
+gfg2 is updated in each iteration, but this update doesn't affect the loop condition the
+loop will always remain true and gfg2 will be updated infinitely.
+
+The primary difference is that the first programme increments the variable gfg2 in each 
+iteration, while the second programme doesn't use gfg2 , both programme behave the same way 
+with an infinite loop 
