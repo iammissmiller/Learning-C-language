@@ -1,0 +1,12 @@
+As we can see , even when the condition is false at the start, the loop body is executed once .
+
+This is because in te do while loop , the condition is checked after going through the body so when the
+control is at the start ,
+
+1. It goes through the loop body .
+
+2. Executes all the statement in the body.
+
+3. Check the condition which turns out to be false.
+
+4. Then exit the loop
