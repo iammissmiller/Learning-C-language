@@ -1,0 +1,13 @@
+while Loop 
+
+The test condition is checked before the loop body is executed.	
+When the condition is false, the body is not executed not even once.
+It is a type of pre-tested or entry-controlled loop.
+Semicolon is not required.	
+
+do while loop 
+
+The test condition is checked after executing the body.
+The body of the do…while loop is executed at least once even when the condition is false.
+It is a type of post-tested or exit-controlled loop.
+Semicolon is required at the end.
