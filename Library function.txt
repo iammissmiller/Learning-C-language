@@ -1,0 +1,11 @@
+Library function 
+
+built in function 
+compiler package already exists that contains these functions each of which has specific 
+meaning and is included in the package 
+
+Advantages
+
+easy to use and optimized for better performance 
+save a lot of time 
+convenient 
