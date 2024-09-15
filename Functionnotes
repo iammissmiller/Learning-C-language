@@ -1,0 +1,40 @@
+Function 
+
+set of statements when called perform some specific task
+
+basic building block of programme 
+
+used for code reusability 
+
+
+# syntax if functions 
+
+1. Declaration 
+2. Definition 
+3. calling 
+
+#function declaration 
+
+A function declaration tells the compiler that there is a function with given name defined 
+some where else in programme.
+
+We must provide function name its return type the number and type of its parameters 
+
+Syntax 
+
+return_type name(para1 , para2);
+
+***a function in c must always be declared globally before calling it
+
+
+#function definition 
+
+consists actual statement 
+
+we do not need to declare and define function explicitly 
+
+# function call
+
+instructs the compiler to execute the function 
+
+we use the function name and parameters in the function call 
