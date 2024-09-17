@@ -1,0 +1,17 @@
+# User defined function 
+
+function that programmer creates
+
+user defined or tailor made function 
+
+user defined function can be improved or modified according to the need of 
+the programme 
+
+
+# Advantages of user defined function 
+
+they are changeable per need 
+
+reliability of code
+
+easy to understand debug and maintain 
