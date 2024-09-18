@@ -1,0 +1,13 @@
+#Passing parameters to functions
+
+1. pass by value
+
+2. pass by refrence
+
+#Pass by value 
+
+* In this method parameter copies values from actual parameters into 
+  formal functions parameters 
+
+* As result , any changes made outside the function do not reflect in the 
+  callers parameters
