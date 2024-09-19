@@ -1,0 +1,35 @@
+#components of function definition 
+
+1. function parameters
+
+2. function body
+
+3. return value
+
+
+# function parameter
+
+function paramter (or argument) are the values that are passed to the called function by the caller.
+
+we can pass none or any number of function parameters to the function
+
+we have to define the function name and its type in the function definition and we onlt pass the same number 
+oand type of parameter in the function call.
+
+
+# function body 
+
+the function body is the set of statements that are enclosed within {} braces . they are the statement that 
+are executed when the function is called.
+
+
+# return value 
+
+the return value is the value returned by the function to its called. a function can only return a single value 
+and it is optional . if no value is to be returned the return type is defined as void .
+
+the returned keyword is used to return the the value from a function.
+
+syntax 
+
+return (expression);
