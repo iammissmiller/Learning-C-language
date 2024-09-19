@@ -1,0 +1,12 @@
+# advantages of function in c
+
+* reduces repetetion of the same statement 
+* makes code readable
+* no fixed number of calling the function it can be called as many times as you want
+* reduces the size of program
+
+
+# disadvantages of function
+
+* cannot return multiple values. 
+* memory and time overhead due to stack frame allocation and transfer of praogram control.
