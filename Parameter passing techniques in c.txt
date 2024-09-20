@@ -1,0 +1,21 @@
+In C , there are different ways in which parameter data can be passed into and out of method and function
+
+let us assume function B() is called in function A() b. in this case , A is called the caller and B is called
+the called or the callee funtion
+
+Also the arguments which A sends to B are called actual arguements and parameters of B are called the formal arguments
+
+# Terminology 
+
+Format Parameter : A variable and its type as it appears as it appears in the prototype of the function or method
+
+Actual Parameter : the variable or expression corresponding to a formal parameters that appears in the function 
+or method call in the calling environment .
+
+Modes :
+
+* IN : passes info from caller to the callee.
+
+* Out : callee writes value in the caller 
+
+In?Out : the caller tells the callee the value of the variable , which the callee may update.
