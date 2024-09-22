@@ -1,0 +1,4 @@
+* one can avoid duplication of programs by using functions . code can be writeen more quickly and be more readable as result.
+
+code can be divided and conquered using function . this large amounts of code writtem the main function, as well as testing and debugging .
+our one task can be divided into several smaller sub- tasks by using functions,this reducing the overall complexity. 
