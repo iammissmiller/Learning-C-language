@@ -1,0 +1,5 @@
+* C library funtions are easy to use and optimized for better performance
+
+* C library functions save a lot of time
+
+* C library function are convenient as they always work
