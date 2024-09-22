@@ -1,0 +1,32 @@
+* In a call by reference , the address of the argument is passed to the function , and changes that are made 
+to the function are reflected back to the values
+
+* we use the points to the required type to recieve the address in the function .
+
+
+Example
+
+#include <stdio.h>
+
+void swap(int* a , int* b)
+
+{
+    
+   int temp = *a;
+   *a = *b;
+   *b = temp;
+   
+}
+
+int main()
+
+{
+    
+    int x = 10 , y = 30;
+    printf("values of x and y before swap " 
+            "are : %d , %d\n" , x , y);
+    swap(&x,&y);
+    printf("values of x and y after swap " 
+            "are : %d , %d\n" , x , y);
+    return 0;
+}
