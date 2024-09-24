@@ -1,0 +1,28 @@
+# Pass by Pointers 
+
+* this technique uses a pointer 
+
+* in function we passmemory address (pointer) of a variable rather than passing the actual value of variable .
+
+* this passing technique allows the function to accessand modify the context at that particular memory location .
+
+
+# Shortcomings of pass by pointers 
+
+* Pointers can be null so null pointers issues aries if properly not checked 
+
+* if more than one pointers point to the same memory location then changes mode by one pointer which points to the same 
+memory location 
+
+* memory management should be done effectively using functions like malloc and free
+
+
+
+
+
+
+
+
+
+
+
