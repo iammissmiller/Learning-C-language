@@ -1,0 +1,17 @@
+Other Methods of Parameter Passing
+These techniques are older and were used in earlier programming languages like Pascal, Algol, and Fortran. 
+These techniques are not applicable in high-level languages.
+
+1. Pass by Result
+This method uses out-mode semantics. Just before control is transferred back to the caller, the value of the 
+formal parameter is transmitted back to the actual parameter. This method is sometimes called call by the result. 
+In general, the pass-by-result technique is implemented by copying.
+
+2. Pass by Value-Result
+This method uses in/out-mode semantics. It is a combination of Pass-by-Value and Pass-by-Result. Just before the 
+control is transferred back to the caller, the value of the formal parameter is transmitted back to the actual 
+parameter. This method is sometimes called call by value-result.
+
+3. Pass by Name
+This technique is used in programming languages such as Algol. In this technique, the symbolic “name” of a 
+variable is passed, which allows it both to be accessed and updated.
