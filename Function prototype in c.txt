@@ -1,0 +1,49 @@
+# Function prototype in C 
+
+* It is a a statement that tells the compiler about the function name , its return type , numbers and data types of its 
+parameters . by using this information , the compiler cross checks function parameters and thier data type with function
+definition and function call.
+
+* Function prototype works like funtion declaration where it is necessary where the function reference or call is present 
+  before the function definition but optional if the function definition is present before the function call in the program.
+
+# syntax 
+
+return_type function_name()parameter_list);
+
+
+# example
+
+
+#include <stdio.h>
+
+float calculaterectanglearea(float length , float width);
+
+int main()
+{
+    
+    float length = 7.0;
+    float width = 3.0;
+    
+    float area = calculaterectanglearea(length , width);
+    
+    printf("the area of rectangle is : %0.2f\n" , area);
+    
+    return 0;
+    
+}
+
+float calculaterectanglearea(float length , float width)
+{
+    
+    return length * width;
+    
+}
+
+
+
+
+
+
+
+
