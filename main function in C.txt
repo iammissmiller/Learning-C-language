@@ -1,0 +1,41 @@
+The main function is an integral part of the programming languages such as C, C++, and Java. The main function in C is the entry point of a program where the execution of a program starts. 
+It is a user-defined function that is mandatory for the execution of a program because when a C program is executed, the operating system starts executing the statements in the main() function.
+
+Syntax of C main() Function
+return_type main() {
+    // Statement 1;
+    // Statement 2;
+    // and so on..
+    return;
+}
+
+We can write the main function in many ways in C language as follows:
+
+int main(){} or int main(void){}
+main(){} or void main(){} or main(void){} or void main(void){}
+In the above notations, int means integer return type, and void return type means that does not return any information, or (void) or () means that does not take any information.
+
+Important Points about C main Function
+
+It is the function where the program’s execution starts.
+
+Every program has exactly one main function.
+
+The name of this function should be “main” not anything else.
+
+The main function always returns an integer value or void.
+
+The main function is called by OS, not the user.
+
+
+Types of C main Functions
+
+Main function with no arguments and void return type
+
+Main function with no arguments and int return type
+
+Main function with the Command Line Arguments
+
+
+
+
