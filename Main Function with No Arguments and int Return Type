@@ -1,0 +1,32 @@
+2. Main Function with No Arguments and int Return Type
+
+In this example, we use the int return type in the main() function that indicates the exit status of the program. The exit status is a way for the program to communicate to the operating 
+system whether the program was executed successfully or not. The convention is that a return value of 0 indicates that the program was completed successfully, while any other value indicates 
+that an error occurred.
+
+Syntax
+
+int main()
+{
+   // Function body
+}
+or
+
+int main(void)
+{
+    // Function Body
+}
+
+
+
+Example
+
+#include <stdio.h>
+
+int main()
+
+{
+    
+    printf("hello hell");
+    return 0;
+}
