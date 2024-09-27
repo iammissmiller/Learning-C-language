@@ -1,0 +1,50 @@
+What if the function prototype is not specified?
+
+If we ignore the function prototype, a program may compile with a warning, 
+it may give errors and may work properly. But sometimes, it will give strange 
+output and it is very hard to find such programming mistakes.
+
+example 
+
+#include <stdio.h>
+
+#include <errno.h>
+
+int main(int argc , char* argv[])
+
+{
+    
+    FILE* fp;
+    
+    fp = fopen(argv[1] , "r");
+    if (fp == NULL) {
+        
+        fprintf(stderr , "%s\n" , strerror(errno));
+        return errno ;
+        
+    }
+    
+    printf("file exist\n");
+    
+    fclose(fp);
+    
+    return 0;
+    
+}
+
+shows error 
+
+Explanation
+
+The above program checks the existence of a file, provided from the command line,
+if a given file exists, then the program prints “file exists”, otherwise it 
+prints an appropriate error message.
+
+Why did this program crash, instead it should show an appropriate error message.
+This program will work fine on x86 architecture but will crash on x86_64 
+architecture. Let us see what was wrong with the code. Carefully go through 
+the program, deliberately I haven’t included the prototype of the “strerror()” 
+function. This function returns a “pointer to the character”, which will print 
+an error message which depends on the errno passed to this function.
+
+
