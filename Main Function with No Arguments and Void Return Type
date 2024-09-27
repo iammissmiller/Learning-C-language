@@ -1,0 +1,42 @@
+1. Main Function with No Arguments and Void Return Type
+
+Let’s see the example of the main function inside which we have written a simple program for printing a string. In the below code, first, we include a header file and then we define a 
+main function inside which we write a statement to print a string using printf() function. The main function is called by the operating system itself and then executes all statements 
+inside this function.
+
+
+Syntax
+
+void main()
+{
+   // Function body
+}
+The above function is equivalent to:
+
+void main (void)
+{
+    // Function Body
+}
+
+
+Example 
+
+#include <stdio.h>
+
+void main()
+
+{
+    
+    printf("hello hell");
+    
+}
+
+
+
+
+
+
+
+
+
+
