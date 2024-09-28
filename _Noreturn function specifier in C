@@ -1,0 +1,60 @@
+_Noreturn function specifier in C
+
+The _Noreturn keyword appears in a function declaration and specifies that the function does not return by executing the return statement or by reaching the end of the 
+function body. If the function declared _Noreturn returns, the behavior is undefined. A compiler diagnostic is recommended if this can be detected.
+
+The _Noreturn specifier may appear more than once in the same function declaration, the behavior is the same as if it appeared once.
+
+This specifier is typically used through the convenience macro noreturn, which is provided in the header stdnoreturn.h.
+
+Note: 
+
+_Noreturn function specifier is deprecated. [[noreturn]] attribute should be used instead.
+The macro noreturn is also deprecated.
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+_Noreturn void view()
+{
+    return 10;
+}
+
+int main(void)
+{
+    printf("ready to begin...\n");
+    view();
+    
+    printf("NOT over till now\n");
+    return 0;
+}
+
+Output:
+
+Ready to begin...
+After that abnormal termination of program.
+compiler error:[Warning] function declared 'noreturn' has a 'return' statement
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+_Noreturn void show()
+{
+    printf("BYE BYE");
+}
+
+int main(void)
+{
+    printf("Ready to begin...\n");
+    show();
+    
+    printf("Not over till now\n");
+    return 0;
+}
+
+
+
+
+
