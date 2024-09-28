@@ -1,0 +1,33 @@
+Callbacks in C
+
+A callback is any executable code that is passed as an argument to another code, which is expected to call back (execute) the argument at a given time. In simple language, 
+If a reference of a function is passed to another function as an argument to call it, then it will be called a Callback function.
+
+In C, a callback function is a function that is called through a function pointer.
+
+Below is a simple example in C to illustrate the above definition to make it more clear.
+
+#include <stdio.h>
+
+void A() {
+    printf("I am Function A\n");
+}
+
+void B(void (*ptr)())
+{
+    
+    (*ptr) ();
+    
+}
+
+int main()
+{
+    
+    void (*ptr)() =&A;
+    B(ptr);
+    
+    return 0;
+    
+}
+
+In C++ STL, functors are also used for this purpose.
