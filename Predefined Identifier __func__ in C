@@ -1,0 +1,88 @@
+Predefined Identifier __func__ in C
+
+Before we start discussing __func__, let us write some code snippets and anticipate the output:
+
+#include <stdio.h>
+
+int main()
+{
+    printf("%s" , __func__);
+    return 0;
+}
+
+“The identifier __func__ shall be implicitly declared by the translator as if, immediately 
+following the opening brace of each function definition, the declaration
+
+static const char __func__[] = "function-name";
+
+appeared, where function-name is the name of the lexically-enclosing function.”
+
+It means that the C compiler implicitly adds __func__ in every function so that it can 
+be used in that function to get the function name. 
+
+#include <stdio.h>
+
+void foo(void) {
+    printf("%s" , __func__);
+}
+void bar(void) {
+    printf("%s" , __func__);
+}
+
+int main()
+{
+    foo();
+    bar();
+    return 0;
+}
+
+A use case of this predefined identifier could be logging the output of a big program 
+where a programmer can use __func__ to get the current function instead of mentioning 
+the complete function name explicitly.
+
+Now, what happens if we define one more variable of name __func__?
+
+Example:
+
+#include <stdio.h>
+
+int __func__= 10;
+int main()
+{
+    printf("%s" , __func__);
+    return 0;
+}
+
+SHOWS ERROR
+
+Since the C standard says the compiler implicitly defines __func__ for each function as the function name, we should not define __func__ in the first place. You might get an error but the C standard says “undefined behavior” if someone explicitly defines __func__.
+
+Just to finish the discussion on Predefined Identifier __func__, let us mention Predefined Macros as well (such as __FILE__ and __LINE__, etc.) Basically, C standard clause 6.10.8 mentions several predefined macros out of which __FILE__ and __LINE__ are of relevance here. 
+
+
+
+
+It’s worthwhile to see the output of the following code snippet:
+
+#include <stdio.h>
+
+int main()
+{
+    printf("In file: %s, function : %s() and line: %d" , __FILE__ , __func__, __LINE__);
+    return 0;
+}
+
+__FILE__ tells us which file it is 
+
+__LINE__ tells us theno. of line the code is written 
+
+
+
+
+
+
+
+
+
+
+
