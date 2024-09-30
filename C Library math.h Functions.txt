@@ -1,0 +1,139 @@
+The math.h header defines various C mathematical functions and one macro. All the functions available in this library take double as an argument and return double as the result. 
+Let us discuss some important C math functions one by one.
+
+C Math Functions
+
+1. double ceil (double x)
+
+The C library function double ceil (double x) returns the smallest integer value greater than or equal to x.
+
+Syntax
+double ceil(double x);
+
+#include <stdio.h>
+
+#include <math.h>
+
+int main()
+{
+    float val1, val2, val3, val4;
+    
+    val1 = 1.6;
+    val2 = 1.2;
+    val3 = -2.8;
+    val4 = -2.3;
+    
+    printf("value1 = %.1lf\n" , ceil(val1));
+    printf("value2 = %.1lf\n" , ceil(val2));
+    printf("value3 = %.1lf\n" , ceil(val3));
+    printf("value4 = %.1lf\n" , ceil(val4));
+    
+    return 0;
+}
+
+
+2. double floor(double x)
+
+The C library function double floor(double x) returns the largest integer value less than or equal to x.
+
+Syntax
+double floor(double x);
+
+#include <stdio.h>
+
+#include <math.h>
+
+int main()
+{
+    float val1, val2, val3, val4;
+    
+    val1 = 1.6;
+    val2 = 1.2;
+    val3 = -2.8;
+    val4 = -2.3;
+    
+    printf("value1 = %.1lf\n" , floor(val1));
+    printf("value2 = %.1lf\n" , floor(val2));
+    printf("value3 = %.1lf\n" , floor(val3));
+    printf("value4 = %.1lf\n" , floor(val4));
+    
+    return 0;
+}
+
+3. double fabs(double x)
+
+The C library function double fabs(double x) returns the absolute value of x.
+
+Syntax
+syntax : double fabs(double x)
+
+#include <stdio.h>
+
+#include <math.h>
+
+int main()
+{
+    float val1, val2, val3, val4;
+    
+    val1 = 1.6;
+    val2 = 1.2;
+    val3 = -2.8;
+    val4 = -2.3;
+    
+    printf("value1 = %lf\n" , fabs(val1));
+    printf("value2 = %lf\n" , fabs(val2));
+    printf("value3 = %lf\n" , fabs(val3));
+    printf("value4 = %lf\n" , fabs(val4));
+    
+    return 0;
+}
+
+4. double log(double x)
+The C library function double log(double x) returns the natural logarithm 
+(base-e logarithm) of x. 
+
+Syntax
+double log(double x)
+
+#include <stdio.h>
+
+#include <math.h>
+
+int main()
+{
+    double x , ret;
+    x =2.7;
+    
+    ret = log(x);
+    printf("log(%lf) = %lf\n", x , ret);
+    
+    return 0;
+}
+
+6. double fmod(double x, double y)
+
+The C library function double fmod(double x, double y) returns the remainder of x divided by y. 
+
+Syntax
+double fmod(double x, double y) 
+
+#include <stdio.h>
+
+#include <math.h>
+
+int main()
+{
+    float a , b;
+    int c;
+    a = 8.2;
+    b = 5.7;
+    c = 3;
+    printf("Remainder of %f / %d is %lf\n" , a , c , fmod(a,c));
+    printf("remainder of %f / %f is %f\n" , a , b, fmod(a,b));
+    
+    return 0;
+}
+
+
+
+
