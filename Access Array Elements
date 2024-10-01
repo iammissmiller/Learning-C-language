@@ -1,0 +1,28 @@
+Access Array Elements
+
+We can access any element of an array in C using the array subscript operator [ ]  
+and the index value i of the element.
+
+array_name [index];
+One thing to note is that the indexing in the array always starts with 0, i.e., the first 
+element is at index 0 and the last element is at N – 1 where N is the number of elements in 
+the array.
+
+#include <stdio.h>
+
+int main()
+{
+    //array declaration and initialization
+    int arr[5] = { 15 , 25, 35 ,45 , 55 };
+    
+    //accessing elements at index 2 i.e 3rd elements
+    printf("element of arr[2] : %d\n " ,  arr[2]);
+    
+    //accessing elements at index 4 i.e last element 
+    printf("element of arr[4] : %d\n " ,  arr[4]);
+    
+    //accesing element at index 0 i.e first element
+    printf("element of arr[0] : %d\n " ,  arr[0]);
+
+    return 0;
+}
