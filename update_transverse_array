@@ -1,0 +1,13 @@
+Update Array Element
+We can update the value of an element at the given index i in a similar way to accessing an 
+element by using the array subscript operator [ ] and assignment operator =.
+
+array_name[i] = new_value;
+C Array Traversal
+Traversal is the process in which we visit every element of the data structure. For C array 
+traversal, we use loops to iterate through each element of the array.
+
+Array Traversal using for Loop
+for (int i = 0; i < N; i++) {
+    array_name[i];
+}
