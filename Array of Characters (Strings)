@@ -1,0 +1,27 @@
+Array of Characters (Strings)
+
+In C, we store the words, i.e., a sequence of characters in the form of an array of characters 
+terminated by a NULL character. These are called strings in C language.
+
+// C Program to illustrate strings
+#include <stdio.h>
+
+int main()
+{
+
+    // creating array of character
+    char arr[6] = { 'G', 'e', 'e', 'k', 's', '\0' };
+
+    // printing string
+    int i = 0;
+    while (arr[i]) {
+        printf("%c", arr[i++]);
+    }
+    return 0;
+}
+
+
+
+
+
+
