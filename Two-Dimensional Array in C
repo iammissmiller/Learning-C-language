@@ -1,0 +1,33 @@
+Two-Dimensional Array in C
+
+A Two-Dimensional array or 2D array in C is an array that has exactly two dimensions. 
+They can be visualized in the form of rows and columns organized in a two-dimensional plane.
+
+Syntax of 2D Array in C
+array_name[size1] [size2];
+Here,
+
+size1: Size of the first dimension.
+size2: Size of the second dimension.
+
+#include <stdio.h>
+
+int main()
+
+{
+    int arr[2][3] = {23 , 12 , 13 , 16 , 12};
+    
+    printf("2D array : \n");
+    
+    for(int i = 0 ; i < 2; i++) {
+        for (int k = 0; k < 3 ; k++) {
+            printf("%d " , arr[i][k]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+
+
