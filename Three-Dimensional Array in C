@@ -1,0 +1,28 @@
+Three-Dimensional Array in C
+
+Another popular form of a multi-dimensional array is Three Dimensional Array or 3D Array. A 
+3D array has exactly three dimensions. It can be visualized as a collection of 2D arrays 
+stacked on top of each other to create the third dimension.
+
+Syntax of 3D Array in C
+array_name [size1] [size2] [size3];
+
+#include <stdio.h>
+
+int main()
+
+{
+    int arr[2][2][2] = { 10 , 20 , 30 ,40 ,50 ,60 };
+    
+    for(int i = 0 ; i < 2; i++) {
+        for (int j = 0 ; j < 2; j++) {
+            for (int k =0 ; k < 2 ; k++) {
+                printf("%d " , arr[i][j][k]);
+            }
+            printf("\n");
+        }
+        printf("\n\n");
+    }
+   
+    return 0;
+}
