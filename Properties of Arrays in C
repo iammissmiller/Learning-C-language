@@ -1,0 +1,33 @@
+1. Fixed Size
+The array in C is a fixed-size collection of elements. The size of the array must be known at the compile time and it cannot be changed once it is declared.
+
+2. Homogeneous Collection
+We can only store one type of element in an array. There is no restriction on the number of elements but the type of all of these elements must be the same.
+
+3. Indexing in Array
+The array index always starts with 0 in C language. It means that the index of the first element of the array will be 0 and the last element will be N – 1.
+
+4. Dimensions of an Array
+A dimension of an array is the number of indexes required to refer to an element in the array. It is the number of directions in which you can grow the array size.
+
+5. Contiguous Storage
+All the elements in the array are stored continuously one after another in the memory. It is one of the defining properties of the array in C which is also the reason why 
+random access is possible in the array.
+
+6. Random Access
+The array in C provides random access to its element i.e we can get to a random element at any index of the array in constant time complexity just by using its index number.
+
+7. No Index Out of Bounds Checking
+There is no index out-of-bounds checking in C/C++, for example, the following program compiles fine but may produce unexpected output when run.  
+
+In C, it is not a compiler error to initialize an array with more elements than the specified size. For example, the below program compiles fine and shows just a Warning.
+
+
+
+
+
+
+
+
+
+
