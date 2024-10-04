@@ -1,0 +1,28 @@
+Random access in an array means you can access any element in the array directly using its index, without having to go through the elements one by one.
+
+In C, an array is a collection of elements of the same type stored in contiguous memory locations. Each element can be accessed using its index, which starts from 0.
+
+How It Works:
+Indexing: If you have an array called arr, the first element is arr[0], the second is arr[1], and so on. To access the third element, you simply use arr[2].
+
+Memory Address Calculation: When you access arr[i], C calculates the memory address of that element using the formula:
+
+Address of 
+𝑎
+𝑟
+𝑟
+[
+𝑖
+]
+=
+Base Address
++
+(
+𝑖
+×
+Size of element
+)
+Address of arr[i]=Base Address+(i×Size of element)
+Base Address: The starting address of the array in memory.
+Size of element: The size in bytes of each element in the array.
+Speed: This direct access makes retrieving an element very fast, usually taking constant time, O(1), because you don’t have to loop through other elements.
