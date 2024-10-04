@@ -1,0 +1,20 @@
+Advantages of Array in C
+The following are the main advantages of an array:
+
+Random and fast access of elements using the array index.
+Use of fewer lines of code as it creates a single array of multiple elements.
+Traversal through the array becomes easy using a single loop.
+Sorting becomes easy as it can be accomplished by writing fewer lines of code.
+
+
+
+Disadvantages of Array in C
+
+Allows a fixed number of elements to be entered which is decided at the time of declaration. Unlike a linked list, an array in C is not dynamic.
+Insertion and deletion of elements can be costly since the elements are needed to be rearranged after insertion and deletion.
+
+
+Conclusion
+
+The array is one of the most used and important data structures in C. It is one of the core concepts of C language that is used in every other program. 
+Though it is important to know about its limitation so that we can take advantage of its functionality.
