@@ -1,0 +1,17 @@
+Properties of Array in C
+
+An array in C is a fixed-size homogeneous collection of elements stored at a contiguous memory location. It is a derived data type in C that can store elements
+of different data types such as int, char, struct, etc. It is one of the most popular data types widely used by programmers to solve different problems not only 
+in C but also in other languages.
+
+The properties of the arrays depend on the programming language. In this article, we will study the different properties of Array in the C programming language.
+
+Fixed Size Collection
+Homogeneous Elements
+Indexing in Array
+Dimensions of Array
+Contiguous Storage
+Random Access
+Array name relation with pointer
+Bound Checking
+Array Decay
