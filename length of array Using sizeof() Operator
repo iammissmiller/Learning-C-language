@@ -1,0 +1,39 @@
+length of array Using sizeof() Operator
+
+The sizeof operator is a compile-time unary operator that calculates the size of the variables and datatypes. It returns an integer value that represents the size of the 
+expression or a variable in bytes. The sizeof operator is primarily used for dynamic memory allocation but it can also be used to find the length of an array.
+
+The trick is to first find the size of the whole array in bytes and the size of a single element using the sizeof operator and then divide the size of the whole array by the 
+size of a single element so that we can get the number of elements in the array.
+
+Syntax:
+
+data_type size = sizeof(Array_name) / sizeof(Array_name[index]);
+In the above syntax,
+
+data_type: It is the type of variable in which we want to store the length of the array.(like int, size_t, etc.).
+Array_name: It is the name of the array you want to find the size of.
+sizeof(Array_name): It is an operator that returns the size of the entire array in bytes.
+sizeof(Array_name[index]): It returns the size of a single element in the array in bytes.
+index: It is the index of any element in the array.
+
+
+#include <stdio.h>
+
+int main() 
+{
+    
+    int arr[] = {1 , 2 ,3 ,4 , 5};
+    
+    int length = sizeof(arr)/sizeof(arr[0]);
+    
+    printf("the length of the is : %d\n" , length);
+    
+    return 0;
+    
+}
+
+
+
+
+
