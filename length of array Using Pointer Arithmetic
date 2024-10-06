@@ -1,0 +1,29 @@
+length of array Using Pointer Arithmetic
+
+We can also calculate the length of an array in C using pointer arithmetic. This solution 
+of using a pointer is just a hack that is used to find the number of elements in an array.
+
+Syntax:
+
+ data_type length = *(&arr + 1) - arr;
+In the above syntax:
+
+&arr: Pointer to an array of elements.
+(&arr + 1): Address of memory ahead of the array as pointer type is a pointer to an array of
+integers.
+*(&arr + 1) – arr: Inclusive difference between the start and the end of the array
+
+#include <stdio.h>
+
+int main()
+
+{
+    
+    int arr[] = { 1 , 2 , 3 ,4 , 4 , 5 ,6 ,6 };
+    
+    int length = *(&arr + 1) - arr;
+    
+    printf("number of elements in arr[] is :%d " , length);
+    return 0;
+    
+}
