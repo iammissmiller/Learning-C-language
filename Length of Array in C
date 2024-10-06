@@ -1,0 +1,7 @@
+Length of Array in C
+
+The Length of an array in C refers to the number of elements in the array. It must be specified at the time of declaration. It is also known as the size of an array that is used to determine the memory required to store all of its elements. In C Programming language, we don’t have any pre-defined function to find the length of the array but we can manually determine it by using different methods mentioned below:
+
+Using sizeof() Operator
+Using Pointer Arithmetic
+Using Loop
