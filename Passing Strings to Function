@@ -1,0 +1,26 @@
+Passing Strings to Function
+
+
+As strings are character arrays, we can pass strings to functions in the
+same way we pass an array to a function. Below is a sample program to do
+this: 
+
+
+
+#include <stdio.h>
+
+void printstr( char str[]) 
+{
+    printf("String is : %s " , str);
+}
+
+int main()
+{
+    
+    char str[] = " SOMAWAR " ;
+    
+    printstr(str);
+    
+    return 0;
+    
+}
