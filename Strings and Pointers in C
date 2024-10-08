@@ -1,0 +1,33 @@
+Strings and Pointers in C
+
+In Arrays, the variable name points to the address of 
+the first element.
+
+Below is the memory representation of the string 
+str = “Geeks”.
+
+memory representation of strings
+
+Similar to arrays, In C, we can create a character 
+pointer to a string that points to the starting address
+of the string which is the first character of the string. 
+The string can be accessed with the help of pointers as 
+shown in the below example. 
+
+#include <stdio.h>
+
+int main()
+{
+    
+    char str[40] = "i am miller";
+    
+    char* ptr = str;
+    
+    while (*ptr != '\0') {
+        printf("%c" , *ptr);
+        
+        ptr++;
+    }
+    
+    return 0;
+}
