@@ -1,0 +1,60 @@
+What is the difference between single quoted and double quoted declaration of char array?
+
+In C, when a character array is initialized with a double-quoted string and the array size is not specified, the compiler automatically allocates one extra space for string terminator ‘\0’.
+
+Example
+The below example demonstrates the initialization of a char array with a double-quoted string without specifying the size. The below program prints 6 as output.
+
+
+#include <stdio.h>
+
+int main()
+{
+
+char arr[] = "geeks";
+
+printf("%lu" , sizeof(arr));
+
+return 0;
+
+}
+
+
+On the other hand, when the character array is initialized with comma comma-separated list of characters and the array size is not specified, the compiler doesn’t create extra space for the string terminator ‘\0’.
+
+Example
+The below example demonstrates the initialization of a char array with comma separated list of characters without specifying the size of the array.
+
+
+#include <stdio.h>
+
+int main()
+{
+
+char arr[] = {'g' , 'e' ,'t' , ' ' , 'o' , 'u' , 't'};
+
+printf("%lu" , sizeof(arr));
+
+return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
