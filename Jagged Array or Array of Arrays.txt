@@ -1,0 +1,140 @@
+Jagged Array or Array of Arrays in C with Examples
+
+Jagged array is array of arrays such that member arrays can be of different sizes, i.e., we can create a 2-D array but with a variable number of columns in each row. These type of arrays are also known as Jagged arrays.
+
+Example:
+
+arr[][] = { {0, 1, 2},
+            {6, 4},
+            {1, 7, 6, 8, 9},
+            {5} 
+          };
+
+Below are the methods to implement the jagged array in C:
+
+1. Using array and a pointer (Static Jagged    Array)
+
+   First declare 1-D arrays with the number    of rows you will need,
+   The size of each array (array for the    elements in the row) will be the number    of columns (or elements) in the row,
+   Then declare a 1-D array of pointers    that will hold the addresses of the       rows,The size of the 1-D array is the    number of rows you want in the jagged       array.
+
+
+example
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+int row0[4] = {1 , 2 , 3, 4 };
+
+int row1[2] = {5 , 6};
+
+int* jagged[2] = {row0 , row1};
+
+int size[2] = {4 , 2} , k = 0;
+
+for (int i = 0; i < 2; i++) {
+
+int* ptr = jagged[i];
+
+for (int j = 0; j < size[k]; j++) {
+
+printf("%d" , *ptr);
+
+ptr++;
+
+}
+
+printf("\n");
+
+k++;
+
+jagged[i]++;
+
+}
+
+return 0;
+
+}
+
+
+
+2. Using an array of pointer (Dynamic     Jagged Array)
+Declare an array of pointers (jagged array),
+The size of this array will be the number of rows required in the Jagged array
+Then for each pointer in the array allocate memory for the number of elements you want in this row.
+
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+int main()
+{
+
+int* jagged[2];
+
+jagged[0] = malloc(sizeof(int) * 1);
+
+jagged[1] = malloc(sizeof(int) * 3);
+
+int size[2] = {1 , 3} , k = 0 , number = 100;
+
+for (int i = 0; i < 2; i++) {
+
+int* p = jagged[i];
+
+for (int j = 0; j < size[k]; j++) {
+
+*p = number++;
+
+p++;
+
+}
+
+k++;
+
+}
+
+k = 0;
+
+for (int i = 0; i < 2; i++) {
+
+int* p = jagged[i];
+for (int j = 0; j < size[k]; j++) {
+
+printf("%d " , *p);
+
+p++;
+
+}
+
+printf("\n");
+k++;
+jagged[i]++;
+
+}
+
+return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
