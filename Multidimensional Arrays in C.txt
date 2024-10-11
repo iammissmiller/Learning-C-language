@@ -1,0 +1,32 @@
+Multidimensional Arrays in C 
+
+A multi-dimensional array can be defined as an array that has more than one dimension. Having more than one dimension means that it can grow in multiple directions. Some popular multidimensional arrays are 2D arrays and 3D arrays. In this article, we will learn about multidimensional arrays in C programming language.
+
+Syntax
+The general form of declaring N-dimensional arrays is shown below:
+
+type arr_name[size1][size2]….[sizeN];
+
+
+type: Type of data to be stored in the array.
+arr_name: Name assigned to the array.
+size1, size2,…, sizeN: Size of each dimension.
+Examples
+
+Two-dimensional array: int two_d[10][20]; Three-dimensional array: int three_d[10][20][30];
+
+
+To learn more about managing complex data structures like these in C, the C Programming Course Online with Data Structures teaches you how to work with 2D and 3D arrays efficiently
+
+Size of Multidimensional Arrays
+The total number of elements that can be stored in a multidimensional array can be calculated by multiplying the size of both dimensions. Consider the array arr[10][20]:
+
+The array int arr[10][20] can store total of (10*20) = 200 elements.
+To get the size in bytes, we multiply the size of a single element (in bytes) by the total number of elements in the array.
+
+The size of array int arr[10][20] = 10 * 20 * 4  = 800 bytes, where the size of int is 4 bytes.
+Types of Multidimensional Arrays
+In C, there can be many types of arrays depending on their dimensions but two of them are most commonly used:
+
+Two-Dimensional Array (2D Array)
+Three-Dimensional Array (3D Array)
