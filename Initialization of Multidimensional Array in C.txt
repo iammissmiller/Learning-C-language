@@ -1,0 +1,88 @@
+Initialization of Multidimensional Array in C
+
+
+In C, initialization of a multidimensional array can have left most dimensions as optional. Except for the leftmost dimension, all other dimensions must be specified.
+
+For example, the following program fails in compilation because two dimensions are not specified.
+
+
+#include <stdio.h>
+
+int main()
+{
+
+int a[][][2] = {{{7,8},{5,6}},{{3,4},{1,2}}};   //error
+
+printf("%d" , sizeof(a));
+
+getchar();
+
+return 0;
+
+}
+
+
+Multidimensional Array can be initialized using an initializer list as shown:
+
+Syntax
+
+array_name[x][y] = { {a, b, c, ... }, ........., { m, n, o ...}};
+
+Following 2 programs work without any error.
+
+
+#include <stdio.h>
+
+int main()
+{
+
+int a[][2] = {{3,4},{1,2}}; //works
+
+printf("%lu" , sizeof(a)); //prints 4*sizeof(int)
+
+getchar();
+
+return 0;
+
+}
+
+
+
+
+
+
+#include <stdio.h> 
+int main() 
+{ 
+    int a[][2][2] = { { { 1, 2 }, { 3, 4 } }, 
+                      { { 5, 6 }, { 7, 8 } } }; // Works 
+    printf("%lu", sizeof(a)); // prints 8*sizeof(int) 
+    getchar(); 
+    return 0; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
