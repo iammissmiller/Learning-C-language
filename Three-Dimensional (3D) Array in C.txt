@@ -1,0 +1,114 @@
+Three-Dimensional (3D) Array in C
+
+A Three-Dimensional Array or 3D array in C is a collection of two-dimensional arrays. It can be visualized as multiple 2D arrays stacked on top of each other.
+
+
+Declaration of 3D Array in C
+We can declare a 3D array with x 2D arrays each having m rows and n columns using the syntax shown below:
+
+type arr_name[x][m][n];
+
+
+type: Type of data to be stored in each element.
+arr_name: name of the array
+x: Number of 2D arrays. (also called depth of the array)
+m: Number of rows in each 2D array.
+n: Number of columns in each 2D array.
+For example,
+
+int arr[2][2][2]
+
+
+Initialization of 3D Array in C
+Initialization in a 3D array is the same as that of 2D arrays. The difference is as the number of dimensions increases so the number of nested braces will also increase.
+
+int arr[2][3][2] = {0, 1, 2, 3, 4, 5, 6, 7 , 8, 9, 10, 11}
+
+
+or
+
+int arr[2][3][2] = { { { 1, 1 }, { 2, 3 }, { 4, 5 } },
+                         { { 6, 7 }, { 8, 9 }, { 10, 11 } } };
+
+
+Again, just like the 2D arrays, we can also declare the 3D arrays without specifying the size of the first dimensions if we are using initializer list. The compiler will automatically deduce the size of the first dimension. But we still need to specify the rest of the dimensions.
+
+3D Array Traversal in C
+To access an elements in 3D array, we use three indexes. One for depth, one for row and one for column.
+
+arr_name[d][i][j]
+
+#include <stdio.h>
+
+int main()
+{
+
+int arr[2][3][2] =  { { { 1, 1 }, { 2, 3 }, { 4, 5 } },{ { 6, 7 }, { 8, 9 }, { 10, 11 } } };
+
+for (int i = 0; i < 2; ++i) {
+
+for (int j = 0; j < 3; ++j) {
+
+for (int k = 0; k < 2; ++k)
+printf("arr[%i][%i][%i] = %d \n",i,j,k, arr[i][j][k]);
+
+}
+
+printf("\n\n");
+
+}
+
+return 0;
+
+}
+
+
+
+How 3D Arrays are Stored in the Memory?
+
+
+Like 2D arrays, the elements of a 3D array should also be stored contiguously in memory.
+
+Since computers have linear memory, the 3D array must also be linearized for storage. We use the same two techniques, the Row Major Order and Column Major Order but with added dimension. The elements are first stored layer by layer (or 2D array by 2D array). Within each 2D array, the elements follow the corresponding row or column major order.
+
+Passing 3D Arrays to Functions
+Passing a 3D array to a function in C is similar to passing 2D arrays, but with an additional dimension. When passing a 3D array, you need to pass the sizes of all the dimensions separately because the size information of array is lost while passing.
+
+returnType funcName (arrType arr_name[d][m][n], int d, int m, int n)
+
+
+
+
+where, d, i and j are the indexes for depth (representing a specific 2D array.), the row within that 2D array, and the column within that 2D array respectively.
+
+To traverse the entire 3D array, you need to use three nested loops: an outer loop that goes through the depth (or the set of 2D arrays), a middle loop goes through the rows of each 2D array and at last an inner loop goes through each element of the current row.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
