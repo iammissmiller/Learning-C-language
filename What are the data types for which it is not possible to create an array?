@@ -1,0 +1,21 @@
+What are the data types for which it is not possible to create an array?
+
+In C, it is possible to have array of all types except following.
+1) void.
+2) functions.
+
+For example, below program throws compiler error
+
+int main()
+{
+    void arr[100];
+}
+Output:
+
+error: declaration of 'arr' as array of voids 
+But we can have array of void pointers and function pointers. The below program works fine.
+
+int main()
+{
+    void *arr[100];
+}
