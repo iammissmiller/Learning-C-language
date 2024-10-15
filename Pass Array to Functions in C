@@ -1,0 +1,30 @@
+Pass Array to Functions in C
+
+In C, the whole array cannot be passed as an argument to a function. However, you can pass a pointer to an array without an index by specifying the array’s name.
+
+Arrays in C are always passed to the function as pointers pointing to the first element of the array.
+
+
+Syntax
+In C, we have three ways to pass an array as a parameter to the function. In the function definition, use the following syntax:
+
+return_type foo ( array_type array_name[size], ...);
+Mentioning the size of the array is optional. So the syntax can be written as:
+
+return_type foo ( array_type array_name[], ...);
+In both of the above syntax, even though we are defining the argument as array it will still be passed as a pointer. So we can also write the syntax as:
+
+return_type foo ( array_type* array_name, ...);
+But passing an array to function results in array decay due to which the array loses information about its size. It means that the size of the array or the number of elements 
+of the array cannot be determined anymore. To explore how functions and arrays work together in complex data structures, the C Programming Course Online with Data Structures 
+offers in-depth explanations and examples.
+
+
+
+
+
+
+
+
+
+
