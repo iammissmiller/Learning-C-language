@@ -1,0 +1,33 @@
+C Pointer Arithmetic
+
+The Pointer Arithmetic refers to the legal or valid arithmetic operations that can be performed on a pointer. It is slightly different from the ones that we generally use for mathematical calculations as only a limited set of operations can be performed on pointers. These operations include:
+
+Increment in a Pointer
+Decrement in a Pointer
+Addition of integer to a pointer
+Subtraction of integer to a pointer
+Subtracting two pointers of the same type
+Comparison of pointers of the same type.
+Assignment of pointers of the same type.
+
+#include <stdio.h>
+
+int main()
+{
+    int v[3] = {1 , 2 , 3};
+    
+    int* p;
+    
+    p = v;
+    
+    for (int i = 0; i < 3; i++) {
+        printf("value of *p = %d\n" , *p);
+        
+        printf("value of p = %p\n\n" , p);
+        
+        p++;
+    }
+    
+    return 0;
+    
+}
