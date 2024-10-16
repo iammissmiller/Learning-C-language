@@ -1,0 +1,64 @@
+Size of Pointers in C
+
+The size of the pointers in C is equal for every pointer type. The size of the pointer does not depend on the type it is pointing to. It only depends on the operating 
+system and CPU architecture. The size of pointers in C is 
+
+8 bytes for a 64-bit System
+4 bytes for a 32-bit System
+The reason for the same size is that the pointers store the memory addresses, no matter what type they are. As the space required to store the addresses of the different 
+memory locations is the same, the memory required by one pointer type will be equal to the memory required by other pointer types.
+
+How to find the size of pointers in C?
+We can find the size of pointers using the sizeof operator as shown in the following program:
+
+Example: C Program to find the size of different pointer types.
+
+#include <stdio.h>
+
+struct str {
+    
+};
+
+void func(int a , int b){};
+
+int main()
+{
+    int a = 10;
+    char c = 'G';
+    struct str x;
+    
+    int* ptr_int = &a ;
+    char* ptr_char = &c;
+    struct str* ptr_str = &x;
+    void(*ptr_func)(int , int) = &func;
+    void* ptr_vn = NULL;
+    
+    printf("size of integer pointer \t:\t%d bytes\n" , sizeof(ptr_int));
+    
+    printf("size of character pointer \t:\t%d bytes\n" , sizeof(ptr_char));
+    
+    printf("size of  structure pointer \t:\t%d bytes\n" , sizeof(ptr_str));
+    
+    printf("size of function pointer \t:\t%d bytes\n" , sizeof(ptr_func));
+    
+    printf("size of NULL pointer \t:\t%d bytes\n" , sizeof(ptr_vn));
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
