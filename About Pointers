@@ -1,0 +1,33 @@
+Uses of Pointers in C
+The C pointer is a very powerful tool that is widely used in C programming to perform various useful 
+operations. It is used to achieve the following functionalities in C:
+
+Pass Arguments by Reference
+Accessing Array Elements
+Return Multiple Values from Function
+Dynamic Memory Allocation
+Implementing Data Structures
+In System-Level Programming where memory addresses are useful.
+In locating the exact value at some memory location.
+To avoid compiler confusion for the same variable name.
+To use in Control Tables.
+Advantages of Pointers
+Following are the major advantages of pointers in C:
+
+Pointers are used for dynamic memory allocation and deallocation.
+An Array or a structure can be accessed efficiently with pointers
+Pointers are useful for accessing memory locations.
+Pointers are used to form complex data structures such as linked lists, graphs, trees, etc.
+Pointers reduce the length of the program and its execution time as well.
+Disadvantages of Pointers
+Pointers are vulnerable to errors and have following disadvantages:
+
+Memory corruption can occur if an incorrect value is provided to pointers.
+Pointers are a little bit complex to understand.
+Pointers are majorly responsible for memory leaks in C.
+Pointers are comparatively slower than variables in C.
+Uninitialized pointers might cause a segmentation fault.
+Conclusion
+In conclusion, pointers in C are very capable tools and provide C language with its distinguishing 
+features, such as low-level memory access, referencing, etc. But as powerful as they are, they should 
+be used with responsibility as they are one of the most vulnerable parts o
