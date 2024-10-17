@@ -1,0 +1,11 @@
+Pointer Arithmetics in C with Examples
+
+Pointer Arithmetic is the set of valid arithmetic operations that can be performed on pointers. The pointer variables store the memory address of another variable. It doesn’t store any value. 
+
+Hence, there are only a few operations that are allowed to perform on Pointers in C language. The C pointer arithmetic operations are slightly different from the ones that we generally use for mathematical calculations. These operations are:
+
+Increment/Decrement of a Pointer
+Addition of integer to a pointer
+Subtraction of integer to a pointer
+Subtracting two pointers of the same type
+Comparison of pointers
