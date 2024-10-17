@@ -1,0 +1,58 @@
+Increment/Decrement of a Pointer
+
+Increment: It is a condition that also comes under addition. When a pointer is incremented, it actually increments by the number equal to the size of the data type for which it is a pointer. 
+
+For Example:
+If an integer pointer that stores address 1000 is incremented, then it will increment by 4(size of an int), and the new address will point to 1004. While if a float type pointer is incremented then it will increment by 4(size of a float) and the new address will be 1004.
+
+
+Decrement: It is a condition that also comes under subtraction. When a pointer is decremented, it actually decrements by the number equal to the size of the data type for which it is a pointer. 
+
+For Example:
+If an integer pointer that stores address 1000 is decremented, then it will decrement by 4(size of an int), and the new address will point to 996. While if a float type pointer is decremented then it will decrement by 4(size of a float) and the new address will be 996.
+
+pointer increment and decrement
+ 
+
+Note: It is assumed here that the architecture is 64-bit and all the data types are sized accordingly. For example, integer is of 4 bytes.
+
+
+To fully understand how to use pointers in complex data structures, the C Programming Course Online with Data Structures provides practical examples and in-depth explanations.
+
+Example of Pointer Increment and Decrement
+
+#include <stdio.h>
+
+int main()
+{
+    
+    int a = 44;
+    int* b = &a;
+    
+    printf("before increment b = %u" , b);
+    
+    b++;
+    
+    printf("\n\nafter increment b = %u\n\n" , b);
+    
+    float c = 44.44;
+    float* d = &c;
+    
+    printf("before increment d = %u" , d);
+    
+    d++;
+    
+    printf("\n\nafter increment d = %u\n\n" , d);
+    
+    char e = 's';
+    char* f = &e;
+    
+    printf("before increment f = %u" ,f);
+    
+    f++;
+    
+    printf("\n\nafter increment f = %u\n\n" , f);
+    
+    
+    return 0;
+}
