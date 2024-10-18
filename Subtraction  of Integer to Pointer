@@ -1,0 +1,32 @@
+Subtraction  of Integer to Pointer
+
+When a pointer is subtracted with an integer value, the value is first multiplied by the size 
+of the data type and then subtracted from the pointer similar to addition.
+
+For Example:
+Consider the same example as above where the ptr is an integer pointer that stores 1000 as 
+an address. If we subtract integer 5 from it using the expression, ptr = ptr – 5, then, the 
+final address stored in the ptr will be ptr = 1000 – sizeof(int) * 5 = 980.
+
+
+#include <stdio.h>
+int main()
+{
+    
+    int n = 4;
+    
+    int *p , *q ;
+    
+    p = &n;
+    
+    q = &n;
+    
+    printf("before addition p = %p" , p);
+    
+    p = p - 3;
+    
+    printf("\nafter addition p = %p" , p);
+    
+    return 0;
+    
+}
