@@ -1,0 +1,32 @@
+Addition of Integer to Pointer
+
+When a pointer is added with an integer value, the value is first multiplied by the size of the data type and then 
+added to the pointer.
+
+For Example:
+Consider the same example as above where the ptr is an integer pointer that stores 1000 as an address. If we add
+integer 5 to it using the expression, ptr = ptr + 5, then, the final address stored in the ptr will be
+ptr = 1000 + sizeof(int) * 5 = 1020.
+
+#include <stdio.h>
+
+int main()
+{
+    
+    int n = 4;
+    
+    int *p , *q ;
+    
+    p = &n;
+    
+    q = &n;
+    
+    printf("before addition p = %p" , p);
+    
+    p = p + 3;
+    
+    printf("\nafter addition p = %p" , p);
+    
+    return 0;
+    
+}
