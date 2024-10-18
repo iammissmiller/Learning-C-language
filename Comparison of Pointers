@@ -1,0 +1,32 @@
+Comparison of Pointers
+
+We can compare the two pointers by using the comparison operators in C. We can implement this by using all operators in C >, >=, <, <=, ==, !=.  It returns true for the valid condition and returns false for the unsatisfied condition. 
+
+Step 1: Initialize the integer values and point these integer values to the pointer.
+Step 2: Now, check the condition by using comparison or relational operators on pointer variables.
+Step 3: Display the output.
+
+Example of Pointer Comparision
+
+#include <stdio.h>
+
+int main()
+{
+    
+   int arr[5];
+   
+   int* p = &arr;
+   
+   int* q = &arr[0];
+   
+   if (p==q)
+   
+   printf("they are equal");
+   
+   else
+   
+   printf("they are not equal ");
+   
+   return 0;
+   
+}
