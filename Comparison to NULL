@@ -1,0 +1,18 @@
+Comparison to NULL
+
+A pointer can be compared or assigned a NULL value irrespective of what is the pointer type. 
+Such pointers are called NULL pointers and are used in various pointer-related error-handling methods.
+#include <stdio.h>
+
+int main()
+{
+    int* ptr = NULL;
+
+    if (ptr == NULL) {
+    printf("The pointer is NULL");
+    }
+    else {
+        printf("The pointer is not NULL");
+    }
+    return 0;
+}
