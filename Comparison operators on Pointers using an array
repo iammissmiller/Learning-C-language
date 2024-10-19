@@ -1,0 +1,43 @@
+Comparison operators on Pointers using an array
+
+
+In the below approach, it results in the count of odd numbers and even numbers in an array. We are going to implement this by using a pointer.
+
+Step 1: First, declare the length of an array and array elements.
+Step 2: Declare the pointer variable and point it to the first element of an array.
+Step 3: Initialize the count_even and count_odd. Iterate the for loop and check the conditions for the number of odd elements and even elements in an array
+Step 4: Increment the pointer location ptr++ to the next element in an array for further iteration.
+Step 5: Print the result.
+Example of Pointer Comparison in Array
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n = 13;
+    int arr[n];  // Declare an array of size n
+    int* p = arr;  // Pointer to the array
+    int odd = 0;   // Initialize odd counter
+    int even = 0;  // Initialize even counter
+
+    // Fill the array with some values
+    for (int i = 0; i < n; i++) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);  // Input values for the array
+    }
+
+    // Count odd and even numbers
+    for (int i = 0; i < n; i++) {
+        if (p[i] % 2 == 0) {  // Access array elements correctly
+            even++;
+        } else {
+            odd++;
+        }
+    }
+
+    printf("No. of odd elements = %d\n", odd);
+    printf("No. of even elements = %d\n", even);
+
+    return 0;
+}
