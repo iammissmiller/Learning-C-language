@@ -1,0 +1,40 @@
+C – Pointer to Pointer (Double Pointer)
+
+Prerequisite: Pointers in C
+
+The pointer to a pointer in C is used when we want to store the address of another pointer. The first pointer is used to store the address of the variable. And the second pointer is used to store the address of the first pointer. That is why they are also known as double-pointers. We can use a pointer to a pointer to change the values of normal pointers or create a variable-sized 2-D array. A double pointer occupies the same amount of space in the memory stack as a normal pointer.
+
+Declaration of Pointer to a Pointer in C
+Declaring Pointer to Pointer is similar to declaring a pointer in C. The difference is we have to place an additional ‘*’ before the name of the pointer.
+
+data_type_of_pointer **name_of_variable = & normal_pointer_variable;
+int val = 5;
+int *ptr = &val;    // storing address of val to pointer ptr.
+int **d_ptr = &ptr; // pointer to a pointer declared
+                    // which is pointing to an integer. 
+The above diagram shows the memory representation of a pointer to a pointer. The first pointer ptr1 stores the address of the variable and the second pointer ptr2 stores the address of the first pointer.  
+
+Example of Double Pointer in C
+
+#include <stdio.h>
+
+int main()
+{
+    int var = 10;
+    
+    int* p;
+    
+    int* q;
+    
+    p = &var;
+    
+    q = &p;
+    
+    printf("value in var = %d" , var);
+    
+    printf("\nvalue in p = %d" , *p);
+    
+    printf("\nvalue in q = %d" , *q);
+    
+    return 0;
+}
