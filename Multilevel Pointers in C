@@ -1,0 +1,11 @@
+Multilevel Pointers in C
+
+Double Pointers are not the only multilevel pointers supported by the C language. What if we want to change the value of a double pointer?
+
+In this case, we can use a triple pointer, which will be a pointer to a pointer to a pointer i.e, int ***t_ptr.
+
+Syntax of Triple Pointer
+pointer_type *** pointer_name;  
+Similarly, to change the value of a triple pointer we can use a pointer to a pointer to a pointer to a pointer (Four level Pointer). In other words, we can say that to change the value of a ” level – x ” variable we can use a ” level – x+1 ” pointer. And this concept can be extended further.
+
+Note: We can use any level pointer in C. There is no restriction about it but it makes the program very complex and vulnerable to errors.
