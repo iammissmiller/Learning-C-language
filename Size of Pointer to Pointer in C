@@ -1,0 +1,29 @@
+Size of Pointer to Pointer in C
+
+In the C programming language, a double pointer behaves similarly to a normal pointer in C. So,
+the size of the double-pointer variable is always equal to the normal pointers. We can verify 
+this using the below C Program.
+
+Example 1: C Program to find the size of a pointer to a pointer.
+
+#include <stdio.h>
+
+int main()
+{
+    int a = 69;
+    
+    int* p = &a;
+    
+    int** double_p = &p;
+    
+    printf("size of normal pointer =  %d", sizeof(p));
+    
+    printf("\nsize of double p = %d" , sizeof(double_p));
+    
+    return 0;
+}
+
+Note: The output of the above code also depends on the type of machine which is being used. The size of 
+a pointer is not fixed in the C programming language and it depends on other factors like CPU architecture 
+and OS used. Usually, for a 64-bit Operating System, the size will be 8 bytes and for a 32-bit Operating system, 
+the size will be 4 bytes.
