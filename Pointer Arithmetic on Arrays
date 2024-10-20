@@ -1,0 +1,5 @@
+Pointer Arithmetic on Arrays
+
+Pointers contain addresses. Adding two addresses makes no sense because there is no idea what
+it would point to. Subtracting two addresses lets you compute the offset between the two addresses. 
+An array name acts like a pointer constant. The value of this pointer constant is the address of the first element.
