@@ -1,0 +1,41 @@
+How to declare a pointer to a function?
+
+While a pointer to a variable or an object is used to access them indirectly, a pointer to a function is used to invoke a function indirectly.
+
+Well, we assume that you know what it means by a pointer in C. So how do we create a pointer to an integer in C?
+
+Huh..it is pretty simple…
+
+int *ptrInteger; /*We have put a * operator between int and ptrInteger to create a pointer.*/
+Here ptrInteger is a pointer to an integer. If you understand this, then logically we should not have any problem in declaring a pointer to a function
+
+So let us first see ..how do we declare a function?
+
+int foo(int);
+Here foo is a function that returns int and takes one argument of int type. So as a logical guy will think, putting a * operator between int and foo(int) should create a pointer to a function i.e.
+
+int *foo(int);
+But Oops..C operator precedence also plays a role here ..so in this case, operator () will take priority over operator *. And the above declaration will mean – a function foo with one argument of int type and return value of int * i.e. integer pointer. So it did something that we didn’t want to do.
+
+So as a next logical step, we have to bind operator * with foo somehow. And for this, we would change the default precedence of C operators using () operator.
+
+Example
+
+int (*foo)(int);
+That’s it. Here * operator is with foo which is a function name. And it did the same as what we wanted to do. So that wasn’t as difficult as we thought earlier!
+
+Let’s see an example in C to understand how to declare a pointer to a function.
+
+#include <stdio.h>
+int add(int a, int b) { return a + b; }
+
+int main()
+{
+	int (*add_ptr)(int, int) = &add;
+	int result = add_ptr(3, 4);
+	printf("Result: %d\n", result);
+
+	return 0;
+}
+
+
