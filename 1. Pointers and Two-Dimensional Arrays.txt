@@ -1,0 +1,67 @@
+Pointer to Multidimensional Arrays
+
+1. Pointers and Two-Dimensional Arrays
+
+In a two-dimensional array, we can access each element by using two subscripts, where the first subscript represents the row number and the second subscript represents the column number. The elements of 2-D array can be accessed with the help of pointer notation also. Suppose arr is a 2-D array, we can access any element arr[i][j] of the array using the pointer expression *(*(arr + i) + j). Now we’ll see how this expression can be derived. 
+Let us take a two dimensional array arr[3][4]: 
+
+int arr[3][4] = { {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12} };
+
+Since memory in a computer is organized linearly it is not possible to store the 2-D array in rows and columns. The concept of rows and columns is only theoretical, actually, a 2-D array is stored in row-major order i.e rows are placed next to each other. The following figure shows how the above 2-D array will be stored in memory.
+
+Each row can be considered as a 1-D array, so a two-dimensional array can be considered as a collection of one-dimensional arrays that are placed one after another. In other words, we can say that 2-D dimensional arrays that are placed one after another. So here arr is an array of 3 elements where each element is a 1-D array of 4 integers. 
+We know that the name of an array is a constant pointer that points to 0th 1-D array and contains address 5000. Since arr is a ‘pointer to an array of 4 integers’, according to pointer arithmetic the expression arr + 1 will represent the address 5016 and expression arr + 2 will represent address 5032. 
+So we can say that arr points to the 0th 1-D array, arr + 1 points to the 1st 1-D array and arr + 2 points to the 2nd 1-D array.
+
+In general we can write: 
+
+arr + i  Points to ith element of arr ->
+Points to ith 1-D array
+Since arr + i points to ith element of arr, on dereferencing it will get ith element of arr which is of course a 1-D array. Thus the expression *(arr + i) gives us the base address of ith 1-D array.
+We know, the pointer expression *(arr + i) is equivalent to the subscript expression arr[i]. So *(arr + i) which is same as arr[i] gives us the base address of ith 1-D array.
+To access an individual element of our 2-D array, we should be able to access any jth element of ith 1-D array.
+Since the base type of *(arr + i) is int and it contains the address of 0th element of ith 1-D array, we can get the addresses of subsequent elements in the ith 1-D array by adding integer values to *(arr + i).
+For example *(arr + i) + 1 will represent the address of 1st element of 1stelement of ith 1-D array and *(arr+i)+2 will represent the address of 2nd element of ith 1-D array.
+Similarly *(arr + i) + j will represent the address of jth element of ith 1-D array. On dereferencing this expression we can get the jth element of the ith 1-D array.
+Pointers and Three Dimensional Arrays 
+int arr[2][3][2] = { {{5, 10}, {6, 11}, {7, 12}}, {{20, 30}, {21, 31}, {22, 32}} };
+In a three dimensional array we can access each element by using three subscripts. Let us take a 3-D array- We can consider a three dimensional array to be an array of 2-D array i.e each element of a 3-D array is considered to be a 2-D array. The 3-D array arr can be considered as an array consisting of two elements where each element is a 2-D array. The name of the array arr is a pointer to the 0th 2-D array.
+
+Thus the pointer expression *(*(*(arr + i ) + j ) + k) is equivalent to the subscript expression arr[i][j][k]. 
+We know the expression *(arr + i) is equivalent to arr[i] and the expression *(*(arr + i) + j) is equivalent arr[i][j]. So we can say that arr[i] represents the base address of ith 2-D array and arr[i][j] represents the base address of the jth 1-D array. 
+
+Example
+
+The below example demonstrates the program to print elements of 3D array using pointers.
+
+
+// C program to print the elements of 3-D
+// array using pointer notation
+#include<stdio.h>
+int main()
+{
+  int arr[2][3][2] = {
+                       {
+                         {5, 10},
+                         {6, 11},
+                         {7, 12},
+                       },
+                       {
+                         {20, 30},
+                         {21, 31},
+                         {22, 32},
+                       }
+                     };
+  int i, j, k;
+  for (i = 0; i < 2; i++)
+  {
+    for (j = 0; j < 3; j++)
+    {
+       for (k = 0; k < 2; k++)
+         printf("%d\t", *(*(*(arr + i) + j) +k));
+       printf("\n");
+    }
+  }
+
+  return 0;
+}
