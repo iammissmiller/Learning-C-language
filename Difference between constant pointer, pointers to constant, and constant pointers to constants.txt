@@ -1,0 +1,47 @@
+Difference between constant pointer, pointers to constant, and constant pointers to constants
+
+
+Pointers are the variables that hold the address of some other variables, constants, or functions. There are several ways to qualify pointers using const.
+
+
+Pointers to constant.
+
+Constant pointers.
+
+Constant pointers to constant.
+
+
+
+
+
+# Pointers to constant:
+
+In the pointers to constant, the data pointed by the pointer is constant and cannot be changed. Although, the pointer itself can change and points somewhere else (as the pointer itself is a variable).
+
+
+
+# Constant pointers:
+
+In constant pointers, the pointer points to a fixed memory location, and the value at that location can be changed because it is a variable, but the pointer will always point to the same location because it is made constant here.
+
+It can be assumed references as constant pointers which are automatically dereferenced. The value passed in the actual parameter can be changed but the reference points to the same variable.
+
+
+
+
+#Constant Pointers to constants:
+
+In the constant pointers to constants, the data pointed to by the pointer is constant and cannot be changed. The pointer itself is constant and cannot change and point somewhere else.
+
+
+
+
+
+
+
+
+
+
+
+
+
