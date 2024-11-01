@@ -1,0 +1,58 @@
+NULL Pointer in C
+
+The Null Pointer is the pointer that does not point to any location but NULL. According to C11 standard:
+
+“An integer constant expression with the value 0, or such an expression cast to type void *, is called a null pointer constant. If a null pointer constant is converted to a pointer type, the resulting pointer, called a null pointer, is guaranteed to compare unequal to a pointer to any object or function.”
+
+Syntax of Null Pointer Declaration in C
+type pointer_name = NULL;
+type pointer_name = 0;
+
+We just have to assign the NULL value. Strictly speaking, NULL expands to an implementation-defined null pointer constant which is defined in many header files such as “stdio.h”, “stddef.h”, “stdlib.h” etc.
+
+
+Uses of NULL Pointer in C
+
+Following are some most common uses of the NULL pointer in C:
+
+To initialize a pointer variable when that pointer variable hasn’t been assigned any valid memory address yet.
+
+To check for a null pointer before accessing any pointer variable. By doing so, we can perform error handling in pointer-related code, e.g., dereference a pointer variable only if it’s not NULL.
+
+To pass a null pointer to a function argument when we don’t want to pass any valid memory address.
+
+A NULL pointer is used in data structures like trees, linked lists, etc. to indicate the end.
+
+
+Check if the pointer is NULL
+
+It is a valid operation in pointer arithmetic to check whether the pointer is NULL. We just have to use isequal to operator ( == ) as shown below:
+
+ptr == NULL;
+The above equation will be true if the pointer is NULL, otherwise, it will be false.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
