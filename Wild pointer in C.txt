@@ -1,0 +1,26 @@
+Wild pointer in C
+
+A pointer that has not been initialized to anything (not even NULL) is known as a wild pointer. The pointer may be initialized to a non-NULL garbage value that may not be a valid address. 
+
+Syntax
+
+dataType *pointerName;
+
+Example
+
+The below example demonstrates the undefined behavior of the Wild pointer.
+
+#include <stdio.h>
+
+int main()
+{
+
+int* p;
+
+int x = 10;
+
+printf("value pointed by 'p' is : %d" , *p);
+
+return 0;
+
+}
