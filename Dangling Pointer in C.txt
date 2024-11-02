@@ -1,0 +1,130 @@
+Dangling Pointer in C
+
+A pointer pointing to a memory location that has been deleted (or freed) is called a dangling pointer. Such a situation can lead to unexpected behavior in the program and also serve as a source of bugs in C programs.
+
+There are three different ways where a pointer acts as a dangling pointer:
+
+1. De-allocation of Memory
+When a memory pointed by a pointer is deallocated the pointer becomes a dangling pointer.
+
+Example
+
+The below program demonstrates the deallocation of a memory pointed by ptr.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+
+int* ptr = (int*)malloc(sizeof(int));
+
+//after below free call , ptr becomes a dangling pointer
+
+free(ptr);
+
+printf("memory freed \n");
+
+//removing dangling pointer
+
+ptr = NULL;
+
+return 0;
+
+}
+
+
+
+2. Function Call 
+When the local variable is not static and the function returns a pointer to that local variable. The pointer pointing to the local variable becomes dangling pointer.
+
+Example
+
+The below example demonstrates a dangling pointer when the local variable is not static
+
+
+#include <stdio.h>
+
+int* fun()
+{
+
+int x = 5;
+
+return &x;
+
+}
+
+int main()
+{
+
+int* p = fun();
+
+fflush(stdin);
+
+
+printf("%d" , *p);
+
+return 0;
+
+}
+
+
+3. Variable Goes Out of Scope
+When a variable goes out of scope the pointer pointing to that variable becomes a dangling pointer.
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+int* ptr;
+
+{
+
+int a = 10;
+
+ptr = &a;
+
+}
+
+printf("%d" , *ptr);
+
+return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
