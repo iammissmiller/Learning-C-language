@@ -1,0 +1,28 @@
+Difference Between NULL Pointer and Void Pointer in C
+
+NULL Pointer
+
+A NULL pointer does not point to anything. It is a special reserved value for pointers.
+
+Any pointer type can be assigned NULL.
+
+All the NULL pointers are equal.
+
+NULL Pointer is a value.
+
+Example: int *ptr = NULL;
+
+
+
+
+Void Pointer
+
+A void pointer points to the memory location that may contain typeless data.
+
+It can only be of type void.
+
+Void pointers can be different.
+
+A void pointer is a type.
+
+Example: void *ptr;
