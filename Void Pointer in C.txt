@@ -1,0 +1,62 @@
+Void Pointer in C
+
+Void pointer is a specific pointer type – void * – a pointer that points to some data location in storage, which doesn’t have any specific type. Void refers to the type. Basically, the type of data that it points to can be any. Any pointer type is convertible to a void pointer hence it can point to any value. 
+
+Note: Void pointers cannot be dereferenced. It can however be done using typecasting the void pointer. Pointer arithmetic is not possible on pointers of void due to lack of concrete value and thus size.
+
+
+Syntax
+
+void *ptrName;
+
+Example
+The below program shows the use void pointer as it is convertible to any pointer type.
+
+#include <stdio.h>
+
+int main()
+{
+
+int x = 4;
+
+float y = 5.5;
+
+void* ptr;
+ptr = &x;
+
+printf("integer variable is = %d" , *((int*)ptr));
+
+ptr = &y;
+
+printf("\nFloat variable is = %f" , *((float*)ptr));
+
+return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
