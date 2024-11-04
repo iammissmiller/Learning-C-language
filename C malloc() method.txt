@@ -1,0 +1,100 @@
+C malloc() method
+
+The “malloc” or “memory allocation” method in C is used to dynamically allocate a single large block of memory with the specified size. It returns a pointer of type void which can be cast into a pointer of any form. It doesn’t Initialize memory at execution time so that it has initialized each block with the default garbage value initially. 
+
+Syntax of malloc() in C
+ptr = (cast-type*) malloc(byte-size)
+For Example:
+ptr = (int*) malloc(100 * sizeof(int));
+Since the size of int is 4 bytes, this statement will allocate 400 bytes of memory. And, the pointer ptr holds the address of the first byte in the allocated memory.
+
+ptr = (int*) malloc(100 * sizeof(int));
+Since the size of int is 4 bytes, this statement will allocate 400 bytes of memory. And, the pointer ptr holds the address of the first byte in the allocated memory.
+
+
+
+If space is insufficient, allocation fails and returns a NULL pointer.
+
+Example of malloc() in C
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+int* ptr;
+int n,i;
+
+printf("enter number of elements : ");
+scanf("%d" , &n);
+printf("entered no. of elemnts : %d\n" , n);
+
+//dynamically allocate memory using malloc
+ptr = (int*)malloc(n* sizeof(int));
+
+//check if memory has been 
+//succesfully allocated or not 
+
+
+if (ptr==NULL) {
+
+printf("Memory not allocated ");
+exit(0);
+
+}
+
+else {
+
+printf("memory succesfully allocated using malloc");
+
+//get elements of array
+
+for(i = 0; i < n ; ++i) {
+
+ptr[i] = i + 1;
+
+}
+
+printf("the elements of the arrays are : ");
+
+for (i = 0; i < n; ++i) {
+ 
+printf("%d" , ptr[i]);
+
+}
+
+}
+
+return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
