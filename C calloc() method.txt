@@ -1,0 +1,115 @@
+C calloc() method
+
+“calloc” or “contiguous allocation” method in C is used to dynamically allocate the specified number of blocks of memory of the specified type. it is very much similar to malloc() but has two different points and these are:
+
+It initializes each block with a default value ‘0’.
+
+It has two parameters or arguments as compare to malloc().
+
+
+
+Syntax of calloc() in C
+
+ptr = (cast-type*)calloc(n, element-size);
+here, n is the no. of elements and element-size is the size of each element.
+
+
+For Example: 
+
+ptr = (float*) calloc(25, sizeof(float));
+This statement allocates contiguous space in memory for 25 elements each with the size of the float.
+
+If space is insufficient, allocation fails and returns a NULL pointer.
+
+Example of calloc() in C
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+int main()
+{
+
+int* ptr;
+int n , i;
+
+//get no. of elements for array
+n = 5;
+
+printf("enter no. of elements : %d\n" , 
+
+n);
+
+//dynamically allocate memory using calloc
+
+ptr  = (int*)calloc(n , sizeof(int));
+
+//check if memory has been
+//succesfully allocated
+
+if(ptr == NULL) {
+
+printf("memory not allocated\n");
+exit(0);
+}
+
+else {
+
+printf("memory succesfully allocated");
+
+//get the elements of array
+
+for(i = 0; i < n ; ++i){
+
+ptr[i] = i + 1;
+
+}
+
+// print the elements of array
+
+printf("the elements of array are : ");
+for (i = 0; i < n ; i++){
+
+printf("%d " , ptr[i]);
+
+}
+
+}
+
+return 0;
+
+}
+
+
+
+
+Output
+Enter number of elements: 5
+Memory successfully allocated using calloc.
+The elements of the array are: 1, 2, 3, 4, 5, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
