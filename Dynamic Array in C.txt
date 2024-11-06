@@ -1,0 +1,45 @@
+Dynamic Array in C
+
+Array in C is static in nature, so its size should be known at compile time and we can’t change the size of the array after its declaration. Due to this, we may encounter situations where our array doesn’t have enough space left for required elements or we allotted more than the required memory leading to memory wastage. To solve this problem, dynamic arrays come into the picture.
+
+A Dynamic Array is allocated memory at runtime and its size can be changed later in the program.
+
+We can create a dynamic array in C by using the following methods:
+
+Using malloc() Function
+Using calloc() Function
+Resizing Array Using realloc() Function
+Using Variable Length Arrays(VLAs)
+Using Flexible Array Members
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
