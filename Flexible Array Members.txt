@@ -1,0 +1,73 @@
+5. Flexible Array Members
+
+The flexible array members are the array that is defined inside a structure without any dimension and their size is flexible. This feature was introduced in C99 standard.
+
+We can control the size of a flexible member using malloc() function.
+
+There are a few rules to follow in the case of flexible array members:
+
+The array inside the structure should preferably be declared as the last member of the structure and its size is variable(can be changed at runtime).
+The structure must contain at least one more named member in addition to the flexible array member.
+Let’s take the following structure for example
+
+struct student
+{
+  int len;
+  int 
+};
+Now to allocate memory, we will use malloc() function as shown below.
+
+struct student *s = malloc(sizeof(*s) + 5 * sizeof(int));
+
+
+Example:
+
+
+// C program to demonstrate the use of Flexible Array Member 
+#include <stdio.h> 
+#include <stdlib.h> 
+
+// defining struct 
+typedef struct { 
+	int len; 
+	int arr[]; 
+} fam; 
+
+int main() 
+{ 
+	// creating an array member of size 5 
+	fam* fam1 
+		= (fam*)malloc(sizeof(fam*) + 5 * sizeof(int)); 
+
+	// creating an array mebmer of size 10 
+	fam* fam2 
+		= (fam*)malloc(sizeof(fam*) + 10 * sizeof(int)); 
+	
+	// inserting elements 
+	for (int i = 0; i < 5; i++) { 
+		fam1->arr[i] = i + 1; 
+	} 
+	for (int i = 0; i < 10; i++) { 
+		fam2->arr[i] = i + 10; 
+	} 
+
+	// printing elements 
+	printf("Array of Size 5:\n"); 
+	for (int i = 0; i < 5; i++) { 
+		printf("%d, ", fam1->arr[i]); 
+	} 
+	printf("\n"); 
+
+	printf("Array of size 10:\n"); 
+	for (int i = 0; i < 10; i++) { 
+		printf("%d, ", fam2->arr[i]); 
+	} 
+	return 0; 
+}
+
+
+Output
+Array of Size 5:
+1, 2, 3, 4, 5, 
+Array of size 10:
+10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 
