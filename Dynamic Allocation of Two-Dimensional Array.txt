@@ -1,0 +1,15 @@
+Dynamic Allocation of Two-Dimensional Array
+
+We can also create a two-dimensional dynamic array in c.  These are the following different ways to create a 2D dynamic array.
+
+Using a single pointer and a 1D array with pointer arithmetic
+
+Using an array of pointers 
+
+Using a pointer to a pointer 
+
+Using a double-pointer and one malloc call 
+
+Using a pointer to Variable Length Array
+
+Using a pointer to the first row of VLA
