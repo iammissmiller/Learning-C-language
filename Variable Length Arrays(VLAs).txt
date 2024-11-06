@@ -1,0 +1,58 @@
+4. Variable Length Arrays(VLAs)
+
+Variable length arrays or VLAs, are those arrays in which we can determine the size of the array at the run time. It allocates the memory in the stack and it’s based on the local scope level.
+
+The size of a variable length array cannot be changed once it is defined and using variable length array as its found down sides as compared to above methods.
+
+Example:
+
+// C program to demonstrate the use of VLAs 
+#include <stdio.h> 
+
+int main() 
+{ 
+
+	int n; 
+	printf("Enter the size of the array: "); 
+	scanf("%d", &n); 
+	
+	int arr[n]; 
+
+	printf("Enter elements: "); 
+
+	for (int i = 0; i < n; ++i) { 
+
+		scanf("%d", &arr[i]); 
+	} 
+	
+	printf("Elements of VLA of Given Size: "); 
+	for (int i = 0; i < n; ++i) { 
+
+		printf("%d ", arr[i]); 
+	} 
+
+	return 0; 
+}
+
+
+Output:
+
+Enter the size of the array: 5
+Enter elements: 1 2 3 4 5
+Elements of VLA of Given Size: 1 2 3 4 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
