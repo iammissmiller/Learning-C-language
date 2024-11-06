@@ -1,0 +1,423 @@
+Dynamically Growing Array in C
+
+
+A Dynamically Growing Array is a type of dynamic array, which can automatically grow in size to store data.
+
+The C language only has static arrays whose size should be known at compile time and cannot be changed after declaration. This leads to problems like running out of space or not using the allocated space leading to memory wastage. Programming languages like C++, Python, Java, etc already come equipped with containers for which the programmer doesn’t have to worry about the size.
+
+So, our objective is to create a dynamic array that should automatically be able to manage its own size depending on the requirement.
+
+In this article, we will create a Dynamically Growing Array using pointers and dynamic memory allocation.
+
+Basic Principle
+The basic principle of the Dynamically Growing Array is the dynamic memory allocation concept in C which allow the users to allocate memory at runtime and also change the allocated size afterward.
+
+
+Working
+
+
+The initial size of the newly created array would be small.
+
+Different functions would provide all the basic operations that a conventional array provides.
+
+When the array runs out of space, the capacity would be doubled by using realloc() to reallocate the array.
+
+The reason for doubling the capacity instead of increasing it one by one on demand is that the calls to realloc() are expensive calls. If we call realloc() again and again, it may increase the insertion time of the element to O(n) negating the advantages of using an array. Doubling the size has amortized constant time complexity for insertion operation.
+
+After we have done our task involving the array, we can also clear the memory using free().
+
+
+
+Following is the C Program for Dynamically Growing Array:
+
+// C program to demonstrate the 
+// dynamically growing array 
+#include <stdio.h> 
+#include <stdlib.h> 
+
+#define INITIAL_SIZE 8 
+
+// base structure 
+typedef struct { 
+	size_t size; 
+	size_t capacity; 
+	int* array; 
+}dynamic_array; 
+
+// function prototypes 
+// array container functions 
+void arrayInit(dynamic_array** arr_ptr); 
+void freeArray(dynamic_array* container); 
+
+// Basic Operation functions 
+void insertItem(dynamic_array* container, int item); 
+void updateItem(dynamic_array* container, int i, int item); 
+int getItem(dynamic_array* container, int i); 
+void deleteItem(dynamic_array* container, int item); 
+void printArray(dynamic_array* container); 
+
+
+// driver code 
+int main() 
+{ 
+	dynamic_array* arr; 
+	arrayInit(&arr); 
+	
+	for (int i = 0; i < 6; i++) { 
+		insertItem(arr, i + 11); 
+	} 
+	printArray(arr); 
+	printf("%d\n", getItem(arr, 3)); 
+	deleteItem(arr, 3); 
+	printArray(arr); 
+
+	for (int i = 0; i < 5; i++) { 
+		insertItem(arr, i + 17); 
+	} 
+
+	printArray(arr); 
+
+	freeArray(arr); 
+	int var; 
+	return 0; 
+} 
+
+//------Function Definitions------ 
+// Array initialization 
+void arrayInit(dynamic_array** arr_ptr) 
+{ 
+	dynamic_array *container; 
+	container = (dynamic_array*)malloc(sizeof(dynamic_array)); 
+	if(!container) { 
+		printf("Memory Allocation Failed\n"); 
+		exit(0); 
+	} 
+
+	container->size = 0; 
+	container->capacity = INITIAL_SIZE; 
+	container->array = (int *)malloc(INITIAL_SIZE * sizeof(int)); 
+	if (!container->array){ 
+		printf("Memory Allocation Failed\n"); 
+		exit(0); 
+	} 
+
+	*arr_ptr = container; 
+} 
+
+// Insertion Operation 
+void insertItem(dynamic_array* container, int item) 
+{ 
+	if (container->size == container->capacity) { 
+		int *temp = container->array; 
+		container->capacity <<= 1; 
+		container->array = realloc(container->array, container->capacity * sizeof(int)); 
+		if(!container->array) { 
+			printf("Out of Memory\n"); 
+			container->array = temp; 
+			return; 
+		} 
+	} 
+	container->array[container->size++] = item; 
+} 
+
+// Retrieve Item at Particular Index 
+int getItem(dynamic_array* container, int index) 
+{ 
+	if(index >= container->size) { 
+		printf("Index Out of Bounds\n"); 
+		return -1; 
+	} 
+	return container->array[index]; 
+} 
+
+// Update Operation 
+void updateItem(dynamic_array* container, int index, int item) 
+{ 
+	if (index >= container->size) { 
+		printf("Index Out of Bounds\n"); 
+		return; 
+	} 
+	container->array[index] = item; 
+} 
+
+// Delete Item from Particular Index 
+void deleteItem(dynamic_array* container, int index) 
+{ 
+	if(index >= container->size) { 
+		printf("Index Out of Bounds\n"); 
+		return; 
+	} 
+
+	for (int i = index; i < container->size; i++) { 
+		container->array[i] = container->array[i + 1]; 
+	} 
+	container->size--; 
+} 
+
+// Array Traversal 
+void printArray(dynamic_array* container) 
+{ 
+	printf("Array elements: "); 
+	for (int i = 0; i < container->size; i++) { 
+		printf("%d ", container->array[i]); 
+	} 
+	printf("\nSize: "); 
+	printf("%lu", container->size); 
+	printf("\nCapacity: "); 
+	printf("%lu\n", container->capacity); 
+} 
+
+// Freeing the memory allocated to the array 
+void freeArray(dynamic_array* container) 
+{ 
+	free(container->array); 
+	free(container); 
+}
+
+
+
+
+Output
+Array elements: 11 12 13 14 15 16 
+Size: 6
+Capacity: 8
+14
+Array elements: 11 12 13 15 16 
+Size: 5
+Capacity: 8
+Array elements: 11 12 13 15 16 17 18 19 20 21 
+Size: 10
+Capacity: 16
+
+
+
+Components of Dynamically Growing Array
+
+dynamic_array: The base structure for the dynamically growing array.
+
+arrayInit(): This function is to initialize the array.
+
+deleteArr(): This function is for freeing the memory once we are done with the array.
+
+
+1. dynamic_array
+
+It is the name given to the structure type which serves as the container for our dynamically growing array. It contains 3 members:
+
+size: Counter to track the memory used.
+capacity: Counter to track the maximum capacity of the array.
+array: Pointer pointing to the actual storage location. (For this program, we will be using an array of type int)
+Code:
+
+typedef struct {
+    size_t size;
+    size_t capacity;
+    int* array;
+} dynamic_array;
+
+
+2. arrayInit()
+
+This function initializes the dynamic array with the default initial size which is set to 8. This function takes the address of the double-pointer to the dynamic_array pointer as an argument.
+
+Code:
+
+void arrayInit(dynamic_array** arr_ptr)
+{
+    dynamic_array *container;
+    container = (dynamic_array*)malloc(sizeof(dynamic_array));
+    if(!container) {
+        printf("Memory Allocation Failed\n");
+        exit(0);
+    }
+
+    container->size = 0;
+    container->capacity = INITIAL_SIZE;
+    container->array = (int *)malloc(INITIAL_SIZE * sizeof(int));
+    if (!container->array){
+        printf("Memory Allocation Failed\n");
+        exit(0);
+    }
+
+    *arr_ptr = container;
+}
+
+
+
+3. freeArray()
+
+This function frees the memory allocated to the dynamically growing array. This function should be called after we are done using the array.
+
+Code:
+
+void freeArray(dynamic_array* container)
+{
+    free(container->array);
+    free(container);
+}
+Rest components are the functions providing basic array operations for our Dynamically Growing Array. They are discussed below:
+
+
+
+
+
+
+
+Basic Operations
+
+There are 5 functions that provide the basic operations of an array which are as follows:
+
+insertItem(): For inserting an element at the end of the array
+
+getItem(): For retrieving the element at the given index
+
+updateItem(): For updating an element at that given index of the array
+
+printItem(): For printing all the elements of the array
+
+deleteItem(): For deleting an element of the array at the given index
+
+
+
+1. insertItem() 
+
+The insertItem() function provides the insertion operation using which we can insert elements in the array. When there is space left for the elements, the insertItem() function will put elements in the array without changing size.
+
+But when the space is completely filled, the space allocated to the array will be doubled using realloc() function and then the insertion will be done.
+
+Code:
+
+void insertItem(dynamic_array* container, int item)
+{
+    if (container->size == container->capacity) {
+        int *temp = container->array;
+        container->capacity <<= 1;
+        container->array = realloc(container->array, container->capacity * sizeof(int));
+        if(!container->array) {
+            printf("Out of Memory\n");
+            container->array = temp;
+            return;
+        }
+    }
+    container->array[container->size++] = item;
+}
+
+
+2. getItem()]
+
+This function returns the integer value present at the given index. It takes two arguments – container address and index.
+
+Code:
+
+int getItem(dynamic_array* container, int index)
+{
+    if(index > container->size) {
+        printf("Index Out of Bounds\n");
+        return -1;
+    }
+    return container->array[index];
+}
+
+
+3. updateItem()
+
+The updateItem() function facilitates us to update the element present at a particular index. This function take 3 arguments – container address, index, and updated_item.
+
+Code:
+
+void updateItem(dynamic_array* container, int index, int item)
+{
+    if (index > container->size) {
+        printf("Index Out of Bounds\n");
+        return;
+    }
+    container->array[index] = item;
+}
+
+
+4. printItem()
+
+This function traverses the array and prints all the elements. Apart from that, it also prints the current size and capacity of the array.
+
+Code:
+
+void printArray(dynamic_array* container)
+{
+    printf("Array elements: ");
+    for (int i = 0; i < container->size; i++) {
+        printf("%d ", container->array[i]);
+    }
+    printf("\nSize: ");
+    printf("%ld", container->size);
+    printf("\nCapacity: ");
+    printf("%ld\n", container->capacity);
+}
+
+
+5. deleteItem()
+The deleteItem() function provides the deletion operation using which we can remove the element at any particular index.
+
+Code:
+
+void deleteItem(dynamic_array* container, int index)
+{
+    if(index > container->size) {
+        printf("Index Out of Bounds\n");
+        return;
+    }
+
+    for (int i = index; i < container->size; i++) {
+        container->array[i] = container->array[i + 1];
+    }
+    container->size--;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
