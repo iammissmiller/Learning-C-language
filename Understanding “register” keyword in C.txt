@@ -1,0 +1,138 @@
+Understanding “register” keyword in C
+
+
+Registers are faster than memory to access, so the variables which are most frequently used in a C program can be put in registers using the register keyword.  The keyword register hints to the compiler that a given variable can be put in a register. It’s the compiler’s choice to put it in a register or not. Generally, compilers themselves do optimizations and put the variables in a register.
+
+Following are some interesting facts about the “register” keyword in C:
+
+1. If you use & operator with a register variable then the compiler may give an error or warning (depending upon the compiler you are using), because when we say a variable is a register, it may be stored in a register instead of memory and accessing the address of a register is invalid.
+
+Try the below program:
+
+
+// C program that demonstrates accessing the address of a
+// register is invalid
+#include <stdio.h>
+
+int main()
+{
+    // Declaring a register variable 'i' and initializing it
+    // with 10
+    register int i = 10;
+    // Creating a pointer variable 'a' and assigning the
+    // address of 'i' to it
+    int* a = &i;
+    printf("%d", *a);
+    getchar();
+    return 0;
+}
+
+
+Output
+
+./Solution.c: In function 'main':
+./Solution.c:6:5: error: address of register variable 'i' requested
+     int* a = &i;
+     ^
+
+
+2. register keyword can be used with pointer variables. Obviously, a register can have the address of a memory location. There would not be any problem with the below program.
+
+
+// C program that demonstrates register keyword can be used
+// with pointer variables
+
+#include <stdio.h>
+
+int main()
+{
+    // Declaring an integer variable 'i' and initializing it
+    // with 10
+    int i = 10;
+    // Declaring a register pointer variable 'a' and
+    // assigning the address of 'i' to it
+    register int* a = &i;
+    printf("%d", *a);
+    getchar();
+    return 0;
+}
+
+
+Output
+10
+
+
+3. Register is a storage class, and C doesn’t allow multiple storage class specifiers for a variable. So, the register can not be used with static.
+
+Try the below program:
+
+
+// C program that demonstrates register can not be used with
+// static
+
+#include <stdio.h>
+
+int main()
+{
+    // Declaring an integer variable 'i' and initializing it
+    // with 10
+    int i = 10;
+    // ERROR: Attempting to use both register and static
+    // storage classes for 'a'
+    register static int* a = &i;
+    printf("%d", *a);
+    getchar();
+    return 0;
+}
+
+
+Output
+
+./Solution.c: In function 'main':
+./Solution.c:6:5: error: multiple storage classes in declaration specifiers
+     register static int* a = &i;
+
+
+
+
+
+4. Register can only be used within a block (local), it can not be used in the global scope (outside main).
+
+
+#include <stdio.h>
+
+// error (global scope)
+register int x = 10;
+int main()
+{
+    // works (inside a block)
+    register int i = 10;
+    printf("%d\n", i);
+    printf("%d", x);
+    return 0;
+}
+
+
+
+Output
+
+./Solution.c:4:14: error: register name not specified for 'x'
+ register int x = 10;
+
+
+
+              ^
+5. There is no limit on the number of register variables in a C program, but the point is compiler may put some variables in the register and some not.
+
+
+
+
+
+
+
+
+
+
+
+
+
