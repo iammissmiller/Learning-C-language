@@ -1,0 +1,149 @@
+Static Variables in C
+
+Static variables have the property of preserving their value even after they are out of their scope! Hence, a static variable preserves its previous value in its previous scope and is not initialized again in the new scope. 
+
+Syntax:
+
+static data_type var_name = var_value;
+Static variables in C retain their value across function calls, offering persistence. To learn how static variables interact with data structures and memory, the C Programming Course Online with Data Structures offers practical insights into this concept.
+
+Following are some interesting facts about static variables in C:
+
+1) A static int variable remains in memory while the program is running. A normal or auto variable is destroyed when a function call where the variable was declared is over. 
+For example, we can use static int to count the number of times a function is called, but an auto variable can’t be used for this purpose.
+
+Example
+
+// C Program to illustrate the static variable lifetime
+#include <stdio.h>
+
+// function with static variable
+int fun()
+{
+    static int count = 0;
+    count++;
+    return count;
+}
+
+int main()
+{
+    printf("%d ", fun());
+    printf("%d ", fun());
+    return 0;
+}
+
+Output
+1 2 
+
+Output
+1 2 
+The above program prints 1 2 because static variables are only initialized once and live till the end of the program. That is why they can retain their value between multiple function calls.
+
+Let’s try the same code for the local auto variable.
+
+
+Example
+
+// C Program to illustrate local auto variable in comparison
+// of static variable.
+#include <stdio.h>
+
+// Function
+int fun()
+{
+    int count = 0;
+    count++;
+    return count;
+}
+
+// Driver Code
+int main()
+{
+    printf("%d ", fun());
+    printf("%d ", fun());
+    return 0;
+}
+
+
+Output
+1 1 
+
+2) Static variables are allocated memory in the data segment, not the stack segment.
+
+
+3) Static variables (like global variables) are initialized as 0 if not initialized explicitly. For example in the below program, the value of x is printed as 0, while the value of y is something garbage. 
+
+Example
+
+
+// C program to illustrate the default value of static
+// variables
+#include <stdio.h>
+
+int main()
+{
+    static int x;
+    int y;
+    printf("%d \n%d", x, y);
+}
+
+
+Output
+
+0 
+[some_garbage_value] 
+
+
+4) In C, static variables can only be initialized using constant literals. For example, the following program fails in the compilation. See this for more details.
+
+Example
+
+#include<stdio.h>
+int initializer(void)
+{
+    return 50;
+}
+ 
+int main()
+{
+    static int i = initializer();
+    printf(" value of i = %d", i);
+    getchar();
+    return 0;
+}
+
+
+Output
+
+In function 'main':
+9:5: error: initializer element is not constant
+     static int i = initializer();
+     ^
+
+
+Note: Please note that this condition doesn’t hold in C++. So if you save the program as a C++ program, it would compile and run fine.
+
+
+
+5) Static global variables and functions are also possible in C/C++. The purpose of these is to limit the scope of a variable or function to a file. Please refer to Static functions in C for more details.
+
+6) Static variables should not be declared inside a structure. The reason is C compiler requires the entire structure elements to be placed together (i.e.) memory allocation for structure members should be contiguous. It is possible to declare structure inside the function (stack segment) or allocate memory dynamically(heap segment) or it can be even global (BSS or data segment). Whatever might be the case, all structure members should reside in the same memory segment because the value for the structure element is fetched by counting the offset of the element from the beginning address of the structure. Separating out one member alone to a data segment defeats the purpose of structure and it is possible to have an entire structure as static.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
