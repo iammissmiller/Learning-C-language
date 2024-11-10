@@ -1,0 +1,36 @@
+Non-Standard Header Files in C and Their Uses
+
+Non-standard header files are not part of the language’s ISO standard. They are generally all the header files defined by the programmers for purposes like containing custom library functions etc. They are manually installed by the user or maybe part of the compiler by some specific vendor.
+
+There are lots of non-standard libraries for C language. Some commonly used non-standard/user-defined header files are listed below:
+
+Header File	Description
+<conio.h>	It contains some useful console functions.
+<gtk/gtk.h>	It contains GNU’s GUI library for C.
+Example
+
+The below example demonstrates the use of conio.h non-standard header file.
+
+#include <stdio.h>
+#include <conio.h>
+
+// Function to display a welcome message
+void displayMessage() {
+    printf("Hello! Geek\n");
+}
+
+int main() {
+    // Using conio.h functions
+    printf("Press any key to print message \n");
+    getch();  // Wait for a key press
+
+    // Call the additional function after a key press
+    displayMessage();
+
+    return 0;
+}
+
+Output
+
+Press any key to print message 
+Hello! Geek
