@@ -1,0 +1,40 @@
+Create your own Header File in C
+
+
+Instead of writing a large and complex code, we can create our own header files and include them in our program to use whenever we want. It enhances code functionality and readability. Below are the steps to create our own header file:
+
+Step 1: Write your own C code and save that file with the “.h” extension. Below is the illustration of the header file:
+
+// Function to find the sum of two
+// numbers passed
+int sumOfTwoNumbers(int a, int b) 
+{
+  return (a + b); 
+}
+
+Step 2: Include your header file with “#include” in your C program as shown below: 
+
+// C++ program to find the sum of two
+// numbers using function declared in
+// header file
+#include "iostream"
+
+// Including header file
+#include "sum.h"
+using namespace std;
+
+// Driver Code
+int main()
+{
+
+    // Given two numbers
+    int a = 13, b = 22;
+
+    // Function declared in header
+    // file to find the sum
+    printf("Sum is: %d", sumoftwonumbers(a, b));
+}
+
+Output
+
+Sum is: 35
