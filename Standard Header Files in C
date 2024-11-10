@@ -1,0 +1,105 @@
+Standard Header Files in C and Their Uses
+
+Standard header files contain the libraries defined in the ISO standard of the C programming language. They are stored in the default directory of the compiler and are present in all the C compilers from any vendor.
+
+There are 31 standard header files in the latest version of C language. Following is the list of some commonly used header files in C:
+
+
+<assert.h>	
+It contains information for adding diagnostics that aid program debugging.
+
+<errno.h>	
+It is used to perform error handling operations like errno(), strerror(), perror(), etc.
+
+<float.h>	
+It contains a set of various platform-dependent constants related to floating point values. These constants are proposed by ANSI C. 
+
+They make programs more portable. Some examples of constants included in this header file are- e(exponent), b(base/radix), etc.
+
+<math.h>	
+It is used to perform mathematical operations like sqrt(), log2(), pow(), etc.
+
+<signal.h>	
+It is used to perform signal handling functions like signal() and raise().
+
+<stdarg.h>	
+It is used to perform standard argument functions like va_start() and va_arg(). It is also used to indicate the start of the variable-length argument list and to fetch the arguments from the variable-length argument list in the program respectively.
+
+<ctype.h>	
+It contains function prototypes for functions that test characters for certain properties, and also function prototypes for functions that can be used to convert uppercase letters to lowercase letters and vice versa.
+ 
+<stdio.h>	
+It is used to perform input and output operations using functions like scanf(), printf(), etc.
+
+<setjump.h>	
+It contains standard utility functions like malloc(), realloc(), etc. It contains function prototypes for functions that allow bypassing of the usual function call and return sequence.
+
+<string.h>
+It is used to perform various functionalities related to string manipulation like strlen(), strcmp(), strcpy(), size(), etc.
+
+<limits.h>	
+It determines the various properties of the various variable types. The macros defined in this header limits the values of various variable types like char, int, and long. These limits specify that a variable cannot store any value beyond these limits, for example, an unsigned character can store up to a maximum value of 255.
+
+<time.h>	
+It is used to perform functions related to date() and time() like setdate() and getdate(). It is also used to modify the system date and get the CPU time respectively.
+
+<stddef.h>
+It contains common type definitions used by C for performing calculations.
+
+<locale.h>	
+It contains function prototypes and other information that enables a program to be modified for the current locale on which it’s running. 
+
+It enables the computer system to handle different conventions for expressing data such as times, dates, or large numbers throughout the world.
+
+Example
+The below example demonstrates the use of some commonly used header files in C.
+
+// C program to illustrate
+// the use of header file
+// in C
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Driver Code
+int main()
+{
+    char s1[20] = "12345";
+    char s2[10] = "Geeks";
+    char s3[10] = "ForGeeks";
+    long int res;
+
+    // Find the value of 9^3 using a
+    // function in math.h library
+    res = pow(9, 3);
+    printf("Using math.h, "
+           "The value is: %ld\n",
+           res);
+
+    // Convert a string to long long int
+    // using a function in stdlib.h library
+    long int a = atol(s1);
+    printf("Using stdlib.h, the string");
+    printf(" to long int: %ld\n", a);
+
+    // Copy the string s3 into s2 using
+    // using a function in string.h library
+    strcpy(s2, s3);
+    printf("Using string.h, the strings"
+           " s2 and s3: %s %s\n",
+           s2, s3);
+    return 0;
+}
+
+Output
+Using math.h, The value is: 729
+Using stdlib.h, the string to long int: 12345
+Using string.h, the strings s2 and s3: ForGeeks ForGeeks
+
+
+
+
+
+
+
