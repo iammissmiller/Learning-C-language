@@ -1,0 +1,48 @@
+Header Files in C
+
+In C language, header files contain a set of predefined standard library functions. The .h is the extension of the header files in C and we request to use a header file in our program by including it with the C preprocessing directive “#include”.
+
+C Header files offer the features like library functions, data types, macros, etc by importing them into the program with the help of a preprocessor directive “#include”.
+
+Syntax of Header Files in C
+We can include header files in C by using one of the given two syntax whether it is a pre-defined or user-defined header file.
+
+#include <filename.h>    // for files in system/default directory
+       or
+#include "filename.h"    // for files in same directory as source file
+The “#include” preprocessor directs the compiler that the header file needs to be processed before compilation and includes all the necessary data types and function definitions.
+
+Example of Header File in C
+The below example demonstrates the use of header files using standard input and output stdio.h header file
+
+// C program to demonstrate the use of header files
+//    standard input and output stdio.h header file
+#include <stdio.h>
+
+int main()
+{
+    printf(
+        "Printf() is the function in stdio.h header file");
+    return 0;
+}
+
+Types of C Header Files
+There are two types of header files in C:
+
+Standard / Pre-existing header files
+Non-standard / User-defined header files
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
