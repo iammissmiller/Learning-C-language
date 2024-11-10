@@ -1,0 +1,24 @@
+Including Multiple Header Files
+
+You can use various header files in a program. When a header file is included twice within a program, the compiler processes the contents of that header file twice. This leads to an error in the program. To eliminate this error, conditional preprocessor directives are used.
+
+Syntax
+
+#ifndef HEADER_FILE_NAME
+#define HEADER_FILE_NAME
+the entire header file
+#endif
+
+This construct is called wrapper “#ifndef”. When the header is included again, the conditional will become false, because HEADER_FILE_NAME is defined. The preprocessor will skip over the entire file contents, and the compiler will not see it twice.
+
+Sometimes it’s essential to include several diverse header files based on the requirements of the program. For this, multiple conditionals are used.
+
+Syntax
+
+#if SYSTEM_ONE
+        #include "system1.h"
+#elif SYSTEM_TWO
+        #include "system2.h"
+#elif SYSTEM_THREE
+        ....
+#endif
