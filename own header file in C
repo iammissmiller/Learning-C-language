@@ -1,0 +1,61 @@
+How to write your own header file in C?
+
+As we all know that files with .h extension are called header files in C. These header files generally contain function declarations which we can be used in our main C program, like for e.g. there is need to include stdio.h in our C program to use function printf() in the program. So the question arises, is it possible to create your own header file?
+
+The answer to the above is yes. header files are simply files in which you can declare your own functions that you can use in your main program or these can be used while writing large C programs.
+NOTE:Header files generally contain definitions of data types, function prototypes and C preprocessor commands.
+
+Below is the short example of creating your own header file and using it accordingly.
+
+Creating myhead.h : Write the below code and then save the file as myhead.h or you can give any name but the extension should be .h indicating its a header file.
+
+// It is not recommended to put function definitions 
+// in a header file. Ideally there should be only 
+// function declarations. Purpose of this code is 
+// to only demonstrate working of header files. 
+void add(int a, int b) 
+{ 
+	printf("Added value=%d\n", a + b); 
+} 
+void multiply(int a, int b) 
+{ 
+	printf("Multiplied value=%d\n", a * b); 
+} 
+
+
+
+Including the .h file in other program : Now as we need to include stdio.h as #include in order to use printf() function. We will also need to include the above header file myhead.h as #include”myhead.h”. The ” ” here are used to instructs the preprocessor to look into the present folder and into the standard folder of all header files if not found in present folder. So, if you wish to use angular brackets instead of ” ” to include your header file you can save it in the standard folder of header files otherwise. If you are using ” ” you need to ensure that the header file you created is saved in the same folder in which you will save the C file using this header file.
+
+Using the created header file :
+
+// C program to use the above created header file 
+#include <stdio.h> 
+#include "myhead.h" 
+int main() 
+{ 
+	add(4, 6); 
+
+	/*This calls add function written in myhead.h 
+	and therefore no compilation error.*/
+	multiply(5, 5); 
+
+	// Same for the multiply function in myhead.h 
+	printf("BYE!See you Soon"); 
+	return 0; 
+} 
+
+Output:
+
+Added value:10
+Multiplied value:25
+BYE!See you Soon
+NOTE : The above code compiles successfully and prints the above output only if you have created the header file and saved it in the same folder the above c file is saved.
+
+Important Points:
+The creation of header files are needed generally while writing large C programs so that the modules can share the function definitions, prototypes etc.
+
+Function and type declarations, global variables, structure declarations and in some cases, inline functions; definitions which need to be centralized in one file.
+In a header file, do not use redundant or other header files; only minimal set of statements.
+Don’t put function definitions in a header. Put these things in a separate .c file.
+Include Declarations for functions and variables whose definitions will be visible to the linker. Also, definitions of data structures and enumerations that are shared among multiple source files.
+In short, Put only what is necessary and keep the header file concised.
