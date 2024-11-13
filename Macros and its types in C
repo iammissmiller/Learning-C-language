@@ -1,0 +1,64 @@
+Macros and its types in C
+
+In C, a macro is a piece of code in a program that is replaced by the value of the macro. Macro is defined by  #define directive. Whenever a macro name is encountered by the compiler, it replaces the name with the definition of the macro. Macro definitions need not be terminated by a semi-colon(;).
+
+Examples of Macros in C
+Below are the programs to illustrate the use of macros in C:
+
+Example 1
+The below example demonstrates the use of macros to define LIMIT.
+
+// C program to illustrate macros
+#include <stdio.h>
+
+// Macro definition
+#define LIMIT 5
+
+// Driver Code
+int main()
+{
+    // Print the value of macro defined
+    printf("The value of LIMIT"
+           " is %d " ,LIMIT);
+
+    return 0;
+}
+
+Output
+The value of LIMIT is 5
+Example 2
+The below example demonstrates the use of macros to find the area of a rectangle.
+
+// C program to illustrate macros
+#include <stdio.h>
+
+// Macro definition
+#define AREA(l, b) (l * b)
+
+// Driver Code
+int main()
+{
+    // Given lengths l1 and l2
+    int l1 = 10, l2 = 5, area;
+
+    // Find the area using macros
+    area = AREA(l1, l2);
+
+    // Print the area
+    printf("Area of rectangle"
+           " is: %d" , area);
+
+    return 0;
+}
+Output
+Area of rectangle is: 50
+
+Explanation
+From the above program, we can see that whenever the compiler finds AREA(l, b) in the program it replaces it with the macros definition i.e., (l*b). The values passed to the macro template AREA(l, b) will also be replaced by the statement (l*b). Therefore, AREA(10, 5) will be equal to 10*5. 
+
+
+
+
+
+
+
