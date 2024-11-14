@@ -1,0 +1,28 @@
+Object-Like Macros
+
+An object-like macro is a simple identifier that will be replaced by a code fragment. It is called object-like because it looks like an object in code that uses it. It is popularly used to replace a symbolic name with a numerical/variable represented as a constant.
+
+Example
+
+The below example is the illustration of a simple macro i.e. object-like macros.
+
+// C program to illustrate macros
+#include <stdio.h>
+
+// Macro definition
+#define DATE 31
+
+// Driver Code
+int main()
+{
+    // Print the message
+    printf("Lockdown will be extended"
+           " upto %d-MAY-2020",
+           DATE);
+
+    return 0;
+}
+
+Output
+Lockdown will be extended upto 31-MAY-2020
+
