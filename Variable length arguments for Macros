@@ -1,0 +1,48 @@
+Variable length arguments for Macros
+
+Like functions, we can also pass variable length arguments to macros. For this we will use the following preprocessor identifiers.
+To support variable length arguments in macro, we must include ellipses (…) in macro definition. There is also “__VA_ARGS__” preprocessing identifier which takes care of variable length argument substitutions which are provided to macro. Concatenation operator ## (aka paste operator) is used to concatenate variable arguments. 
+Let us see with an example. Below macro takes variable length argument like “printf()” function. This macro is for error logging. The macro prints filename followed by line number, and finally it prints info/error message. First arguments “prio” determines the priority of message, i.e. whether it is information message or error, “stream” may be “standard output” or “standard error”. It displays INFO messages on stdout and ERROR messages on stderr stream. 
+
+#include <stdio.h>
+
+#define INFO	 1
+#define ERR 2
+#define STD_OUT stdout
+#define STD_ERR stderr
+
+#define LOG_MESSAGE(prio, stream, msg, ...) do {\
+						char *str;\
+						if (prio == INFO)\
+							str = "INFO";\
+						else if (prio == ERR)\
+							str = "ERR";\
+						fprintf(stream, "[%s] : %s : %d : "msg" \n", \
+								str, __FILE__, __LINE__, ##__VA_ARGS__);\
+					} while (0)
+
+int main(void)
+{
+	char *s = "Hello";
+
+		/* display normal message */
+	LOG_MESSAGE(ERR, STD_ERR, "Failed to open file");
+
+	/* provide string as argument */
+	LOG_MESSAGE(INFO, STD_OUT, "%s Geeks for Geeks", s);
+
+	/* provide integer as arguments */
+	LOG_MESSAGE(INFO, STD_OUT, "%d + %d = %d", 10, 20, (10 + 20));
+
+	return 0;
+}
+
+
+Compile and run the above program, it produces below result. 
+ 
+
+  [narendra@/media/partition/GFG]$ ./variable_length 
+  [ERR] : variable_length.c : 26 : Failed to open file 
+  [INFO] : variable_length.c : 27 : Hello Geeks for Geeks 
+  [INFO] : variable_length.c : 28 : 10 + 20 = 30 
+  [narendra@/media/partition/GFG]$
