@@ -1,0 +1,42 @@
+Difference between #define and const in C?
+
+#define is a preprocessor directive. Data defined by the #define macro definition are preprocessed, so that your entire code can use it. This can free up space and increase compilation times.
+
+const variables are considered variables, and not macro definitions. 
+ 
+
+Long story short: CONSTs are handled by the compiler, where as #DEFINEs are handled by the pre-processor.
+
+The big advantage of const over #define is type checking. #defines can’t be type checked, so this can cause problems when trying to determine the data type. If the variable is, instead, a constant then we can grab the type of the data that is stored in that constant variable. 
+
+Since const are considered variables, we can use pointers on them. This means we can typecast, move addresses, and everything else you’d be able to do with a regular variable besides change the data itself, since the data assigned to that variable is constant.
+
+In general, const is a better option if we have a choice and it can successfully apply to the code. There are situations when #define cannot be replaced by const. For example, #define can take parameters (See this for example). #define can also be used to replace some text in a program with another text. 
+
+Let us see the differences in points :-
+
+	#define	
+
+1.	#define is a preprocessor directive.	
+
+2.	is used to define micro substitution	.
+
+3.	
+Its syntax is -:
+
+#define token value  
+
+4.	It should not be enclosed with a (;) semicolon	
+
+
+Const
+
+1. Constants are used to make variables constant such that never change during execution once defined.
+
+2. Constants are also called literals.
+
+3. Its syntax is -:
+
+const type constant_name;
+
+4. It should be enclosed with a (;) semicolon
