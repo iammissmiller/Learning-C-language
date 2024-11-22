@@ -1,0 +1,40 @@
+Error Handling in C
+
+Although C does not provide direct support to error handling (or exception handling), there are ways through which error handling can be done in C. A programmer has to prevent errors in the first place and test return values from the functions.
+
+A lot of C function calls return -1 or NULL or set an in case of an error code as the global variable errno, so quick tests on these values are easily done with an instance of ‘if statement’.
+
+What is errno?
+errno is a global variable indicating the error occurred during any function call and it is defined inside <errno.h> header file.
+
+When a function is called in C, a variable named errno is automatically assigned a code (value) which can be used to identify the type of error that has been encountered. Different codes (values) for errno mean different types of errors.
+
+Below is a list of a few different errno values and their corresponding meaning:
+
+errno value	Error
+
+1. Operation not permitted
+
+2. No such file or directory
+
+3. No such process
+
+4. Interrupted system call
+
+5. I/O error
+
+6. No such device or address
+
+7. The argument list is too long
+
+8. Exec format error
+
+9. Bad file number
+
+10. No child processes
+
+11. Try again
+
+12. Out of memory
+
+13. Permission denied
