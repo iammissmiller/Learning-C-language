@@ -1,0 +1,56 @@
+Using goto for Exception Handling in C
+
+Exceptions are runtime anomalies or abnormal conditions that a program encounters during its execution. C doesn’t provide any specialized keywords for this purpose but in C++ to handle exceptions we have to try, throw and catch keywords.
+
+try -> Represents a block of code that can throw an exception.
+catch -> Represents a block of code that is executed when a particular exception is thrown.
+throw -> Used to throw an exception. Also used to list the exceptions that a function throws but doesn’t handle itself.
+In C programming language we use the goto keyword for the same purpose. With the use of goto, we implement the throw keyword. The goto statement can be used to jump from anywhere to anywhere within a function.
+
+Why Exception Handling?
+
+Sometimes a block of code results in an error that will terminate a program. To overcome this problem, we will use the goto keyword which will make the program execution jump out of the code that is causing program termination. The output of the following program explains the flow of execution of exception and its handling using goto. 
+
+Example:
+
+// C program to demonstrate how goto is used in Exception 
+// Handling 
+#include <stdio.h> 
+
+// function to divide 10 by the number 
+void check(int number) 
+{ 
+	printf("Before try \n"); 
+	// try 
+	if (number < 0) { 
+		// throw 
+		goto catching; 
+		printf("After throw (Never executed) \n"); 
+	} 
+// catch 
+catching : { 
+	printf("Exception Caught \n"); 
+} 
+
+	printf("After catch (Will be executed) \n"); 
+
+	return; 
+} 
+
+int main() 
+{ 
+
+	int x = -1; 
+
+	check(x); 
+	return 0; 
+}
+
+Output
+Before try 
+Exception Caught 
+After catch (Will be executed)
+
+
+
+
