@@ -1,0 +1,286 @@
+Different Methods for Error Handling in C
+
+Different methods are used to handle different kinds of errors in C. Some of the commonly used methods are:
+
+perror()
+strerr()
+ferror()
+feof()
+clearerr()
+Exit Status
+Divide by Zero Error
+1. perror()
+The perror() function is used to show the error description. It displays the string you pass to it, followed by a colon, a space, and then the textual representation of the current errno value.
+
+Syntax
+
+void perror(const char *str);
+Parameters
+
+str: It is a string containing a custom message to be printed before the error message itself.
+
+Example
+
+// C implementation to see how perror() function is used to 
+// print the error messages. 
+#include <errno.h> 
+#include <stdio.h> 
+#include <string.h> 
+
+int main() 
+{ 
+	FILE* fp; 
+
+	// If a file is opened which does not exist, 
+	// then it will be an error and corresponding 
+	// errno value will be set 
+	fp = fopen(" GeeksForGeeks.txt ", "r"); 
+
+	// opening a file which does 
+	// not exist. 
+	printf("Value of errno: %d\n ", errno); 
+	perror("Message from perror"); 
+
+	return 0; 
+}
+
+Output
+
+Value of errno: 2
+Message from perror: No such file or directory
+
+2. strerror()
+The strerror() function is also used to show the error description. This function returns a pointer to the textual representation of the current errno value.
+
+Syntax
+
+char *strerror(int errnum);
+Parameters
+
+errnum: It is the error number (errno).
+
+Example
+
+// C implementation to see how strerror() function is used 
+// to print the error messages. 
+#include <errno.h> 
+#include <stdio.h> 
+#include <string.h> 
+
+int main() 
+{ 
+	FILE* fp; 
+
+	// If a file is opened which does not exist, 
+	// then it will be an error and corresponding 
+	// errno value will be set 
+	fp = fopen(" GeeksForGeeks.txt ", "r"); 
+
+	// opening a file which does 
+	// not exist. 
+	printf("Value of errno: %d\n", errno); 
+	printf("The error message is : %s\n", strerror(errno)); 
+
+	return 0; 
+}
+
+Output
+Value of errno: 2
+The error message is : No such file or directory
+
+3. ferror()
+The ferror() function is used to check whether an error occurred during a file operation.
+
+Syntax
+
+int ferror(FILE *stream);
+Parameters
+
+stream: It is the pointer that points to the FILE for which we want to check the error.
+Return Value
+
+It returns a non-zero value if an error occurred, otherwise it returns 0.
+
+Example
+
+// C program to demonstrate the ferror() function 
+#include <stdio.h> 
+
+int main() 
+{ 
+	// Open the file in read mode 
+	FILE* file = fopen("nonexistent_file.txt", "r"); 
+	if (file == NULL) { 
+		// Print an error message 
+		// if file opening fails 
+		perror("Error opening file"); 
+		// Return with non-zero exit status to 
+		// indicate an error 
+		return 1; 
+	} 
+
+	int c; 
+	// Process the character 
+	// Add your code here to perform operations on each 
+	// character read from the file 
+	while ((c = fgetc(file)) != EOF) { 
+	} 
+
+	if (ferror(file)) { 
+		// Print an error message if an error occurred 
+		// during file reading 
+		printf( 
+			"An error occurred while reading the file.\n"); 
+	} 
+	else { 
+		// Print success message if file reading completed 
+		// without errors 
+		printf("File read successfully.\n"); 
+	} 
+	// Close the file 
+	fclose(file); 
+	// Return with zero exit status to indicate successful 
+	// execution 
+	return 0; 
+}
+
+Output
+
+Error opening file: No such file or directory
+
+4. feof()
+The feof() function is used to check whether end-of-file indicator is set for a file steam.
+
+Syntax
+
+int feof(FILE *stream);
+Parameters
+
+stream: It is the pointer that points to the FILE for which we want to check the error.
+Return Value
+
+It returns a non-zero value if an error occurred, otherwise, it returns 0.
+
+Example
+
+// C program to demonstrate the feof() function 
+#include <stdio.h> 
+
+int main() 
+{ 
+	FILE* fptr = fopen("filename.txt", "r"); 
+	if (fptr == NULL) { 
+		// Print error message if file opening fails 
+		perror("Error opening the file"); 
+		return 1; 
+	} 
+
+	// Perform file operations 
+
+	if (ferror(fptr)) { 
+		// Print error message if file operation fails 
+		perror("Error occurred during file operations"); 
+		// Handle the error 
+	} 
+	// Close the file 
+	fclose(fptr); 
+	return 0; 
+}
+
+Output
+
+Error opening the file: No such file or directory
+
+5. clearerr()
+The clearerr() function is used to clear both end-of-file and error indicators for a file stream.
+
+Syntax
+
+void clearerr(FILE *stream);
+Parameters
+
+stream: It is the pointer that points to the FILE for which we want to check the error.
+Example
+
+6. Exit Status
+Exit status is the value returned by the program after its execution is completed which tells the status of the execution of the program.
+
+The C standard specifies two constants: EXIT_SUCCESS and EXIT_FAILURE, that may be passed to exit() to indicate successful or unsuccessful termination, respectively. These are macros defined in <stdlib.h> header file.
+
+Example
+
+// C implementation which shows the 
+// use of EXIT_SUCCESS and EXIT_FAILURE. 
+#include <errno.h> 
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <string.h> 
+
+int main() 
+{ 
+	FILE* fp; 
+	fp = fopen("filedoesnotexist.txt", "rb"); 
+
+	if (fp == NULL) { 
+		printf("Value of errno: %d\n", errno); 
+		printf("Error opening the file: %s\n", 
+			strerror(errno)); 
+		perror("Error printed by perror"); 
+
+		exit(EXIT_FAILURE); 
+		printf("I will not be printed\n"); 
+	} 
+
+	else { 
+		fclose(fp); 
+		exit(EXIT_SUCCESS); 
+		printf("I will not be printed\n"); 
+	} 
+	return 0; 
+}
+
+Output
+
+Value of errno: 2
+Error opening the file: No such file or directory
+Error printed by perror: No such file or directory
+
+7. Divide by Zero Errors
+A common pitfall made by C programmers is not checking if a divisor is zero before a division command. Division by zero leads to undefined behavior, there is no C language construct that can do anything about it. Your best bet is to not divide by zero in the first place, by checking the denominator.
+
+Example
+
+// C program to check and rectify 
+// divide by zero condition 
+#include <stdio.h> 
+#include <stdlib.h> 
+
+void function(int); 
+
+int main() 
+{ 
+	int x = 0; 
+	function(x); 
+	return 0; 
+} 
+
+void function(int x) 
+{ 
+	float fx; 
+
+	if (x == 0) { 
+		printf("Division by Zero is not allowed"); 
+		fprintf(stderr, "Division by zero! Exiting...\n"); 
+		exit(EXIT_FAILURE); 
+	} 
+	else { 
+		fx = 10 / x; 
+		printf("f(x) is: %.5f", fx); 
+	} 
+}
+
+
+
+
+
+
