@@ -1,0 +1,123 @@
+C Program to Handle Divide By Zero and Multiple Exceptions
+
+In C programming, there is no built-in exception handling like in other high-level languages such as C++, Java, or Python. However, you can still handle exceptions using error checking, function return values, or by using signal handlers. In this answer, we’ll discuss two methods for handling exceptions in C, particularly handling divide-by-zero errors.
+
+Methods to Handle Divide by Zero and Multiple Exceptions
+There are 2 methods to handle divide-by-zero exceptions mentioned below:
+
+Error checking and function return values
+Signal handling
+1. Error checking and function return values
+In this method, we use return values of functions to indicate if an error has occurred. We can write a custom function that checks for divide-by-zero exceptions and returns an error code if it occurs.
+
+Example:
+
+// C Program to handle divide-by-zero exceptions using 
+// error checking 
+#include <stdbool.h> 
+#include <stdio.h> 
+
+bool safe_divide(double num, double denom, double* result) 
+{ 
+	if (denom == 0) { 
+		return false; 
+	} 
+	*result = num / denom; 
+	return true; 
+} 
+
+// main function 
+int main() 
+{ 
+	double numerator, denominator, quotient; 
+
+	// Taking input 
+	printf("Enter numerator: "); 
+	scanf("%lf", &numerator); 
+
+	printf("Enter denominator: "); 
+	scanf("%lf", &denominator); 
+
+	// handling exceptions using in-build function 
+	if (safe_divide(numerator, denominator, "ient)) { 
+		printf("The quotient is: %.2lf\n", quotient); 
+	} 
+	else { 
+		printf("Error: Division by zero is not allowed.\n"); 
+	} 
+
+	return 0; 
+}
+
+Output:
+
+Enter numerator: 10
+Enter denominator: 0
+Error: Division by zero is not allowed.
+
+
+2. Signal handling
+Signal handling can be used to catch hardware exceptions like divide-by-zero errors. When a signal is raised, the program jumps to a specified signal handling function. by using the feclearexcept and fetestexcept functions from the fenv.h header. This version checks for floating-point exceptions explicitly and handles them accordingly.
+
+Example:
+
+// C Program to demonstrate use of signal handlinng 
+#include <fenv.h> 
+#include <setjmp.h> 
+#include <signal.h> 
+#include <stdio.h> 
+#include <stdlib.h> 
+
+jmp_buf recovery; 
+
+void handle_divide_by_zero(int sig) 
+{ 
+	// Re-assign the signal handler 
+	signal(SIGFPE, handle_divide_by_zero); 
+	printf("Error: Division by zero is not allowed.\n"); 
+	// Jump to the recovery point 
+	longjmp(recovery, 1); 
+} 
+
+// main function 
+int main() 
+{ 
+	double numerator, denominator, quotient; 
+	int recovery_status; 
+
+	// Assign the signal handler 
+	signal(SIGFPE, handle_divide_by_zero); 
+
+	printf("Enter numerator: "); 
+	scanf("%lf", &numerator); 
+	printf("Enter denominator: "); 
+	scanf("%lf", &denominator); 
+
+	// Set a recovery point 
+	recovery_status = setjmp(recovery); 
+
+	if (recovery_status == 0) { 
+
+		// Clear all floating-point exceptions 
+		feclearexcept(FE_ALL_EXCEPT); 
+		quotient = numerator / denominator; 
+
+		// Test for the divide-by-zero exception 
+		if (fetestexcept(FE_DIVBYZERO)) { 
+			// Raise the SIGFPE signal 
+			raise(SIGFPE); 
+		} 
+		else { 
+			printf("The quotient is: %.2lf\n", quotient); 
+		} 
+	} 
+
+	return 0; 
+}
+
+Output:
+
+Enter numerator: 10
+Enter denominator: 0
+Error: Division by zero is not allowed.
+
