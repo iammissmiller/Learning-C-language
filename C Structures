@@ -1,0 +1,142 @@
+C Structures
+
+
+The structure in C is a user-defined data type that can be used to group items of possibly different types into a single type. The struct keyword is used to define the structure in the C programming language. The items in the structure are called its member and they can be of any valid data type. Additionally, the values of a structure are stored in contiguous memory locations.
+
+C Structure Declaration
+We have to declare structure in C before using it in our program. In structure declaration, we specify its member variables along with their datatype. We can use the struct keyword to declare the structure in C using the following syntax:
+
+Syntax
+struct structure_name {
+    data_type member_name1;
+    data_type member_name2;
+    ....
+    ....
+};
+
+The above syntax is also called a structure template or structure prototype and no memory is allocated to the structure in the declaration.
+
+C Structure Definition
+
+To use structure in our program, we have to define its instance. We can do that by creating variables of the structure type. We can define structure variables using two methods:
+
+1. Structure Variable Declaration with Structure Template
+struct structure_name {
+    data_type member_name1;
+    data_type member_name1;
+    ....
+    ....
+}variable1, varaible2, ...;
+
+2. Structure Variable Declaration after Structure Template
+// structure declared beforehand
+struct structure_name variable1, variable2, .......;
+Access Structure Members
+We can access structure members by using the ( . ) dot operator.
+
+Syntax
+
+structure_name.member1;
+strcuture_name.member2;
+
+In the case where we have a pointer to the structure, we can also use the arrow operator to access the members.
+
+Initialize Structure Members
+Structure members cannot be initialized with the declaration. For example, the following C program fails in the compilation.
+
+struct Point
+{
+   int x = 0;  // COMPILER ERROR:  cannot initialize members here
+   int y = 0;  // COMPILER ERROR:  cannot initialize members here
+};
+The reason for the above error is simple. When a datatype is declared, no memory is allocated for it. Memory is allocated only when variables are created.
+
+Default Initialization
+By default, structure members are not automatically initialized to 0 or NULL. Uninitialized structure members will contain garbage values. However, when a structure variable is declared with an initializer, all members not explicitly initialized are zero-initialized.
+
+struct Point
+{    
+     int x;    
+     int y;
+};
+
+struct Point p = {0}; // Both x and y are initialized to 0
+We can initialize structure members in 3 ways which are as follows:
+
+Using Assignment Operator.
+Using Initializer List.
+Using Designated Initializer List.
+1. Initialization using Assignment Operator
+struct structure_name str;
+str.member1 = value1;
+str.member2 = value2;
+str.member3 = value3;
+.
+.
+.
+2. Initialization using Initializer List
+struct structure_name str = { value1, value2, value3 };
+In this type of initialization, the values are assigned in sequential order as they are declared in the structure template.
+
+3. Initialization using Designated Initializer List
+Designated Initialization allows structure members to be initialized in any order. This feature has been added in the C99 standard.
+
+struct structure_name str = { .member1 = value1, .member2 = value2, .member3 = value3 };
+The Designated Initialization is only supported in C but not in C++.
+
+Example of Structure in C
+The following C program shows how to use structures
+
+// C program to illustrate the use of structures
+#include <stdio.h>
+
+// declaring structure with name str1
+struct str1 {
+    int i;
+    char c;
+    float f;
+    char s[30];
+};
+
+// declaring structure with name str2
+struct str2 {
+    int ii;
+    char cc;
+    float ff;
+} var; // variable declaration with structure template
+
+// Driver code
+int main()
+{
+    // variable declaration after structure template
+    // initialization with initializer list and designated
+    //    initializer list
+    struct str1 var1 = { 1, 'A', 1.00, "GeeksforGeeks" },
+                var2;
+    struct str2 var3 = { .ff = 5.00, .ii = 5, .cc = 'a' };
+
+    // copying structure using assignment operator
+    var2 = var1;
+
+    printf("Struct 1:\n\ti = %d, c = %c, f = %f, s = %s\n",
+           var1.i, var1.c, var1.f, var1.s);
+    printf("Struct 2:\n\ti = %d, c = %c, f = %f, s = %s\n",
+           var2.i, var2.c, var2.f, var2.s);
+    printf("Struct 3\n\ti = %d, c = %c, f = %f\n", var3.ii,
+           var3.cc, var3.ff);
+
+    return 0;
+}
+
+
+Output
+Struct 1:
+    i = 1, c = A, f = 1.000000, s = GeeksforGeeks
+Struct 2:
+    i = 1, c = A, f = 1.000000, s = GeeksforGeeks
+Struct 3
+    i = 5, c = a, f = 5.000000
+
+
+
+
