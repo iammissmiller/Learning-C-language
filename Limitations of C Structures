@@ -1,0 +1,13 @@
+Limitations of C Structures
+
+In C language, structures provide a method for packing together data of different types. A Structure is a helpful tool to handle a group of logically related data items. However, C structures also have some limitations.
+
+Higher Memory Consumption: It is due to structure padding.
+
+No Data Hiding: C Structures do not permit data hiding. Structure members can be accessed by any function, anywhere in the scope of the structure.
+
+Functions inside Structure: C structures do not permit functions inside the structure so we cannot provide the associated functions.
+
+Static Members: C Structure cannot have static members inside its body.
+
+Construction creation in Structure: Structures in C cannot have a constructor inside Structures.
