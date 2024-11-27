@@ -1,0 +1,11 @@
+Uses of Structure in C
+
+C structures are used for the following:
+
+The structure can be used to define the custom data types that can be used to create some complex data types such as dates, time, complex numbers, etc. which are not present in the language.
+
+It can also be used in data organization where a large amount of data can be stored in different fields.
+
+Structures are used to create data structures such as trees, linked lists, etc.
+
+They can also be used for returning multiple values from a function.
