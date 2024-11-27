@@ -1,0 +1,38 @@
+Bit Fields
+
+Bit Fields are used to specify the length of the structure members in bits. When we know the maximum length of the member, we can use bit fields to specify the size and reduce memory consumption.
+
+Syntax of Bit Fields
+struct structure_name {
+    data_type member_name: width_of_bit-field;
+};
+ Example of Bit Fields
+
+// C Program to illustrate bit fields in structures
+#include <stdio.h>
+
+// declaring structure for reference
+struct str1 {
+    int a;
+    char c;
+};
+
+// structure with bit fields
+struct str2 {
+    int a : 24; // size of 'a' is 3 bytes = 24 bits
+    char c;
+};
+
+// driver code
+int main()
+{
+    printf("Size of Str1: %d\nSize of Str2: %d",
+           sizeof(struct str1), sizeof(struct str2));
+    return 0;
+}
+
+Output
+Size of Str1: 8
+Size of Str2: 4
+As we can see, the size of the structure is reduced when using the bit field to define the max size of the member ‘a’.
+
