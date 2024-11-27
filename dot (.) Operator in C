@@ -1,0 +1,75 @@
+dot (.) Operator in C
+
+The C dot (.) operator is used for direct member selection via the name of variables of type struct and union. Also known as the direct member access operator, it is a binary operator that helps us to extract the value of members of the structures and unions.
+
+Syntax of Dot Operator
+variable_name.member;
+variable_name: An instance of a structure or a union.
+member: member associated with the created structure or union.
+
+Example of dot(.) Operator
+
+// C program to demonstrate the use of dot operator 
+#include <stdio.h> 
+
+struct str { 
+	int mem; 
+}; 
+
+union un { 
+	int mem1; 
+	char mem2; 
+}; 
+
+int main() 
+{ 
+	struct str str_name = { 12}; 
+	union un un_name; 
+
+	// accessing union member 
+	un_name.mem1 = 9; 
+	printf("Union Member 1: %d\n", un_name.mem1); 
+
+	// accessing structure member 
+	printf("Structure Member: %d", str_name.mem); 
+
+	return 0; 
+}
+
+Output
+Union Member 1: 9
+Structure Member: 12
+
+
+dot(.) operator with Nested Structures and Unions
+The dot operator can also be used to access the members of nested structures and unions. It can be done in the same way as done for the normal structure.
+
+Syntax with Nested Struct
+variable_name.member1.member2;
+
+
+Example:
+
+// C program to illustrate the use of dot operator for 
+// nested structure 
+#include <stdio.h> 
+
+struct base { 
+	struct child { 
+		int i; 
+	} child; 
+}; 
+
+int main() 
+{ 
+	struct base s_name = { 12 }; 
+	
+	// accessing nested structure member using dot operator 
+	printf("Nested Structure Variable: %d", s_name.child.i); 
+	return 0; 
+}
+
+Output
+Nested Structure Variable: 12
+Operator Precedence of dot (.) Operator
+The dot (.) operator has the highest operator precedence in C Language and its associativity is from left to right. To
