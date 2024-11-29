@@ -1,0 +1,46 @@
+C typedef
+
+The typedef is a keyword that is used to provide existing data types with a new name. The C typedef keyword is used to redefine the name of already existing data types.
+
+When names of datatypes become difficult to use in programs, typedef is used with user-defined datatypes, which behave similarly to defining an alias for commands.
+
+C typedef Syntax
+
+typedef existing_name alias_name;
+After this declaration, we can use the alias_name as if it were the real existing_name in out C program.
+
+Example of typedef in C
+typedef long long ll;
+
+Below is the C program to illustrate how to use typedef.
+
+// C program to implement typedef
+#include <stdio.h>
+
+// defining an alias using typedef
+typedef long long ll;
+
+// Driver code
+int main()
+{
+    // using typedef name to declare variable
+    ll var = 20;
+    printf("%ld", var);
+
+    return 0;
+}
+
+Output
+20
+
+Use of typedef in C
+
+Following are some common uses of the typedef in C programming:
+
+The typedef keyword gives a meaningful name to the existing data type which helps other users to understand the program more easily.
+
+It can be used with structures to increase code readability and we don’t have to type struct repeatedly.
+
+The typedef keyword can also be used with pointers to declare multiple pointers in a single statement.
+
+It can be used with arrays to declare any number of variables.
