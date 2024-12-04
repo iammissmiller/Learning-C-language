@@ -1,0 +1,34 @@
+The swap function in your code is designed to swap the values of two integers using pointers. Here's a detailed explanation of how it works:
+
+Function Signature:
+
+c
+Copy code
+void swap(int *x, int *y)
+The function takes two parameters: x and y, which are pointers to integers. This allows the function to modify the actual values of x and y in the calling function.
+Temporary Variable (t):
+
+c
+Copy code
+int t;
+A temporary variable t is declared to hold one of the values during the swap process. This prevents overwriting one of the values when swapping.
+Swapping the Values:
+
+c
+Copy code
+t = *x;
+*x = *y;
+*y = t;
+t = *x: The value pointed to by x (the value of x in the main function) is stored in t.
+*x = *y: The value pointed to by y (the value of y in the main function) is assigned to the memory location pointed to by x, effectively updating x's value.
+*y = t: Finally, the value stored in t (which was the original value of x) is assigned to the memory location pointed to by y, completing the swap.
+By using pointers, the swap function directly modifies the values of x and y in the main function without needing to return anything.
+
+In summary, the function swaps the values of two variables by manipulating their memory addresses through pointers.
+
+
+
+
+
+
+
