@@ -1,0 +1,87 @@
+Anonymous Union and Structure in C
+
+In C11 standard of C, anonymous Unions and structures were added. 
+Anonymous unions/structures are also known as unnamed unions/structures as they don’t have names. Since there is no names, direct objects(or variables) of them are not created and we use them in nested structure or unions. 
+Definition is just like that of a normal union just without a name or tag. For example, 
+
+// Anonymous union example
+union 
+{
+   char alpha;
+   int num;
+};
+// Anonymous structure example
+struct 
+{
+   char alpha;
+   int num;
+};
+Since there is no variable and no name, we can directly access members. This accessibility works only inside the scope where the anonymous union is defined. 
+Following is a complete working example of anonymous union.
+
+// C Program to demonstrate working of anonymous union
+#include <stdio.h>
+struct Scope {
+    // Anonymous union
+    union {
+        char alpha;
+        int num;
+    };
+};
+
+int main()
+{
+    struct Scope x;
+    x.num = 65;
+
+    // Note that members of union are accessed directly
+    printf("x.alpha = %c, x.num = %d", x.alpha, x.num);
+
+    return 0;
+}
+
+Output
+x.alpha = A, x.num = 65
+Remember that we can only access one member of a union at a time. If another member is assigned the previous member will be wiped out from the union.
+
+// C Program to demonstrate working of anonymous struct
+#include<stdio.h>
+struct Scope
+{
+    // Anonymous structure
+    struct
+    {
+        char alpha;
+        int num;
+    };
+};
+
+int main()
+{
+    struct Scope x;
+    x.num = 65;
+    x.alpha = 'B';
+
+    // Note that members of structure are accessed directly
+    printf("x.alpha = %c, x.num = %d", x.alpha, x.num);
+
+    return 0;
+}
+
+
+Output
+x.alpha = B, x.num = 65
+What about C++? 
+Anonymous Unions and Structures are NOT part of C++ 11 standard, but most of the C++ compilers support them. Since this is a C only feature, the C++ implementations don’t allow to anonymous struct/union to have private or protected members, static members, and functions.  
+
+Conclusion:
+
+This is especially advantageous when dealing with complex data structures or when passing data between different modules or functions. In addition to these advantages, anonymous unions and structures also enhance code maintenance and reduce the potential for errors. With anonymous unions and structures, developers can easily modify or add new members without breaking existing code. This flexibility allows for easier code evolution and minimizes the risk of introducing bugs or inconsistencies.
+
+
+
+
+
+
+
+
