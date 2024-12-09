@@ -1,0 +1,179 @@
+Basics of File Handling in C
+
+File handling in C is the process in which we create, open, read, write, and close operations on a file. C language provides different functions such as fopen(), fwrite(), fread(), fseek(), fprintf(), etc. to perform input, output, and many different C file operations in our program.
+
+Why do we need File Handling in C?
+So far the operations using the C program are done on a prompt/terminal which is not stored anywhere. The output is deleted when the program is closed. But in the software industry, most programs are written to store the information fetched from the program. The use of file handling is exactly what the situation calls for.
+
+In order to understand why file handling is important, let us look at a few features of using files:
+
+Reusability: The data stored in the file can be accessed, updated, and deleted anywhere and anytime providing high reusability.
+Portability: Without losing any data, files can be transferred to another in the computer system. The risk of flawed coding is minimized with this feature.
+Efficient: A large amount of input may be required for some programs. File handling allows you to easily access a part of a file using few instructions which saves a lot of time and reduces the chance of errors.
+Storage Capacity: Files allow you to store a large amount of data without having to worry about storing everything simultaneously in a program.
+
+
+Types of Files in C
+A file can be classified into two types based on the way the file stores the data. They are as follows:
+
+Text Files
+Binary Files
+
+
+1. Text Files
+A text file contains data in the form of ASCII characters and is generally used to store a stream of characters.
+
+Each line in a text file ends with a new line character (‘\n’).
+It can be read or written by any text editor.
+They are generally stored with .txt file extension.
+Text files can also be used to store the source code.
+2. Binary Files
+A binary file contains data in binary form (i.e. 0’s and 1’s) instead of ASCII characters. They contain data that is stored in a similar manner to how it is stored in the main memory.
+
+The binary files can be created only from within a program and their contents can only be read by a program.
+More secure as they are not easily readable.
+They are generally stored with .bin file extension.
+C File Operations
+C file operations refer to the different possible operations that we can perform on a file in C such as:
+
+Creating a new file – fopen() with attributes as “a” or “a+” or “w” or “w+”
+Opening an existing file – fopen()
+Reading from file – fscanf() or fgets()
+Writing to a file – fprintf() or fputs()
+Moving to a specific location in a file – fseek(), rewind()
+Closing a file – fclose()
+The highlighted text mentions the C function used to perform the file operations.
+
+Functions for C File Operations
+
+File Pointer in C
+A file pointer is a reference to a particular position in the opened file. It is used in file handling to perform all file operations such as read, write, close, etc. We use the FILE macro to declare the file pointer variable. The FILE macro is defined inside <stdio.h> header file.
+
+Syntax of File Pointer
+FILE* pointer_name;
+File Pointer is used in almost all the file operations in C.
+
+Open a File in C
+For opening a file in C, the fopen() function is used with the filename or file path along with the required access modes.
+
+Syntax of fopen()
+FILE* fopen(const char *file_name, const char *access_mode);
+Parameters
+file_name: name of the file when present in the same directory as the source file. Otherwise, full path.
+access_mode: Specifies for what operation the file is being opened.
+Return Value
+If the file is opened successfully, returns a file pointer to it.
+If the file is not opened, then returns NULL.
+File opening modes in C
+File opening modes or access modes specify the allowed operations on the file to be opened. They are passed as an argument to the fopen() function. Some of the commonly used file access modes are listed below:
+
+
+Opening Modes	Description
+
+r	
+Searches file. If the file is opened successfully fopen( ) loads it into memory and sets up a pointer that points to the first character in it. If the file cannot be opened fopen( ) returns NULL.
+
+rb	
+Open for reading in binary mode. If the file does not exist, fopen( ) returns NULL.
+
+w	
+Open for writing in text mode. If the file exists, its contents are overwritten. If the file doesn’t exist, a new file is created. Returns NULL, if unable to open the file.
+
+wb	
+Open for writing in binary mode. If the file exists, its contents are overwritten. If the file does not exist, it will be created.
+
+a	
+Searches file. If the file is opened successfully fopen( ) loads it into memory and sets up a pointer that points to the last character in it. It opens only in the append mode. If the file doesn’t exist, a new file is created. Returns NULL, if unable to open the file.
+
+ab	 
+Open for append in binary mode. Data is added to the end of the file. If the file does not exist, it will be created.
+
+r+	
+Searches file. It is opened successfully fopen( ) loads it into memory and sets up a pointer that points to the first character in it. Returns NULL, if unable to open the file.
+
+rb+	 
+Open for both reading and writing in binary mode. If the file does not exist, fopen( ) returns NULL.
+
+w+
+Searches file. If the file exists, its contents are overwritten. If the file doesn’t exist a new file is created. Returns NULL, if unable to open the file.
+
+wb+	
+Open for both reading and writing in binary mode. If the file exists, its contents are overwritten. If the file does not exist, it will be created.
+
+a+	
+Searches file. If the file is opened successfully fopen( ) loads it into memory and sets up a pointer that points to the last character in it. It opens the file in both reading and append mode. If the file doesn’t exist, a new file is created. Returns NULL, if unable to open the file.
+
+ab+	
+Open for both reading and appending in binary mode. If the file does not exist, it will be created.
+
+As given above, if you want to perform operations on a binary file, then you have to append ‘b’ at the last. For example, instead of “w”, you have to use “wb”, instead of “a+” you have to use “a+b”.
+
+Example of Opening a File
+
+// C Program to illustrate file opening
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // file pointer variable to store the value returned by
+    // fopen
+    FILE* fptr;
+
+    // opening the file in read mode
+    fptr = fopen("filename.txt", "r");
+
+    // checking if the file is opened successfully
+    if (fptr == NULL) {
+        printf("The file is not opened. The program will "
+               "now exit.");
+        exit(0);
+    }
+
+    return 0;
+}
+
+The file is not opened. The program will now exit.
+The file is not opened because it does not exist in the source directory. But the fopen() function is also capable of creating a file if it does not exist. It is shown below
+
+
+The fopen() function can not only open a file but also can create a file if it does not exist already. For that, we have to use the modes that allow the creation of a file if not found such as w, w+, wb, wb+, a, a+, ab, and ab+.
+
+FILE *fptr;
+fptr = fopen("filename.txt", "w");
+
+Example of Opening a File
+
+// C Program to create a file
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // file pointer
+    FILE* fptr;
+
+    // creating file using fopen() access mode "w"
+    fptr = fopen("file.txt", "w");
+
+    // checking if the file is created
+    if (fptr == NULL) {
+        printf("The file is not opened. The program will "
+               "exit now");
+        exit(0);
+    }
+    else {
+        printf("The file is created Successfully.");
+    }
+  
+    return 0;
+}
+
+Output
+The file is created Successfully.
+
+
+
+
+
+
