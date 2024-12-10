@@ -1,0 +1,194 @@
+Reading From a File
+The file read operation in C can be performed using functions fscanf() or fgets(). Both the functions performed the same operations as that of scanf and gets but with an additional parameter, the file pointer. There are also other functions we can use to read from a file. Such functions are listed below:
+
+Function	Description
+fscanf()	
+Use formatted string and variable arguments list to take input from a file. 
+
+fgets()	
+Input the whole line from the file.
+fgetc()	Reads a single character from the file.
+
+fgetw()	
+Reads a number from a file.
+
+fread()	
+Reads the specified bytes of data from a binary file.
+
+So, it depends on you if you want to read the file line by line or character by character.
+
+Example:
+FILE * fptr; 
+fptr = fopen(“fileName.txt”, “r”);
+fscanf(fptr, "%s %s %s %d", str1, str2, str3, &year);
+char c = fgetc(fptr);
+
+The getc() and some other file reading functions return EOF (End Of File) when they reach the end of the file while reading. EOF indicates the end of the file and its value is implementation-defined.
+
+Note: One thing to note here is that after reading a particular part of the file, the file pointer will be automatically moved to the end of the last read character.
+
+
+Write to a File
+
+The file write operations can be performed by the functions fprintf() and fputs() with similarities to read operations. C programming also provides some other functions that can be used to write data to a file such as:
+
+Function	Description
+
+fprintf()	
+Similar to printf(), this function use formatted string and varible arguments list to print output to the file.
+
+fputs()
+Prints the whole line in the file and a newline at the end.
+
+fputc()	
+Prints a single character into the file.
+
+fputw()	
+Prints a number to the file.
+
+fwrite()	
+This functions write the specified amount of bytes to the binary file.
+
+Example:
+
+FILE *fptr ; 
+fptr = fopen(“fileName.txt”, “w”);
+fprintf(fptr, "%s %s %s %d", "We", "are", "in", 2012);
+fputc("a", fptr);
+
+Closing a File
+
+The fclose() function is used to close the file. After successful file operations, you must always close a file to remove it from the memory.
+
+Syntax of fclose()
+fclose(file_pointer);
+where the file_pointer is the pointer to the opened file.
+
+Example:
+FILE *fptr ;
+fptr= fopen(“fileName.txt”, “w”);
+---------- Some file Operations -------
+fclose(fptr);
+
+Examples of File Handing in C
+
+Example 1: Program to Create a File, Write in it, And Close the File
+
+// C program to Open a File,
+// Write in it, And Close the File
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+
+    // Declare the file pointer
+    FILE* filePointer;
+
+    // Get the data to be written in file
+    char dataToBeWritten[50] = "GeeksforGeeks-A Computer "
+                               "Science Portal for Geeks";
+
+    // Open the existing file GfgTest.c using fopen()
+    // in write mode using "w" attribute
+    filePointer = fopen("GfgTest.c", "w");
+
+    // Check if this filePointer is null
+    // which maybe if the file does not exist
+    if (filePointer == NULL) {
+        printf("GfgTest.c file failed to open.");
+    }
+    else {
+
+        printf("The file is now opened.\n");
+
+        // Write the dataToBeWritten into the file
+        if (strlen(dataToBeWritten) > 0) {
+
+            // writing in the file using fputs()
+            fputs(dataToBeWritten, filePointer);
+            fputs("\n", filePointer);
+        }
+
+        // Closing the file using fclose()
+        fclose(filePointer);
+
+        printf("Data successfully written in file "
+               "GfgTest.c\n");
+        printf("The file is now closed.");
+    }
+  
+    return 0;
+}
+
+
+Output
+The file is now opened.
+Data successfully written in file GfgTest.c
+The file is now closed.
+This program will create a file named GfgTest.c in the same directory as the source file which will contain the following text: “GeeksforGeeks-A Computer Science Portal for Geeks”.
+
+Example 2: Program to Open a File, Read from it, And Close the File
+
+// C program to Open a File,
+// Read from it, And Close the File
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+
+    // Declare the file pointer
+    FILE* filePointer;
+
+    // Declare the variable for the data to be read from
+    // file
+    char dataToBeRead[50];
+
+    // Open the existing file GfgTest.c using fopen()
+    // in read mode using "r" attribute
+    filePointer = fopen("GfgTest.c", "r");
+
+    // Check if this filePointer is null
+    // which maybe if the file does not exist
+    if (filePointer == NULL) {
+        printf("GfgTest.c file failed to open.");
+    }
+    else {
+
+        printf("The file is now opened.\n");
+
+        // Read the dataToBeRead from the file
+        // using fgets() method
+        while (fgets(dataToBeRead, 50, filePointer)
+               != NULL) {
+
+            // Print the dataToBeRead
+            printf("%s", dataToBeRead);
+        }
+
+        // Closing the file using fclose()
+        fclose(filePointer);
+
+        printf(
+            "Data successfully read from file GfgTest.c\n");
+        printf("The file is now closed.");
+    }
+    return 0;
+}
+
+Output
+
+The file is now opened.
+GeeksforGeeks-A Computer Science Portal for Geeks
+Data successfully read from file GfgTest.c
+The file is now closed.
+This program reads the text from the file named GfgTest.c which we created in the previous example and prints it in the console.
+
+
+
+
+
+
+
+
