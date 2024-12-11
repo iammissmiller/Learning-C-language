@@ -1,0 +1,218 @@
+Read and Write in a Binary File
+
+Till now, we have only discussed text file operations. The operations on a binary file are similar to text file operations with little difference.
+
+Opening a Binary File
+To open a file in binary mode, we use the rb, rb+, ab, ab+, wb, and wb+ access mode in the fopen() function. We also use the .bin file extension in the binary filename.
+
+Example
+
+fptr = fopen("filename.bin", "rb");
+Write to a Binary File
+We use fwrite() function to write data to a binary file. The data is written to the binary file in the from of bits (0’s and 1’s).
+
+Syntax of fwrite()
+
+size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *file_pointer);
+Parameters:
+
+ptr: pointer to the block of memory to be written.
+size: size of each element to be written (in bytes).
+nmemb: number of elements.
+file_pointer: FILE pointer to the output file stream.
+Return Value:
+
+Number of objects written.
+Example: Program to write to a Binary file using fwrite()
+
+// C program to write to a Binary file using fwrite()
+#include <stdio.h>
+#include <stdlib.h>
+struct threeNum {
+    int n1, n2, n3;
+};
+int main()
+{
+    int n;
+    // Structure variable declared here.
+    struct threeNum num;
+    FILE* fptr;
+    if ((fptr = fopen("C:\\program.bin", "wb")) == NULL) {
+        printf("Error! opening file");
+        // If file pointer will return NULL
+        // Program will exit.
+        exit(1);
+    }
+    int flag = 0;
+    // else it will return a pointer to the file.
+    for (n = 1; n < 5; ++n) {
+        num.n1 = n;
+        num.n2 = 5 * n;
+        num.n3 = 5 * n + 1;
+        flag = fwrite(&num, sizeof(struct threeNum), 1,
+                      fptr);
+    }
+
+    // checking if the data is written
+    if (!flag) {
+        printf("Write Operation Failure");
+    }
+    else {
+        printf("Write Operation Successful");
+    }
+
+    fclose(fptr);
+  
+    return 0;
+}
+
+Output
+Write Operation Successful
+Reading from Binary File
+The fread() function can be used to read data from a binary file in C. The data is read from the file in the same form as it is stored i.e. binary form.
+
+Syntax of fread()
+
+size_t fread(void *ptr, size_t size, size_t nmemb, FILE *file_pointer);
+ Parameters:
+
+ptr: pointer to the block of memory to read.
+size: the size of each element to read(in bytes).
+nmemb: number of elements.
+file_pointer: FILE pointer to the input file stream.
+Return Value:
+
+Number of objects written.
+Example: Program to Read from a binary file using fread()
+
+// C Program to Read from a binary file using fread()
+#include <stdio.h>
+#include <stdlib.h>
+struct threeNum {
+    int n1, n2, n3;
+};
+int main()
+{
+    int n;
+    struct threeNum num;
+    FILE* fptr;
+    if ((fptr = fopen("C:\\program.bin", "rb")) == NULL) {
+        printf("Error! opening file");
+        // If file pointer will return NULL
+        // Program will exit.
+        exit(1);
+    }
+    // else it will return a pointer to the file.
+    for (n = 1; n < 5; ++n) {
+        fread(&num, sizeof(struct threeNum), 1, fptr);
+        printf("n1: %d\tn2: %d\tn3: %d\n", num.n1, num.n2,
+               num.n3);
+    }
+    fclose(fptr);
+
+    return 0;
+}
+
+Output
+
+n1: 1   n2: 5   n3: 6
+n1: 2   n2: 10  n3: 11
+n1: 3   n2: 15  n3: 16
+n1: 4   n2: 20  n3: 21
+fseek() in C
+If we have multiple records inside a file and need to access a particular record that is at a specific position, so we need to loop through all the records before it to get the record. Doing this will waste a lot of memory and operational time. To reduce memory consumption and operational time we can use fseek() which provides an easier way to get to the required data. fseek() function in C seeks the cursor to the given record in the file.
+
+Syntax for fseek()
+int fseek(FILE *ptr, long int offset, int pos);
+Example of fseek()
+
+// C Program  to demonstrate the use of fseek() in C
+#include <stdio.h>
+
+int main()
+{
+    FILE* fp;
+    fp = fopen("test.txt", "r");
+
+    // Moving pointer to end
+    fseek(fp, 0, SEEK_END);
+
+    // Printing position of pointer
+    printf("%ld", ftell(fp));
+
+    return 0;
+}
+
+Output
+
+81
+rewind() in C
+The rewind() function is used to bring the file pointer to the beginning of the file. It can be used in place of fseek() when you want the file pointer at the start.
+
+Syntax of rewind()
+rewind (file_pointer);
+Example
+
+// C program to illustrate the use of rewind
+#include <stdio.h>
+
+int main()
+{
+    FILE* fptr;
+    fptr = fopen("file.txt", "w+");
+    fprintf(fptr, "Geeks for Geeks\n");
+
+    // using rewind()
+    rewind(fptr);
+
+    // reading from file
+    char buf[50];
+    fscanf(fptr, "%[^\n]s", buf);
+
+    printf("%s", buf);
+
+    return 0;
+}
+
+More Functions for C File Operations
+The following table lists some more functions that can be used to perform file operations or assist in performing them.
+
+Functions	Description
+
+fopen()	
+It is used to create a file or to open a file.
+
+fclose()	
+It is used to close a file.
+
+fgets()
+It is used to read a file.
+
+fprintf()	
+It is used to write blocks of data into a file.
+
+fscanf()	
+It is used to read blocks of data from a file.
+
+getc()	
+It is used to read a single character to a file.
+
+putc()	
+It is used to write a single character to a file.
+
+fseek()
+It is used to set the position of a file pointer to a mentioned location.
+
+ftell()
+It is used to return the current position of a file pointer.
+
+rewind()	
+It is used to set the file pointer to the beginning of a file.
+
+putw()
+It is used to write an integer to a file.
+
+getw()	
+It is used to read an integer from a file.
+
+
