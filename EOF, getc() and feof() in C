@@ -1,0 +1,74 @@
+EOF, getc() and feof() in C
+
+In C/C++, getc() returns the End of File (EOF) when the end of the file is reached. getc() also returns EOF when it fails. So, only comparing the value returned by getc() with EOF is not sufficient to check for the actual end of the file. To solve this problem, C provides feof() which returns a non-zero value only if the end of the file has reached, otherwise, it returns 0.
+
+getc() Function in C
+The C getc() function is used to read a single character from the given file stream. It is implemented as a macro in <stdio.h> header file.
+
+Syntax of getc()
+int getc(FILE* stream);
+Parameters
+
+stream: It is a pointer to a file stream to read the data from.
+Return Value
+
+It returns the character read from the file stream.
+If some error occurs or the End-Of-File is reached, it returns EOF.
+feof() Function in C
+The feof() function is used to check whether the file pointer to a stream is pointing to the end of the file or not. It returns a non-zero value if the end is reached, otherwise, it returns 0.
+
+Syntax of feof()
+int feof(FILE* stream);
+Parameters
+
+It returns the character read from the file stream.
+Return Value
+
+If the end-of-file indicator has been set for the stream, the function returns a non-zero value (usually 1). Otherwise, it returns 0.
+Example of feof()
+In the program, returned value of getc() is compared with EOF first, then there is another check using feof(). By putting this check, we make sure that the program prints “End of file reached” only if the end of the file is reached. And if getc() returns EOF due to any other reason, then the program prints “Something went wrong”.
+
+// C program to demonstrate the use of getc(), feof() and
+// EOF
+#include <stdio.h>
+
+int main()
+{
+	// Open the file "test.txt" in read mode
+	FILE* fp = fopen("test.txt", "r");
+	// Read the first character from the file
+	int ch = getc(fp);
+
+	// Loop until the end of the file is
+	// reached
+	while (ch != EOF) {
+		/* display contents of file on screen */
+		putchar(ch);
+
+		// Read the next character from the file
+		ch = getc(fp);
+	}
+
+	// Check if the end-of-file indicator is
+	// set for the file
+	if (feof(fp))
+		printf("\n End of file reached.");
+	else
+		printf("\n Something went wrong.");
+
+	// Close the file
+	fclose(fp);
+
+	// Wait for a keypress
+	getchar();
+	return 0;
+}
+
+If the file “test.txt” contains the following data:
+
+GeeksforGeeks
+Output
+
+GeeksforGeeks
+End of file reached.
+
