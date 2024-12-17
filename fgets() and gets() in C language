@@ -1,0 +1,94 @@
+fgets() and gets() in C language
+
+For reading a string value with spaces, we can use either gets() or fgets() in C programming language. Here, we will see what is the difference between gets() and fgets().
+
+fgets()
+The fgets() reads a line from the specified stream and stores it into the string pointed to by str. It stops when either (n-1) characters are read, the newline character is read, or the end-of-file is reached, whichever comes first.
+
+Syntax
+char *fgets (char *str, int n, FILE *stream);
+Parameters
+str: Pointer to an array of chars where the string read is copied.
+n: Maximum number of characters to be copied into str (including the terminating null character).
+*stream: Pointer to a FILE object that identifies an input stream.
+Note: stdin can be used as argument to read from the standard input.
+
+
+Return Value
+The fgets() function returns a pointer to the string where the input is stored.
+To learn more about efficient input handling and how it interacts with various data structures, the C Programming Course Online with Data Structures provides practical examples of string handling.
+
+Features of fgets()
+It follows some parameters such as Maximum length, buffer, and input device reference.
+It is safe to use because it checks the array bound.
+It keeps on reading until a new line character is encountered or the maximum limit of the character array.
+Example of fgets()
+Let’s say the maximum number of characters is 15 and the input length is greater than 15 but still fgets() will read only 15 characters and print it. 
+
+// C program to illustrate fgets()
+#include <stdio.h>
+#define MAX 15
+
+int main()
+{
+    // defining buffer
+    char buf[MAX];
+
+    // using fgets to take input from stdin
+    fgets(buf, MAX, stdin);
+    printf("string is: %s\n", buf);
+
+    return 0;
+}
+
+Since fgets() reads input from the user, we need to provide input during runtime.
+
+Input:
+Hello and welcome to GeeksforGeeks
+
+Output:
+string is: Hello and welc
+gets()
+Reads characters from the standard input (stdin) and stores them as a C string into str until a newline character or the end-of-file is reached.
+
+It is not safe to use because it does not check the array bound.
+It is used to read strings from the user until a newline character is not encountered.
+Syntax
+char *gets( char *str );
+Parameters
+str: Pointer to a block of memory (array of char) where the string read is copied as a C string.
+Return Value
+The function returns a pointer to the string where input is stored.
+Example of gets()
+Suppose we have a character array of 15 characters and the input is greater than 15 characters, gets() will read all these characters and store them into a variable. Since, gets() does not check the maximum limit of input characters, at any time compiler may return buffer overflow error. 
+
+
+// C program to illustrate
+// gets()
+#include <stdio.h>
+#define MAX 15
+
+int main()
+{
+    // defining buffer
+    char buf[MAX];
+
+    printf("Enter a string: ");
+
+    // using gets to take string from stdin
+    gets(buf);
+    printf("string is: %s\n", buf);
+
+    return 0;
+}
+
+Since gets() reads input from the user, we need to provide input during runtime.
+
+Input:
+Hello and welcome to GeeksforGeeks
+
+Output:
+Hello and welcome to GeeksforGeeks
+Conclusion
+Both fgets() and gets() functions can be used for reading string input from standard input. The main difference between fgets() function and gets() function is that fgets() function allows the user to specify the maximum number of characters to read and we can also change the input stream to any file in fgets().
+
