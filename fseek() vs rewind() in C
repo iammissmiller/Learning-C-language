@@ -1,0 +1,114 @@
+fseek() vs rewind() in C
+ 
+fseek() and rewind() both functions are used to file positioning defined in <stdio.h> header file. In this article, we will discuss the differences in the usage and behavior of both functions.
+
+fseek() Function
+fseek() is used to set the file position indicator to a specified offset from the specified origin.
+
+Syntax
+
+int fseek(FILE *stream, long offset, int origin);
+
+Parameters
+stream: It is a pointer to the FILE stream.
+
+offset: It specifies the number of bytes to offset from the origin.
+
+origin: It indicates the position from where the offset is calculated. It can be one of the following:
+SEEK_SET: Beginning of the file.
+SEEK_CUR: Current position of the file pointer.
+SEEK_END: End of the file.
+
+Return Value
+It returns 0 if successful, and a non-zero value if an error occurs.
+
+rewind() Function
+rewind() is used to move the file pointer to the beginning of the file stream.
+
+Syntax
+
+void rewind(FILE *stream);
+
+Parameters
+stream: It is the pointer to the file stream
+
+Return Value
+It does not return any value.
+
+Difference between fseek() and rewind() in C
+
+Following are some differences between fseek() and rewind():
+
+fseek
+
+fseek is used to move the file pointer to a specific position.
+
+Syntax: 
+int fseek(FILE *stream, long offset, int origin);
+
+It returns 0 if successful, and a non-zero value if an error occurs.
+
+The stream error indicator is not cleared.	
+
+Example: fseek(file, 10, SEEK_SET);
+
+It moves the file pointer 10 bytes from the beginning of the file.
+
+
+rewind
+
+rewind is used to move the file pointer to the beginning of the file stream.
+
+Syntax:
+void rewind(FILE *stream);
+
+It does not return any value.
+
+The stream error indicator is cleared.
+
+Example: rewind(file);
+
+It moves the file pointer to the beginning of the file.
+
+
+Which should be preferred?
+
+In C, fseek() should be preferred over rewind().
+
+Note the following text C99 standard:
+
+The rewind function sets the file position indicator for the stream pointed to by the stream at the beginning of the file. It is equivalent to
+
+(void)fseek(stream, 0L, SEEK_SET)
+except that the error indicator for the stream is also cleared.
+
+This following code example sets the file position indicator of an input stream back to the beginning using rewind(). But there is no way to check whether the rewind() was successful. 
+
+int main()
+{
+	FILE* fp = fopen("test.txt", "r");
+
+	if (fp == NULL) {
+		/* Handle open error */
+	}
+
+	/* Do some processing with file*/
+
+	/* no way to check if rewind is successful */
+	rewind(fp);
+
+	/* Do some more precessing with file */
+
+	return 0;
+}
+
+In the above code, fseek() can be used instead of rewind() to see if the operation succeeded.
+
+The following lines of code can be used in place of rewind(fp); 
+
+if ( fseek(fp, 0L, SEEK_SET) != 0 ) {
+/* Handle repositioning error */
+}
+
+
+
