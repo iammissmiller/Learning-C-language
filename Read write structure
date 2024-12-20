@@ -1,0 +1,128 @@
+Read/Write Structure From/to a File in C
+
+For writing in the file, it is easy to write string or int to file using fprintf and putc, but you might have faced difficulty when writing contents of the struct. fwrite and fread make tasks easier when you want to write and read blocks of data.
+
+Writing Structure to a File using fwrite
+We can use fwrite() function to easily write a structure in a file. fwrite() function writes the to the file stream in the form of binary data block.
+
+Syntax of fwrite()
+size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream)
+Parameters
+ptr: pointer to the block of memory to be written.
+size: the size of each element to be written (in bytes).
+nmemb: umber of elements.
+stream: FILE pointer to the output file stream.
+
+Return Value
+Number of objects written.
+
+Example
+
+// C program for writing
+// struct to file
+#include <stdio.h>
+#include <stdlib.h>
+
+// a struct to be read and written
+struct person {
+    int id;
+    char fname[20];
+    char lname[20];
+};
+
+int main()
+{
+    FILE* outfile;
+
+    // open file for writing
+    outfile = fopen("person.bin", "wb");
+    if (outfile == NULL) {
+        fprintf(stderr, "\nError opened file\n");
+        exit(1);
+    }
+
+    struct person input1 = { 1, "rohan", "sharma" };
+
+    // write struct to file
+    int flag = 0;
+    flag = fwrite(&input1, sizeof(struct person), 1,
+                  outfile);
+    if (flag) {
+        printf("Contents of the structure written "
+               "successfully");
+    }
+    else
+        printf("Error Writing to File!");
+
+    // close file
+    fclose(outfile);
+
+    return 0;
+}
+
+Output
+Contents of the structure written successfully
+Reading Structure from a File using fread
+We can easily read structure from a file using fread() function. This function reads a block of memory from the given stream.
+
+Syntax of fread()
+size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream) 
+Parameters
+ptr: pointer to the block of memory to read.
+size: the size of each element to read(in bytes).
+nmemb: number of elements.
+stream: FILE pointer to the input file stream.
+Return Value
+Number of objects written.
+
+Example
+
+// C program for reading
+// struct from a file
+#include <stdio.h>
+#include <stdlib.h>
+
+// struct person with 3 fields
+struct person {
+    int id;
+    char fname[20];
+    char lname[20];
+};
+
+// Driver program
+int main()
+{
+    FILE* infile;
+
+    // Open person.dat for reading
+    infile = fopen("person1.dat", "wb+");
+    if (infile == NULL) {
+        fprintf(stderr, "\nError opening file\n");
+        exit(1);
+    }
+
+    struct person write_struct = { 1, "Rohan", "Sharma" };
+
+    // writing to file
+    fwrite(&write_struct, sizeof(write_struct), 1, infile);
+
+    struct person read_struct;
+
+    // setting pointer to start of the file
+    rewind(infile);
+
+    // reading to read_struct
+    fread(&read_struct, sizeof(read_struct), 1, infile);
+
+    printf("Name: %s %s \nID: %d", read_struct.fname,
+           read_struct.lname, read_struct.id);
+
+    // close file
+    fclose(infile);
+
+    return 0;
+}
+
+Output
+Name: Rohan Sharma 
+ID: 1
