@@ -1,0 +1,34 @@
+C Program to print contents of file
+
+In C, reading the contents of a file involves opening the file, reading its data, and then processing or displaying the data.
+
+Example
+
+Input: File containing “This is a test file.\nIt has multiple lines.”
+
+
+Output: This is a test file.
+It has multiple lines.
+
+
+Explanation: The program reads and displays the multiline text from the file.
+
+
+In this article, we will learn different methods to read the content of the whole file in C using file handling.
+
+How to Read a File in C?
+In C, reading a file is a step-by-step process in which we first have to prepare the file only after which we can start reading. The following are the steps that show how to read a file in C:
+
+Opening the File: We first need to connect the file with the current C program by telling its location in the memory and selecting the type of operation (mode) we will do on it. This can be done with the help of fopen() function.
+Reading the Data: We can start reading the data after opening the file. The file must be opened in the read mode to read data. We can use the methods discussed below to read the file according to our requirements.
+Closing the File: After all the operations are done, it is a good practice to close the file using fclose() function to free the acquired memory.
+Different Methods to Read a File in C
+C programming language supports four pre-defined functions to read contents from a file, all of which are defined in <stdio.h> header:
+
+Table of Content
+
+Using fgetc()
+Using fgets()
+Using fscanf()
+Using fread()
+
