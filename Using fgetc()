@@ -1,0 +1,56 @@
+Using fgetc()
+
+fgetc() functions reads a single character pointed by the file pointer. On each successful read, it returns the character (ASCII value) read from the stream and advances the file pointer to the next character. It returns a constant EOF (-1) when there is no content to read or an unsuccessful read.
+
+We can read the whole content of the file using this function by reading characters one by one till we encounter NULL:
+
+Syntax of fgetc()
+fgetc(file_ptr);
+Program to Read a File using fgetc()
+
+
+// C program to read a file using fgetc()
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  
+    // Opening file
+    FILE *file_ptr;
+
+    // Character buffer that stores the read character
+    // till the next iteration
+    char ch;
+
+    // Opening file in reading mode
+    file_ptr = fopen("test.txt", "r");
+
+    if (NULL == file_ptr) {
+        printf("file can't be opened \n");
+          return EXIT_FAILURE;
+    }
+
+    printf("Content of the file are:-: \n");
+
+    // Printing what is written in file
+    // character by character using loop.
+    while ((ch = fgetc(file_ptr)) != EOF) {
+        printf("%c", ch);
+    }
+
+    // Closing the file
+    fclose(file_ptr);
+    return 0;
+}
+
+test.txt
+
+GeeksforGeeks | A computer science portal for geeks
+Output:
+
+Content of the file are:-
+GeeksforGeeks | A computer science portal for geeks
+When to use fgetc()?
+Reading file using fgetc() is useful for processing each character individually, such as counting specific characters or handling text encoding. It is also useful to print data when you don’t know anything about the file.
+
