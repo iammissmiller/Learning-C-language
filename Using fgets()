@@ -1,0 +1,51 @@
+2. Using fgets()
+The fgets() function is similar to the fgetc() but instead of a single character, it reads one string at a time. It returns the string if it is successfully read or returns NULL if failed.
+
+Syntax of fgets()
+fgets(str, size, file_ptr);
+where,  
+
+str: It is string in which fgets() store string after reading it from file.
+size: It is maximum characters to read from stream.
+file_ptr: It is file pointer.
+Program to Read a File using fgets()
+
+// C Program to Read a File using fgets()
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  
+    // Defining file pointer and opening the file.
+    FILE *file_ptr;
+    char str[50];
+
+    // a+ Mode Means that the file is opened in the
+    // append + reading mode
+    file_ptr = fopen("test.txt", "r");
+
+    if (NULL == file_ptr) {
+        printf("File can't be opened \n");
+    }
+
+      // Reading stinrg using fgets
+    printf("Content of this file are:: \n");
+    while (fgets(str, 50, file_ptr) != NULL) {
+        printf("%s", str);
+    }
+
+    fclose(file_ptr);
+    return 0;
+}
+
+test.txt
+
+GeeksforGeeks | A computer science portal for geeks
+Output
+
+Content of this file are::
+GeeksforGeeks | A computer science portal for geeks
+
+When to use fgets()?
+Reading file using fgets() is ideal for text files where lines need to be processed individually, such as reading configuration files or log files.
