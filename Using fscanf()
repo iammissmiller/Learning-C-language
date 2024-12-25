@@ -1,0 +1,52 @@
+Using fscanf()
+
+fscanf() is similar to scanf() that reads the input in the form of formatted string. It can take, ignore, modify the types of the variables using the scanset characters.
+
+Syntax
+int fscanf(FILE *ptr, const char *format, ...)
+
+Program to Read a File Using fscanf()
+
+// C Program to Read a File Using fscanf()
+#include <stdio.h>
+
+int main() {
+    FILE *ptr = fopen("test.txt", "r");
+    if (ptr == NULL) {
+        printf("no such file.");
+        return 0;
+    }
+
+    /* Assuming that test.txt has content
+       in below format
+       NAME    AGE
+       Raman   12
+       Kunal   25
+       Vikas   65 */
+    char name[100];
+    int age;
+    printf("Contents of the File are:\n");
+    while (fscanf(ptr, "%s %d", name, &age) == 2) {
+        printf("Name: %s\t   Age: %d\n", name, age);
+    }
+
+    return 0;
+}
+
+test.txt
+
+Raman 12
+Kunal 25
+Vikas 65
+
+Output
+
+Contents of the File are:
+Name: Raman   Age: 12
+Name: Kunal   Age: 25
+Name: Vikas   Age: 65
+When to use fscan()?
+Reading a file using fread() is best for structured data files, such as CSV files or files with fixed formats (e.g., reading a list of records with specific fields).
+
+
+
