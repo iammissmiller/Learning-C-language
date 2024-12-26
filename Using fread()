@@ -1,0 +1,75 @@
+4. Using fread()
+
+fread() makes it easier to read blocks of data from a file. For instance, in the case of reading a structure from the file, it becomes an easy job to read using fread because instead of looking for types, it reads the blocks of data from the file in the binary form.
+
+Syntax of fread()
+size_t fread(buffer_ptr, size, nmemb, file_ptr)
+where,
+
+buffer_ptr: This is the pointer to a block of memory with a minimum size of size*nmemb bytes.
+size: This is the size in bytes of each element to be read.
+nmemb: This is the number of elements, each one with a size of size bytes.
+file_ptr: This is the pointer to a FILE object that specifies an input stream.
+If the value of size or count is equal to zero, then this program will simply return 0.
+
+Program to Read a File in C Using fread()
+
+// C Program to Read a File in C Using fread()
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Example Structure
+struct Course {
+     int price;
+    char cname[100];
+};
+
+int main() {
+    
+    // Writing data to the binary file
+    FILE *file_ptr;
+    file_ptr = fopen("test.bin", "wb");
+    if (file_ptr == NULL) {
+        fprintf(stderr, "\nError to open the file\n");
+        exit(1);
+    }
+      struct Course var1;
+      strcpy(var1.cname, "Data Structures and Algorithms - Self Paced");
+      var1.price = 6000;
+      fwrite(&var1, sizeof(var1), 1, file_ptr);
+      fclose(file_ptr);
+    
+    // File pointer to read from file
+      file_ptr = fopen("test.bin", "rb");
+    if (file_ptr == NULL) {
+        fprintf(stderr, "\nError to open the file\n");
+        exit(1);
+    }
+  
+      // Structure variable to store the data read
+    struct Course inp;
+  
+     // Start reading the data using fread
+    while (fread(&inp, sizeof(struct Course), 1, file_ptr)) {
+        printf("Course Name = %s Price = %d\n", inp.cname, inp.price);
+    }
+    
+      fclose(file_ptr);
+  
+      
+}
+
+
+test.txt
+
+// Binary form of structure
+Output
+
+Course Name = Data Structures and Algorithms - Self Paced Price = 6000
+When to use fread()?
+Reading a file using fread() is suitable for binary files or when you need to manipulate the entire file content at once, such as image files or raw data files.
+
+
+
+
