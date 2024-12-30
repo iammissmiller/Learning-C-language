@@ -1,0 +1,66 @@
+Difference between getc(), getchar(), getch() and getche()
+
+All of these functions read a character from input and return an integer value. The integer is returned to accommodate a special value used to indicate failure. The value EOF is generally used for this purpose.
+
+getc()
+It reads a single character from a given input stream and returns the corresponding integer value (typically ASCII value of read character) on success. It returns EOF on failure.
+
+Syntax
+int getc(FILE *stream);
+
+Example
+
+// Example for getc() in C
+#include <stdio.h>
+int main()
+{
+	printf("%c", getc(stdin));
+	return (0);
+}
+
+Input: g (press enter key)
+Output: g
+
+
+getchar()
+The difference between getc() and getchar() is getc() can read from any input stream, but getchar() reads a single input character from standard input. So getchar() is equivalent to getc(stdin).
+
+Syntax
+int getchar(void);
+
+Example
+
+// Example for getchar() in C
+#include <stdio.h>
+int main()
+{
+	printf("%c", getchar());
+	return 0;
+}
+
+Input: g(press enter key)
+Output: g
+getch()
+Like the above functions, getch() also reads a single character from the keyboard. But it does not use any buffer, so the entered character does not display on the screen and is immediately returned without waiting for the enter key.
+
+getch() is a nonstandard function and is present in <conio.h> header file which is mostly used by MS-DOS compilers like Turbo C. It is not part of the C standard library or ISO C, nor is it defined by POSIX.
+
+Syntax
+int getch();
+
+Example
+
+// Example for getch() in C
+#include <conio.h>
+#include <stdio.h>
+int main()
+{
+	printf("%c", getch());
+	return 0;
+}
+
+Input:  g(without enter key as it is not buffered)
+Output: Program terminates immediately.
+        But when you use DOS shell in Turbo C, 
+        double g, i.e., 'gg'
+
