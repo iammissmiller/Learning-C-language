@@ -1,0 +1,290 @@
+Here’s a more detailed explanation of each part of the program:
+Creating server
+
+
+---
+
+1. Header Files and Macros
+
+The program starts by including the required header files and defining constants.
+
+Header Files
+
+1. netinet/in.h
+
+Provides definitions for the sockaddr_in structure (used for IPv4 addresses).
+
+Includes constants like AF_INET (IPv4) and INADDR_ANY (bind to all available interfaces).
+
+
+
+2. stdio.h
+
+Standard input/output functions, such as printf for displaying messages and perror for error handling.
+
+
+
+3. stdlib.h
+
+Provides utility functions like exit() for program termination.
+
+
+
+4. string.h
+
+Used for string operations like strlen() and memory initialization with functions like memset().
+
+
+
+5. sys/socket.h
+
+Contains definitions for socket programming, such as creating, binding, and listening to sockets.
+
+
+
+6. unistd.h
+
+Provides access to the close() function for closing sockets.
+
+
+
+
+Macros
+
+#define PORT 8080
+
+Defines a constant PORT with the value 8080, which the server will use to listen for incoming connections.
+
+
+---
+
+2. Declaring Variables
+
+int server_fd, new_socket;
+ssize_t valread;
+struct sockaddr_in address;
+int opt = 1;
+socklen_t addrlen = sizeof(address);
+char buffer[1024] = { 0 };
+char* hello = "Hello from server";
+
+Variables:
+
+1. server_fd: File descriptor for the server's listening socket.
+
+
+2. new_socket: File descriptor for the client connection socket.
+
+
+3. valread: Stores the size of data read from the client.
+
+
+4. address: Structure to store the server's address details (IP, port).
+
+
+5. opt: Configures socket options (e.g., reuse address/port).
+
+
+6. addrlen: Stores the size of the address structure.
+
+
+7. buffer: Buffer to store data received from the client (initialized to zero).
+
+
+8. hello: Message to send to the client.
+
+
+
+
+---
+
+3. Creating the Socket
+
+if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+    perror("socket failed");
+    exit(EXIT_FAILURE);
+}
+
+socket() Function: Creates an endpoint for communication.
+
+AF_INET: Specifies IPv4 addresses.
+
+SOCK_STREAM: Specifies TCP (reliable, connection-oriented communication).
+
+0: Uses the default protocol for TCP.
+
+
+If the socket creation fails (e.g., insufficient resources), it returns -1. The program terminates with perror() displaying the error.
+
+
+
+---
+
+4. Configuring Socket Options
+
+if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt))) {
+    perror("setsockopt");
+    exit(EXIT_FAILURE);
+}
+
+Purpose: Enables reuse of the port and address.
+
+SOL_SOCKET: Configures options at the socket level.
+
+SO_REUSEADDR: Allows reuse of a local address.
+
+SO_REUSEPORT: Allows multiple sockets to bind to the same port.
+
+If setsockopt fails, the program terminates.
+
+
+
+---
+
+5. Binding the Socket
+
+address.sin_family = AF_INET;
+address.sin_addr.s_addr = INADDR_ANY;
+address.sin_port = htons(PORT);
+
+if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) < 0) {
+    perror("bind failed");
+    exit(EXIT_FAILURE);
+}
+
+Binding: Associates the socket with the specified IP and port.
+
+sin_family: Specifies IPv4.
+
+sin_addr.s_addr: Binds to all available network interfaces (INADDR_ANY).
+
+sin_port: Specifies the port, converted to network byte order with htons().
+
+
+bind():
+
+First parameter: Server socket file descriptor.
+
+Second parameter: Pointer to sockaddr_in structure.
+
+Third parameter: Size of the sockaddr_in structure.
+
+
+If the port is already in use or permission is denied, bind fails.
+
+
+
+---
+
+6. Listening for Connections
+
+if (listen(server_fd, 3) < 0) {
+    perror("listen");
+    exit(EXIT_FAILURE);
+}
+
+listen():
+
+Marks the socket as passive, i.e., ready to accept incoming connections.
+
+3: Maximum number of pending connections in the queue.
+
+
+
+
+---
+
+7. Accepting a Connection
+
+if ((new_socket = accept(server_fd, (struct sockaddr*)&address, &addrlen)) < 0) {
+    perror("accept");
+    exit(EXIT_FAILURE);
+}
+
+accept():
+
+Blocks until a client connects.
+
+Returns a new socket descriptor (new_socket) for the client connection.
+
+Copies the client's address to address and updates its length in addrlen.
+
+
+
+
+---
+
+8. Reading Data from Client
+
+valread = read(new_socket, buffer, 1024 - 1);
+printf("%s\n", buffer);
+
+read():
+
+Reads up to 1024 - 1 bytes of data from the client into buffer.
+
+-1 ensures space for a null terminator in case the buffer is treated as a string.
+
+
+Prints the received message to the console.
+
+
+
+---
+
+9. Sending Data to Client
+
+send(new_socket, hello, strlen(hello), 0);
+printf("Hello message sent\n");
+
+send():
+
+Sends the hello message to the client over the new_socket.
+
+
+
+
+---
+
+10. Closing Sockets
+
+close(new_socket);
+close(server_fd);
+
+close():
+
+Releases resources associated with the sockets.
+
+Closes the client connection (new_socket) and the listening socket (server_fd).
+
+
+
+
+---
+
+Execution Flow
+
+1. Socket Creation: Sets up the server socket.
+
+
+2. Socket Configuration: Configures options for address reuse.
+
+
+3. Binding: Binds the server socket to a port (8080).
+
+
+4. Listening: Waits for incoming client connections.
+
+
+5. Accepting: Accepts a client connection and creates a new socket for communication.
+
+
+6. Reading and Sending Data: Reads the client message and responds with a predefined message.
+
+
+7. Closing Connections: Closes the connection and cleans up resources.
+
+
+
+This program is a minimal server that uses blocking sockets to demonstrate the essential components of TCP socket programming in C.
+
