@@ -1,0 +1,275 @@
+time.h header file in C with Examples
+
+
+The time.h header file contains definitions of functions to get and manipulate date and time information. It describes three time-related data types. 
+
+clock_t: clock_t represents the date as an integer which is a part of the calendar time. 
+ 
+time_t: time_t represents the clock time as an integer which is a part of the calendar time. 
+ 
+struct tm: struct tm holds the date and time which contains:
+
+
+
+
+struct tm {
+	// seconds, range 0 to 59
+	int tm_sec;
+
+	// minutes, range 0 to 59
+	int tm_min;
+
+	// hours, range 0 to 23
+	int tm_hour;
+
+	// day of the month, range 1 to 31
+	int tm_mday;
+
+	// month, range 0 to 11
+	int tm_mon;
+
+	// The number of years since 1900
+	int tm_year;
+
+	// day of the week, range 0 to 6
+	int tm_wday;
+
+	// day in the year, range 0 to 365
+	int tm_yday;
+
+	// daylight saving time
+	int tm_isdst;
+}
+
+
+
+It also contains CLOCKS_PER_SEC macro which holds the number of times does the system clock ticks per second.
+
+
+
+Pre-defined Functions in time.h
+
+
+1. asctime()	
+
+This function returns the date and time in the format 
+day month date hours:minutes:seconds year.
+
+Eg: Sat Jul 27 11:26:03 2019.
+
+asctime() function returns a string by taking struct tm variable as a parameter.
+
+
+
+2. clock()	
+
+This function returns the processor time consumed by a program
+
+
+3. ctime()	
+
+This function returns the date and time in the format
+day month date hours:minutes:seconds year
+
+Eg: Sat Jul 27 11:26:03 2019
+
+
+time is printed based on the pointer returned by Calendar Time
+
+
+4. difftime()	
+
+This function returns the difference between the times provided.
+
+
+5. gmtime()	
+
+This function prints the UTC (Coordinated Universal Time) Time and date.
+
+Format for both gmtime() and asctime() is same
+
+
+6. mktime()	
+
+This function returns the calendar-time equivalent using struct tm.
+
+
+7. time()	
+
+This function returns the calendar-time equivalent using data-type time_t.
+
+
+8. strftime()	
+
+This function helps to format the string returned by other time functions using different format specifiers
+
+
+
+Examples
+
+
+Example 1: 
+
+Program to print the date and time of the system.
+
+
+
+#include <stdio.h>
+#include <time.h>
+int main(void)
+{
+	struct tm* ptr;
+	time_t t;
+	t = time(NULL);
+	ptr = localtime(&t);
+	printf("%s", asctime(ptr));
+	return 0;
+}
+
+
+Output
+Tue Aug  6 09:00:29 2019
+
+
+
+
+
+Example 2: 
+
+Program to print UTC (Coordinated Universal Time) of the system.
+
+
+
+#include <stdio.h>
+#include <time.h>
+int main(void)
+{
+	struct tm* ptr;
+	time_t t;
+	t = time(NULL);
+	ptr = gmtime(&t);
+	printf("%s", asctime(ptr));
+	return 0;
+}
+
+
+
+Output
+Tue Aug  6 09:00:31 2019
+
+
+
+Example 3: 
+
+Program to calculate the time taken to add two numbers program.
+
+
+#include <stdio.h>
+#include <time.h>
+int main(void)
+{
+	time_t start, end;
+	start = time(NULL);
+	int a, b;
+	scanf("%d %d", &a, &b);
+	printf("Sum of %d and %d is %d\n",
+		a, b, a + b);
+	end = time(NULL);
+	printf("Time taken to print sum is %.2f seconds",
+		difftime(end, start));
+}
+
+
+
+Output
+Sum of 4196144 and 0 is 4196144
+Time taken to print sum is 0.00 seconds
+
+Note: If user gives input slowly that time also add up for total execution time. 
+
+
+
+Example 4: 
+
+Program to find the clock ticks.
+
+
+#include <math.h>
+#include <stdio.h>
+#include <time.h>
+
+int frequency_of_primes(int n)
+{
+	// This function checks the number of
+	// primes less than the given parameter
+	int i, j;
+	int freq = n - 1;
+	for (i = 2; i <= n; ++i)
+		for (j = sqrt(i); j > 1; --j)
+			if (i % j == 0) {
+				--freq;
+				break;
+			}
+	return freq;
+}
+
+int main()
+{
+	clock_t t;
+	int f;
+	t = clock();
+	f = frequency_of_primes(9999);
+	printf("The number of primes lower"
+		" than 10, 000 is: %d\n",
+		f);
+	t = clock() - t;
+	printf("No. of clicks %ld clicks (%f seconds).\n",
+		t, ((float)t) / CLOCKS_PER_SEC);
+	return 0;
+}
+
+
+
+
+Example 5: 
+
+Program to print time as hour: minute returned by asctime() file. 
+
+
+#include <stdio.h>
+#include <time.h>
+int main()
+{
+	time_t rawtime;
+	struct tm* timeinfo;
+
+	// Used to store the time
+	// returned by localetime() function
+	char buffer[80];
+
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+	strftime(buffer, 80,
+			"Time is %I:%M%p.",
+			timeinfo);
+
+	// strftime() function stores the
+	// current time as Hours : Minutes
+	//%I %M and %p-> format specifier
+	// of Hours minutes and am/pm respectively*/
+
+	// prints the formatted time
+	puts(buffer);
+
+	return 0;
+}
+
+
+Output
+Time is 09:00AM.
+
+
+
+
+
+
